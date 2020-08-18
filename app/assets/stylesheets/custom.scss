@@ -1,0 +1,38 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: sans-serif;
+  color: #444444;
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
+a {
+  color: #5fcf80;
+}
+
+a:hover {
+  color: #86db9f;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+}
+
+.main {
+  padding-top: 55px;
+}
+
+.was-validated .form-control:invalid, .form-control.is-invalid {
+  background-position: right calc(0.375em + 0.8rem) center !important;
+}
+.was-validated .form-control:valid, .form-control.is-valid {
+  background-position: right calc(0.375em + 0.8rem) center !important;
+}
