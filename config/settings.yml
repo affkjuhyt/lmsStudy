@@ -1,0 +1,6 @@
+course_type:
+  maximum: 50
+course:
+  title: 20
+  overview: 20
+  description: 10
