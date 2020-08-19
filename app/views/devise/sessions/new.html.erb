@@ -37,7 +37,7 @@
           <%= f.hidden_field :course_id, value: @course_id %>
           <div class="btn-sign-in">
             <%= f.button :submit, 'Login', class: "btn btn-success btn-block" %>
-            <%= link_to root_path, class: "btn btn-block google-btn" do %>
+            <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-block google-btn" do %>
               <div class="row">
                 <div class="icon-box">
                 <%= image_tag("google_icon.png", class: "google-icon") %>
@@ -45,7 +45,7 @@
                 <div class="google-login-text"><%= 'Google' %></div>
               </div>
             <% end %>
-            <%= link_to root_path, class: "btn btn-block btn-facebook" do %>
+            <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-facebook" do %>
               <i class="fab fa-facebook-square"></i>
               <div>
                 <%= 'Facebook' %>
