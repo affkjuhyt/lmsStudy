@@ -27,7 +27,13 @@
                 </div>
                 <div class="course-show d-flex align-items-center">
                   <div id="register-course">
-                    <!--Register-->
+                    <% if course_registered_by_user?(@course.id) %>
+                      <%= render "registered" %>
+                    <% elsif signed_in? && !current_user.is_admin?  %>
+                      <%= render "register_course" %>
+                    <% elsif !current_user %>
+                      <%= render "register_not_login" %>
+                    <% end %>
                   </div>
                 </div>
               </div>

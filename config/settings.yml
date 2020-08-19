@@ -10,3 +10,5 @@ last_name:
   maximum: 20
 search:
   per_page: 6
+lesson_step:
+  default: 1

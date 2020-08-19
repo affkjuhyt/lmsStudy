@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
     get "/about", to: "home#about"
     resources :courses
+    resources :user_courses, only: [:create, :edit, :update]
     # Ex:- scope :active, -> {where(:active => true)}
     devise_for :users, skip: :omniauth_callbacks, controllers: { sessions: "sessions" }
     resources :categories
