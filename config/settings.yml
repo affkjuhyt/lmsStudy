@@ -4,11 +4,7 @@ course:
   title: 20
   overview: 20
   description: 10
-user:
-  first_name:
-    maximum: 20
-    regex: /\A[A-Za-z\s]+\z/
-  last_name:
-    maximum: 20
-  email:
-    regex: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+first_name:
+  maximum: 20
+last_name:
+  maximum: 20

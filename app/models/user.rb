@@ -5,12 +5,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :first_name, presence: true,
-                        length: { maximum: Settings.user.first_name.maximum },
-                        format: { with: Settings.user.first_name.regex }
+                        length: { maximum: Settings.first_name.maximum },
+                        format: { with: /\A[A-Za-z\s]+\z/ }
   validates :last_name, presence: true,
-                        length: { maximum: Settings.user.last_name.maximum },
-                        format: { with: Settings.user.first_name.regex }
+                        length: { maximum: Settings.last_name.maximum },
+                        format: { with: /\A[A-Za-z\s]+\z/ }
   validates :email, presence: true,
-                    format: { with: Settings.user.email.regex },
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
 end
