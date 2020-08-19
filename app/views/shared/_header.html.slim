@@ -30,7 +30,6 @@ header#header.fixed-top
             a#navbarDropdownXL.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
               = current_user.full_name.capitalize
             .dropdown-menu[aria-labelledby="navbarDropdownXL"]
-              = link_to 'Profile', current_user, class: "dropdown-item"
-              = link_to "Admin", admin_path, class: "dropdown-item" if is_admin?
-              = link_to 'Reset password', edit_user_registration_path, class: "dropdown-item" unless current_user.provider
-              = link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item"
+              = link_to 'Profile', root_path, class: "dropdown-item"
+              = link_to 'Reset password', root_path, class: "dropdown-item"
+              = link_to 'Logout', root_path, method: :delete, class: "dropdown-item"
