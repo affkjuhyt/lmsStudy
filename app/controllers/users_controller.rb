@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :get_user
-  before_action :authenticate_user!
 
   private
 
@@ -9,6 +8,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:full_name, :avatar, :email)
+    params.require(:user).permit(:first_name, :last_name, :avatar, :email)
   end
 end

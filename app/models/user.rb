@@ -4,10 +4,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :full_name, presence: true,
-                        length: { maximum: 20 },
-                        format: { with: /\A[A-Za-z\s]+\z/ }
+  validates :first_name, presence: true,
+                        length: { maximum: Settings.user.first_name.maximum },
+                        format: { with: Settings.user.first_name.regex }
+  validates :last_name, presence: true,
+                        length: { maximum: Settings.user.last_name.maximum },
+                        format: { with: Settings.user.first_name.regex }
   validates :email, presence: true,
-                    format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i },
+                    format: { with: Settings.user.email.regex },
                     uniqueness: { case_sensitive: false }
 end
