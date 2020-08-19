@@ -4,3 +4,7 @@ course:
   title: 20
   overview: 20
   description: 10
+first_name:
+  maximum: 20
+last_name:
+  maximum: 20
