@@ -30,11 +30,14 @@ gem 'rubocop'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'config'
 gem 'figaro'
+gem 'slim-rails'
+gem 'html2slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

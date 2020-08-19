@@ -1,0 +1,66 @@
+footer#footer
+  .footer-top
+    .container
+      .row
+        .col-lg-3.col-md-6.footer-contact
+          h3
+            | Athena
+          p
+            = 'Address'
+            br
+            strong
+              = 'Phone'
+            |  +84 123456789
+            br
+            strong
+              = 'Email'
+            |  athena@gmail.com
+            br
+        .col-lg-2.col-md-6.footer-links
+          h4
+            = 'Link'
+          ul
+            li
+              i.fas.fa-angle-right
+              = link_to 'Home', root_path
+            li
+              i.fas.fa-angle-right
+              = link_to 'About', about_path
+        .col-lg-3.col-md-6.footer-links
+          h4
+            = 'Courses'
+          ul
+            li
+              i.fas.fa-angle-right
+              = link_to "Web Design"
+            li
+              i.fas.fa-angle-right
+              = link_to "Web Development"
+            li
+              i.fas.fa-angle-right
+              = link_to "Product Management"
+            li
+              i.fas.fa-angle-right
+              = link_to "Marketing"
+        .col-lg-4.col-md-6.footer-newsletter
+          h4
+            = 'About'
+          p
+            = 'Company'
+  .container.d-md-flex.py-4
+    .mr-md-auto.text-center.text-md-left
+      .copyright
+        = 'Copy right @2020 '
+        strong
+          span
+            | Athena 
+        = 'Reserved'
+      .credits
+        = 'Design'
+    .social-links.text-center.text-md-right.pt-3.pt-md-0
+      a.twitter[href="#"]
+        i.fab.fa-twitter
+      a.facebook[href="#"]
+        i.fab.fa-facebook
+      a.linkedin[href="#"]
+        i.fab.fa-linkedin
