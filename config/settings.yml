@@ -1,10 +1,12 @@
 course_type:
   maximum: 50
 course:
-  title: 20
-  overview: 20
-  description: 10
+  title: 100
+  overview: 150
+  description: 200
 first_name:
   maximum: 20
 last_name:
   maximum: 20
+search:
+  per_page: 6

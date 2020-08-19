@@ -6,11 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable , omniauth_providers: [:facebook, :google_oauth2]
   validates :first_name, presence: true,
-                        length: { maximum: Settings.first_name.maximum },
-                        format: { with: /\A[A-Za-z\s]+\z/ }
+                        length: { maximum: Settings.first_name.maximum }
   validates :last_name, presence: true,
-                        length: { maximum: Settings.last_name.maximum },
-                        format: { with: /\A[A-Za-z\s]+\z/ }
+                        length: { maximum: Settings.last_name.maximum }
   validates :email, presence: true,
                     format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }

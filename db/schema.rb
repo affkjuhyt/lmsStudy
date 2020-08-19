@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_045657) do
   end
 
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "course_title", limit: 20, null: false
+    t.string "course_title", limit: 100, null: false
     t.string "course_overview", null: false
     t.text "course_description", size: :tiny, null: false
     t.string "course_image"
