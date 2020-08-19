@@ -1,0 +1,7 @@
+#comments.container
+  - @review_courses.each do |review_course|
+    = render review_course
+.container
+  .row
+    .paginate-comment
+      = will_paginate @review_courses, param_name: 'comment_page'

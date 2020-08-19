@@ -5,7 +5,13 @@ class CoursesController < ApplicationController
 
   def index; end
 
-  def show; end
+  def show
+    @review_courses = @course.review_courses.order('created_at DESC').paginate(page: params[:comment_page], per_page: 6)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
   private
 
