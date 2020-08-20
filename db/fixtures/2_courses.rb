@@ -3,10 +3,10 @@ course_attrs = proc do
     {
       id: idx + 1,
       user_id: 1,
-      title: Faker::Lorem.sentence(word_count: 5),
+      title: Faker::Job.title,
       overview: Faker::Lorem.sentence(word_count: 15),
-      description: Faker::Lorem.sentence(word_count: 40),
-      image: Faker::Avatar.image
+      description: Faker::Lorem.sentence,
+      image: Faker::LoremFlickr.image
     }
   end
 end

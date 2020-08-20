@@ -2,7 +2,7 @@ class CreateCourses < ActiveRecord::Migration[6.0]
   def change
     create_table :courses do |t|
       t.string :title, null: false, limit: Settings.course.title
-      t.string :overview, null: false, limit: Settings.course.overvuew
+      t.string :overview, null: false, limit: Settings.course.overview
       t.text :description, null: false, limit: Settings.course.description
       t.string :image
       t.integer :total_rate_count
