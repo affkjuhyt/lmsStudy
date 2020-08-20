@@ -1,0 +1,33 @@
+<% @courses.each do |course|%>
+  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+    <div class="course-item">
+      <div class="course-img">
+        <!--Image-->
+      </div>
+      <div class="course-content">
+        <div class="d-flex mb-3">
+          <!--Category-->
+        </div>
+        <h3>
+          <%= link_to course.title, course %>
+        </h3>
+        <p>
+          <%= course.overview %>
+        </p>
+        <div class="course-info d-flex justify-content-between align-items-center">
+          <div class="course-info-icon d-flex align-items-center" id="course-actions">
+            <div class="item-icon">
+              <i class=" fas fa-users fa-2x disable"></i>
+            </div>
+            <div class="item-icon">
+              <i class=" fa fa-heart fa-2x disable"></i>
+            </div>
+          </div>
+          <div class="course-show d-flex align-items-center">
+            <%= link_to 'Chi tiet', course, class: "btn btn-outline-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
