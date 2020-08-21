@@ -17,7 +17,7 @@ header#header.fixed-top
           li.nav-item
             = link_to 'About', about_path, class: "nav-link"
           li.nav-item
-            = link_to 'Course', root_path, class: "nav-link"
+            = link_to 'Course', courses_path, class: "nav-link"
           li.flag
             = link_to image_tag('en.png'), locale:"en" if I18n.locale == :vi
           li.flag

@@ -1,0 +1,93 @@
+<script src="https://player.vimeo.com/api/player.js"></script>
+<div class="container-fuild">
+  <div class="container">
+    <div class="show-course">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="course-item">
+            <div class="course-img">
+              <!--Image-->
+            </div>
+            <div class="course-content">
+              <div class="d-flex mb-3">
+                <h4>
+                  <!--Category-->
+                </h4>
+              </div>
+
+              <div class="course-info d-flex justify-content-between align-items-center">
+                <div class="course-info-icon d-flex align-items-center" id="course-actions">
+                  <div class="item-icon">
+                      <i class="fas fa-users fa-2x"></i>
+                    <span id="registers-count"> </span>
+                  </div>
+                  <div class="item-icon">
+                    <i class="fa fa-heart fa-2x course-like like"></i>
+                  </div>
+                </div>
+                <div class="course-show d-flex align-items-center">
+                  <div id="register-course">
+                    <!--Register-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="course__item">
+            <div class="course-title">
+              <h3>
+                <%= @course.title %>
+              </h3>
+            </div>
+            <div class="course-overview webkit-box-2">
+              <%= @course.overview %>
+            </div>
+            <div class="course-video-overview">
+              <!--Image-->
+            </div>
+            <nav>
+              <div id="nav-tab" class="nav nav-tabs nav-fill" role="tablist">
+                <a id="nav-home-tab" class="nav-item nav-link active" data-toggle="tab" href="#nav-info" role="tab" aria-controls="nav-home" aria-selected="true" >
+                  <%= 'Thong tin' %>
+                </a>
+                <a id="nav-profile-tab" class="nav-item nav-link" data-toggle="tab" href="#nav-lesson" role="tab" aria-controls="nav-profile" aria-selected="false" >
+                  <%= 'Bai hoc' %>
+                </a>
+                <a id="nav-contact-tab" class="nav-item nav-link" data-toggle="tab" href="#nav-comment" role="tab" aria-controls="nav-contact" aria-selected="false" >
+                  <%= 'Danh gia' %>
+                </a>
+                <a id="nav-about-tab" class="nav-item nav-link" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-about" aria-selected="false" >
+                  <%= 'Danh sach hoc sinh' %>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <section id="tabs">
+        <div class="col-xs-12">
+          <div id="nav-tabContent" class="tab-content py-3 px-3 px-sm-0">
+            <div id="nav-info" class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-home-tab">
+              <%= @course.description.html_safe %>
+            </div>
+            <div id="nav-lesson" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="row col-sm-12">
+                <!--If login-->
+              </div>
+            </div>
+            <div id="nav-comment" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-contact-tab">
+              <div id="student-review">
+                <!--If login-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
