@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
-  before_action :set_search
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -13,11 +12,6 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale }
-  end
-
-  def set_search
-    @q = Course.ransack params[:q]
-    @courses = @q.result(distinct: true).page(params[:page])
   end
 
   def configure_permitted_parameters

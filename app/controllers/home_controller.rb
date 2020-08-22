@@ -2,7 +2,8 @@ class HomeController < ApplicationController
   skip_before_action :authenticate_user!
   
   def index
-    @courses = Course.all.paginate(page: params[:page], per_page: Settings.search.per_page)
+    @q = Category.ransack params[:q]
+    @categories = @q.result(distinct: true).page(params[:page])
   end
 
   def about

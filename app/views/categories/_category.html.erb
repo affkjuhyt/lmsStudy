@@ -1,4 +1,4 @@
-<% @courses.each do |course|%>
+<% @categories.each do |category|%>
   <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
     <div class="course-item">
       <div class="course-img">
@@ -8,10 +8,10 @@
         <div class="d-flex mb-3">
         </div>
         <h3>
-          <%= link_to course.title, course %>
+          <%= link_to category.name, category %>
         </h3>
         <p>
-          <%= course.overview %>
+          
         </p>
         <div class="course-info d-flex justify-content-between align-items-center">
           <div class="course-info-icon d-flex align-items-center" id="course-actions">
@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="course-show d-flex align-items-center">
-            <%= link_to 'Chi tiet', course, class: "btn btn-outline-success" %>
+            <%= link_to 'Chi tiet', category, class: "btn btn-outline-success" %>
           </div>
         </div>
       </div>
