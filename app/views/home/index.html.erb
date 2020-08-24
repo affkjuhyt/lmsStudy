@@ -2,17 +2,17 @@
 <div id="show-courses"></div>
   <div class="container">
     <div class="section-title mt-4">
-    <h2><%= 'Course' %></h2>
+    <h2><%= 'Categories' %></h2>
   </div>
   <div class="courses">
     <div class="row">
-      <%= render @courses %>
+      <%= render @categories %>
     </div>
   </div>
   <div class="row">
     <div class="paginate">
-      <%= will_paginate @courses %>
+      <%= will_paginate @categories %>
     </div>
   </div>
 </div>  
-<%= render "about" %>=
+<%= render "about" %>

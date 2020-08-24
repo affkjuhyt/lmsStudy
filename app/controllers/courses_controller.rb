@@ -1,14 +1,18 @@
 class CoursesController < ApplicationController
-  before_action :get_course, only: [:index, :show]
+  before_action :get_course, only: [:show]
+  before_action :set_search, only: [:index, :show]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def index
-    @courses = Course.all.paginate(page: params[:page], per_page: Settings.search.per_page)
-  end
+  def index; end
 
   def show; end
 
   private
+
+  def set_search
+    @q = Course.ransack params[:q]
+    @courses = @q.result.page(params[:page])
+  end
 
   def get_course
     @course = Course.find(params[:id])

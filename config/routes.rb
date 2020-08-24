@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :courses
     # Ex:- scope :active, -> {where(:active => true)}
     devise_for :users, skip: :omniauth_callbacks, controllers: { sessions: "sessions" }
+    resources :categories
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   end
 

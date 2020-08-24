@@ -45,6 +45,7 @@ gem 'omniauth-facebook'
 gem "faker"
 gem 'will_paginate-bootstrap4'
 gem 'seed-fu'
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
