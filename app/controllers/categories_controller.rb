@@ -6,14 +6,14 @@ class CategoriesController < ApplicationController
   def index; end
 
   def show
-    @courses = Course.where(id: CourseCategory.find(params[:id]).id)
+    @courses = @category.courses
   end
 
   private
 
   def set_search
     @q = Category.ransack params[:q]
-    @categories = @q.result(distinct: true).page(params[:page])
+    @categories = @q.result.page(params[:page])
   end
 
   def get_category

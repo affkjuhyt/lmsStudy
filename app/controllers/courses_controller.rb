@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
 
   def set_search
     @q = Course.ransack params[:q]
-    @courses = @q.result(distinct: true).page(params[:page])
+    @courses = @q.result.page(params[:page])
   end
 
   def get_course
