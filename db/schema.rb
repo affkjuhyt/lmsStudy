@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_025854) do
+ActiveRecord::Schema.define(version: 2020_08_20_134139) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -38,17 +38,6 @@ ActiveRecord::Schema.define(version: 2020_08_24_025854) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_courses_on_user_id"
-  end
-
-  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "course_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.datetime "discarded_at"
-    t.index ["course_id"], name: "index_rates_on_course_id"
-    t.index ["discarded_at"], name: "index_rates_on_discarded_at"
-    t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
   create_table "user_courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -89,8 +78,6 @@ ActiveRecord::Schema.define(version: 2020_08_24_025854) do
   add_foreign_key "course_categories", "categories"
   add_foreign_key "course_categories", "courses"
   add_foreign_key "courses", "users"
-  add_foreign_key "rates", "courses"
-  add_foreign_key "rates", "users"
   add_foreign_key "user_courses", "courses"
   add_foreign_key "user_courses", "users"
 end
