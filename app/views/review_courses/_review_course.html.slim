@@ -1,0 +1,16 @@
+.container.box-comment
+  div.row.container
+    div.row.comment-element
+      div.container.avatar.col
+      .col
+        div.container.user_name
+          = link_to review_course.user.last_name, "#", class: "full-name"
+        div.container.comment
+          = review_course.comment
+    .row.user-actions.container.col-md-12.offset-md-3
+      - if(current_user == review_course.user)
+        = link_to 'Sua', edit_review_course_path(review_course), class: "edit-comment", remote: true
+      - if(current_user == review_course.user) || current_user.is_admin?
+        = link_to 'Xoa binh luan', review_course, method: :delete, data: { confirm: 'Are you sure? '}, remote: true, class: 'destroy-comment'
+  br
+  div.divider-comment
