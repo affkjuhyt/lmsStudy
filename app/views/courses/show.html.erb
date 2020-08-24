@@ -22,7 +22,12 @@
                     <span id="registers-count"> </span>
                   </div>
                   <div class="item-icon">
-                    <i class="fa fa-heart fa-2x course-like like"></i>
+                    <% unless signed_in? %>
+                      <i class="fa fa-heart fa-2x"></i>
+                    <% else %>
+                      <i class="fa fa-heart fa-2x course-like like-<%= @course.id %> <%= 'active' if course_rated_by_user?(@course.id)%>" data-id="<%= @course.id %>"></i>
+                    <% end %>
+                    <span id="course-<%= @course.id %>-likes"> <%= @course.total_rate_count %> </span>
                   </div>
                 </div>
                 <div class="course-show d-flex align-items-center">
