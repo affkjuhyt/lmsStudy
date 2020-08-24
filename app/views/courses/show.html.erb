@@ -31,8 +31,6 @@
                       <%= render "registered" %>
                     <% elsif signed_in? && !current_user.is_admin?  %>
                       <%= render "register_course" %>
-                    <% elsif !current_user %>
-                      <%= render "register_not_login" %>
                     <% end %>
                   </div>
                 </div>

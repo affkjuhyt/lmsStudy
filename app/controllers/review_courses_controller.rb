@@ -1,7 +1,10 @@
 class ReviewCoursesController < ApplicationController
+
+  before_action :load_course, only: [:create, :edit, :update]
   before_action :get_review_course, only: [:edit, :update, :destroy]
+
   def create
-    @review_course = ReviewCourse.new review_params
+    @review_course = current_user.review_courses.build(review_params)
     if @review_course.save
       respond_to do |format|
         format.html { redirect_to @review_course }
@@ -39,11 +42,15 @@ class ReviewCoursesController < ApplicationController
 
   private
 
+  def load_course
+    @course = Product.find_by(id: params[:comment][:course_id])
+  end
+
   def review_params
     params.require(:review_course).permit(:user_id, :course_id, :comment)
   end
 
   def get_review_course
-    @review_course = ReviewCourse.find(params[:id])
+    @review_course = @course.review_courses.find(params[:id])
   end
 end
