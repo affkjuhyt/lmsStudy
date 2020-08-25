@@ -4,13 +4,12 @@ class Rate < ApplicationRecord
   belongs_to :user
 
   validates_uniqueness_of :course_id, scope: :user_id
-  validates :user_id, :course_id, presence: true, numericality: { only_integer: true }
 
   after_discard do
-    Course.find(course_id).increment(:total_rate_count).save
+    course.increment(:total_rate_count).save
   end
 
   after_undiscard do
-    Course.find(course_id).decrement(:total_rate_count).save
+    course.decrement(:total_rate_count).save
   end
 end

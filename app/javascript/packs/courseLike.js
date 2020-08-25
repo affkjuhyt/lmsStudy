@@ -4,9 +4,9 @@ $(window).on("turbolinks:load", function () {
 
     $.ajax ({
       url: "/course/rate/"+course_id,
-      method: "GET"
+      method: "POST"
     }).done(function (response) {
-        console.log(response);
-      })
+      console.log(response);
+    })
   })
 });
