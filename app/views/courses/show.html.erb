@@ -86,7 +86,29 @@
             </div>
             <div id="nav-lesson" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-profile-tab">
               <div class="row col-sm-12">
-                <!--If login-->
+                <% if course_registered_by_user?(@course.id) %>
+                  <div class="col-sm-4 lessons-list">
+                    <%= render "lessons/lesson_unlock", lessons: @lessons %>
+                  </div>
+                  <div class="col-sm-8 offset-sm-4 lesson-content"></div>
+                <% elsif current_user && current_user.is_admin? %>
+                  <div class="col-sm-4 lessons-list">
+                    <% @lessons.each do |lesson| %>
+                      <div class="card card-lesson-show lesson-unlock">
+                        <div class="card-body">
+                          <div class="lesson-name-show row">
+                            <%= link_to lesson.name, lesson, remote: true, class: "btn btn-link lesson-item"%>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class="col-sm-8 offset-sm-4 lesson-content"></div>
+                <% elsif signed_in? %>
+                  <div class="inform"><%= t("message.register_message") %></div>
+                <% else %>
+                  <div class="inform"><%= t("message.log_in_message_html", href: link_to(t("message.log_in"), new_user_session_path(course_id: @course.id)))%></div>
+                <% end %>
               </div>
             </div>
             <div id="nav-comment" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-contact-tab">

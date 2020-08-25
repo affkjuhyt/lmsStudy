@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_025854) do
+ActiveRecord::Schema.define(version: 2020_08_25_061626) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(version: 2020_08_24_025854) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.string "name", null: false
+    t.integer "lesson_type", default: 1, null: false
+    t.integer "sequence"
+    t.string "video_url", null: false
+    t.integer "check_point", default: 2, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_lessons_on_course_id"
   end
 
   create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -99,6 +111,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_025854) do
   add_foreign_key "course_categories", "categories"
   add_foreign_key "course_categories", "courses"
   add_foreign_key "courses", "users"
+  add_foreign_key "lessons", "courses"
   add_foreign_key "rates", "courses"
   add_foreign_key "rates", "users"
   add_foreign_key "review_courses", "courses"
