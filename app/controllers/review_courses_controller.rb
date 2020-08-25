@@ -1,6 +1,4 @@
 class ReviewCoursesController < ApplicationController
-
-  before_action :load_course, only: [:create, :edit, :update]
   before_action :get_review_course, only: [:edit, :update, :destroy]
 
   def create
@@ -41,16 +39,12 @@ class ReviewCoursesController < ApplicationController
   end
 
   private
-
-  def load_course
-    @course = Product.find_by(id: params[:comment][:course_id])
-  end
-
+  
   def review_params
     params.require(:review_course).permit(:user_id, :course_id, :comment)
   end
 
   def get_review_course
-    @review_course = @course.review_courses.find(params[:id])
+    @review_course = ReviewCourse.find(params[:id])
   end
 end
