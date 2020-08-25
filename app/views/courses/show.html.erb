@@ -91,7 +91,7 @@
                     <%= render "lessons/lesson_unlock", lessons: @lessons %>
                   </div>
                   <div class="col-sm-8 offset-sm-4 lesson-content"></div>
-                <% elsif current_user && current_user.is_admin? %>
+                <% elsif current_user &.is_admin? %>
                   <div class="col-sm-4 lessons-list">
                     <% @lessons.each do |lesson| %>
                       <div class="card card-lesson-show lesson-unlock">

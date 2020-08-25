@@ -8,13 +8,8 @@ class UserCoursesController < ApplicationController
   end
 
   def update
-    @lesson = @course.lessons.find_by(course_id: @user_course.course_id, sequence: params[:user_course][:lesson_step])
     @user_course.update user_courses_params
-    respond_to do |format|
-      if @user_course.save
-        format.js { @lesson = @course.lessons.find_by course_id: @user_course.course_id, sequence: @user_course.lesson_step }
-      end
-    end
+    @user_course.save
   end
 
   private
