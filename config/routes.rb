@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     get "/about", to: "home#about"
     resources :courses
     resources :user_courses, only: [:create, :edit, :update]
-    resources :review_courses, except: [:new, :show]  
+    resources :review_courses, except: [:new, :show]
+    post "course/rate/:course_id", to: "rates#save_rate", as: :rate_course  
     # Ex:- scope :active, -> {where(:active => true)}
     devise_for :users, skip: :omniauth_callbacks, controllers: { sessions: "sessions" }
     resources :categories
