@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_061626) do
+ActiveRecord::Schema.define(version: 2020_08_28_042431) do
+
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "choice", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "exam_id"
+    t.index ["exam_id"], name: "index_answers_on_exam_id"
+  end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +48,15 @@ ActiveRecord::Schema.define(version: 2020_08_25_061626) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
+  create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "lesson_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_exams_on_lesson_id"
+    t.index ["user_id"], name: "index_exams_on_user_id"
+  end
+
   create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "course_id", null: false
     t.string "name", null: false
@@ -50,6 +67,23 @@ ActiveRecord::Schema.define(version: 2020_08_25_061626) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["course_id"], name: "index_lessons_on_course_id"
+  end
+
+  create_table "question_choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "answer", null: false
+    t.boolean "right_answer", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_question_choices_on_question_id"
+  end
+
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "lesson_id", null: false
+    t.string "title", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_questions_on_lesson_id"
   end
 
   create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -111,7 +145,11 @@ ActiveRecord::Schema.define(version: 2020_08_25_061626) do
   add_foreign_key "course_categories", "categories"
   add_foreign_key "course_categories", "courses"
   add_foreign_key "courses", "users"
+  add_foreign_key "exams", "lessons"
+  add_foreign_key "exams", "users"
   add_foreign_key "lessons", "courses"
+  add_foreign_key "question_choices", "questions"
+  add_foreign_key "questions", "lessons"
   add_foreign_key "rates", "courses"
   add_foreign_key "rates", "users"
   add_foreign_key "review_courses", "courses"

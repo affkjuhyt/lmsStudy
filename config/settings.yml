@@ -12,4 +12,4 @@ search:
   per_page: 6
 lesson_step:
   default: 1
-lesson_type: { video: 1, quiz: 2 }
+lesson_type: { video: 1, question: 2 }
