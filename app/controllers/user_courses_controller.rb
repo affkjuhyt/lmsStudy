@@ -8,7 +8,6 @@ class UserCoursesController < ApplicationController
   end
 
   def update
-    @user_course = UserCourse.find_by id: params[:id]
     @user_course.update user_courses_params
     @user_course.save
   end

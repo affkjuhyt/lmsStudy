@@ -1,0 +1,5 @@
+- @lessons.each do |lesson|
+  .card.card-lesson-show.lesson-unlock
+    .card-body
+      .lesson-name-show.row
+        = link_to lesson.name, course_lesson_path(@course, lesson), remote: true, class: "btn btn-link lesson-item"

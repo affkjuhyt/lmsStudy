@@ -1,0 +1,36 @@
+<h5 class="lesson-name"> <%= @lesson.name %></h5>
+<div id="iframe-lesson">
+  <iframe class="lesson-video" src="<%= @lesson.video_url %>" width="720" height="480" frameborder="0" allowfullscreen allow="encrypted-media"></iframe>
+</div>
+<script type="text/javascript">
+  <% if @user_course %>
+    var step = <%= @user_course.lesson_step %>;
+  <% end %>
+  $("#iframe-lesson iframe").on("load", function () {
+    var iframe = $('#iframe-lesson iframe');
+    var player = new Vimeo.Player(iframe);
+
+    player.on('ended', function() {
+      var next_element = $(".lessons-list .card-lesson-show").get(<%= @lesson.sequence %>);
+      <% if @user_course && @lesson.video? && (@user_course.lesson_step == @lesson.sequence) %>
+        if (next_element != undefined ) {
+          $.ajax({
+            method: "PATCH",
+            url: "/user_courses/" + <%= @user_course.id %>,
+            data: { user_course: { lesson_step: step + 1 } }
+          });
+        }
+      <% end %>
+      <% if ((@user_course && @user_course.lesson_step > @lesson.sequence)) %>
+        $.ajax({
+          method: "POST",
+          url: $(next_element).find("a").attr("href"),
+          success: function () {
+            $(".lessons-list").find(".card-body").removeClass("active");
+            $(next_element).find(".card-body").addClass("active");
+          }
+        });
+      <% end %>
+    });
+  })
+</script>

@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
 
   def show
     @review_courses = @course.review_courses.order('created_at DESC').paginate(page: params[:comment_page], per_page: 6)
+    @lessons = @course.lessons.order('sequence ASC')
     respond_to do |format|
       format.html
       format.js
