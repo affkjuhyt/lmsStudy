@@ -1,0 +1,2 @@
+class AnwsersController < ApplicationController
+end

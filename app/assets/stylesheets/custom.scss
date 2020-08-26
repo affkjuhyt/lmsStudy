@@ -567,3 +567,21 @@ iframe{
 .lesson-name{
   text-align: center;
 }
+
+/*
+  Question
+*/
+
+.question{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.card-question{
+  height: 80vh;
+  overflow: scroll;
+}
+
+.result{
+  font-size: 60px;
+}
