@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_034226) do
-
-  create_table "anwsers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "question_id", null: false
-    t.bigint "user_id", null: false
-    t.integer "anwser_choice", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_anwsers_on_question_id"
-    t.index ["user_id"], name: "index_anwsers_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2020_08_25_061626) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -60,23 +50,6 @@ ActiveRecord::Schema.define(version: 2020_08_26_034226) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["course_id"], name: "index_lessons_on_course_id"
-  end
-
-  create_table "question_choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "question_id", null: false
-    t.string "anwser", null: false
-    t.boolean "right_anwser"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_question_choices_on_question_id"
-  end
-
-  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "lesson_id", null: false
-    t.string "title", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["lesson_id"], name: "index_questions_on_lesson_id"
   end
 
   create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -135,14 +108,10 @@ ActiveRecord::Schema.define(version: 2020_08_26_034226) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "anwsers", "questions"
-  add_foreign_key "anwsers", "users"
   add_foreign_key "course_categories", "categories"
   add_foreign_key "course_categories", "courses"
   add_foreign_key "courses", "users"
   add_foreign_key "lessons", "courses"
-  add_foreign_key "question_choices", "questions"
-  add_foreign_key "questions", "lessons"
   add_foreign_key "rates", "courses"
   add_foreign_key "rates", "users"
   add_foreign_key "review_courses", "courses"

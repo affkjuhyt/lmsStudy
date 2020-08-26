@@ -1,2 +1,0 @@
-class AnwsersController < ApplicationController
-end
