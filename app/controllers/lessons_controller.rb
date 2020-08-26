@@ -4,6 +4,8 @@ class LessonsController < ApplicationController
   def show
     @lesson = @course.lessons.find(params[:id])
     @user_course = current_user.user_courses.find_by(course_id: @lesson.course_id)
+    @questions = @lesson.questions
+    @max_point = @questions.length
     respond_to do |format|
       format.js
     end

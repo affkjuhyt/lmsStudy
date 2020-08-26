@@ -1,0 +1,4 @@
+- if current_user.answers.exists?
+  = render "answers/result"
+- else
+  = render "exams/quiz_form"

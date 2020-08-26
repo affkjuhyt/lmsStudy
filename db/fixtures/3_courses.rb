@@ -34,5 +34,27 @@ lesson_attrs = proc do
   end
 end
 
+question_attrs = proc do
+  10.times.map do |idx|
+    {
+      lesson_id: idx+1,
+      title: Faker::Lorem.sentence(word_count: 3)
+
+    }
+  end
+end
+
 Course.seed_once(:id, *course_attrs.call)
 Lesson.seed_once(:id, *lesson_attrs.call)
+Question.seed_once(:id, *question_attrs.call)
+
+Question.all.each do |choice|
+  answer = [true, false, false, false].sample(4)
+  for i in 0..3 do
+    QuestionChoice.create(
+      question: choice,
+      answer: Faker::Lorem.sentence,
+      right_answer: answer[i]
+    )
+  end
+end

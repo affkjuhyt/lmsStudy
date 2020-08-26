@@ -1,0 +1,20 @@
+.card.card-quiz
+  .card-header.header-quiz-result
+    strong.quiz-title
+  .card-body
+    h2.mark
+      |Mark:
+      |/
+      = @max_point
+    - @questions.each_with_index do |question, i|
+      .question
+        = i + 1
+        |.
+        - question.answers.each_with_index do |answer, idx|
+          .answer.row
+            .correct-icon.col-sm-1
+                .correct-answer-icon.fa.fa-check
+            .col-sm-11.offset-sm-1.row.answer
+              .label-ans
+                |.
+              .text-answer

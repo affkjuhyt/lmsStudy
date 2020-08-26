@@ -1,0 +1,21 @@
+.card.card-quiz
+  .card-header.header-quiz-result
+    strong.quiz-title
+      = @lesson.name
+  .card-body
+    = form_for Exam.new do |f|
+      = f.hidden_field :lesson_id, value: @lesson.id
+      - @questions.each_with_index do |question, i|
+        .question
+          = i + 1
+          |. 
+          = question.title
+          - question.question_choices.each do |choice|
+            .answer.row
+              .user-answer
+                = fields_for :answers do |role_f|
+                  = role_f.hidden_field :question_id, value: question.id
+                  = role_f.check_box :question_choice_id, { :multiple => true }, choice.id, false
+              = choice.answer
+      = f.submit "Submit", class: "btn btn-success"
+#fail-result
