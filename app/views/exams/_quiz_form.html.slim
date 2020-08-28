@@ -3,12 +3,12 @@
     strong.quiz-title
       = @lesson.name
   .card-body
-    = form_for @exam do |f|
+    = form_for @exam, remote: true do |f|
       = f.hidden_field :lesson_id, value: @lesson.id
       - @questions.each_with_index do |question, i|
         .question
           = i + 1
-          |. 
+          |.
           = question.title
           = f.fields_for :answers do |role_f|
             - question.question_choices.each do |choice|

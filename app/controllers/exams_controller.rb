@@ -8,10 +8,16 @@ class ExamsController < ApplicationController
   def create
     @questions = @lesson.questions
     @exam = current_user.exams.build(exam_params)
+    @point = 0
+    params[:exam][:answers_attributes].each do |param|
+      if(QuestionChoice.find(param.last[:choice]).right_answer == true)
+        @point++
+      end
+    end
     respond_to do |format|
       if @exam.save
         format.html { render '_result', notice: 'Exam was successfully.' }
-        format.json { render '_result', status: :created, location: @exam }
+        format.js { render '_result' }
       else
         format.html
         format.js { render '_fail' }
