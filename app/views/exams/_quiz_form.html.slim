@@ -3,19 +3,18 @@
     strong.quiz-title
       = @lesson.name
   .card-body
-    = form_for Exam.new do |f|
+    = form_for @exam do |f|
       = f.hidden_field :lesson_id, value: @lesson.id
       - @questions.each_with_index do |question, i|
         .question
           = i + 1
           |. 
           = question.title
-          - question.question_choices.each do |choice|
-            .answer.row
-              .user-answer
-                = fields_for :answers do |role_f|
-                  = role_f.hidden_field :question_id, value: question.id
-                  = role_f.check_box :question_choice_id, { :multiple => true }, choice.id, false
-              = choice.answer
+          = f.fields_for :answers do |role_f|
+            - question.question_choices.each do |choice|
+              .answer.row
+                .user-answer
+                    = role_f.radio_button :choice, choice.id
+                = choice.answer
       = f.submit "Submit", class: "btn btn-success"
 #fail-result

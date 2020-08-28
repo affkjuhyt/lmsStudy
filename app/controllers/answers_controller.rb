@@ -1,8 +1,7 @@
 class AnswersController < ApplicationController
   before_action :load_lesson
 
-  def create
-  end
+  def create; end
 
   private
 
