@@ -32,4 +32,4 @@ header#header.fixed-top
               = current_user.first_name.capitalize
             .dropdown-menu[aria-labelledby="navbarDropdownXL"]
               = link_to t('shared.header.reset'), edit_user_registration_path, class: "dropdown-item" unless current_user.provider
-              = link_to t('shared.header.logout's), destroy_user_session_path, method: :delete, class: "dropdown-item"
+              = link_to t('shared.header.logout'), destroy_user_session_path, method: :delete, class: "dropdown-item"
