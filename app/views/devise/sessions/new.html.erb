@@ -4,7 +4,7 @@
       <div class="form" >
         <div class="form-title">
           <h2>
-            <%= 'Login' %>
+            <%= t('devise.login.title') %>
           </h2>
         </div>
         <div class="messages">
@@ -29,14 +29,14 @@
                         <div class="text-box">
                           <i class="fa fa-lock"></i>
                           <%= f.input_field :password,
-                                            placeholder: 'Password',
+                                            placeholder: t('devise.register.password'),
                                             input_html: { auto_complete: "current-password" } %>
                         </div>
                       <% end %>
           <%= f.input :remember_me, label: t("user.remember_me"), as: :boolean if devise_mapping.rememberable? %>
           <%= f.hidden_field :course_id, value: @course_id %>
           <div class="btn-sign-in">
-            <%= f.button :submit, 'Login', class: "btn btn-success btn-block" %>
+            <%= f.button :submit, t('devise.login.title'), class: "btn btn-success btn-block" %>
             <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-block google-btn" do %>
               <div class="row">
                 <div class="icon-box">

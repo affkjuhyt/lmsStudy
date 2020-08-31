@@ -2,25 +2,25 @@ section#about.about
   .container[data-aos="fade-up"]
     .section-title
       h2
-        = 'About'
+        = t('home.about')
     .row
       .col-lg-6.order-1.order-lg-2[data-aos="fade-left" data-aos-delay="100"]
         = image_tag("about.jpg", class: "img-fluid")
       .col-lg-6.pt-4.pt-lg-0.order-2.order-lg-1.content
         h3
-          = 'About Target'
+          = t('home.target')
         p.font-italic
-          = 'About method'
+          = t('home.method')
         ul
           li
             i.fas.fa-angle-down
-            = 'Value 1'
+            = t('home.value')
           li
             i.fas.fa-angle-down
-            = 'Value 2'
+            = t('home.value')
           li
             i.fas.fa-angle-down
-            = 'Value 3'
+            = t('home.value')
         p
-          = 'Value 4'
-        = link_to 'Learn more', about_path, class: "learn-more-btn"
+          = t('home.value')
+        = link_to t('home.learnmore'), about_path, class: "learn-more-btn"

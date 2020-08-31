@@ -1,7 +1,7 @@
 header#header.fixed-top
   .container
     nav.navbar.navbar-expand-xl
-      = link_to  "Athena", root_path, class: "navbar-brand logo"
+      = link_to t('shared.header.name'), root_path, class: "navbar-brand logo"
       .col-sm-5.search-course
         .cover
           - snt = request.url.include?('course') ? 'title_cont' : 'name_cont'
@@ -14,22 +14,22 @@ header#header.fixed-top
       #navbarSupportedContentXL.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
           li.nav-item
-            = link_to 'Home', root_path, class: "nav-link"
+            = link_to t('shared.header.home'), root_path, class: "nav-link"
           li.nav-item
-            = link_to 'About', about_path, class: "nav-link"
+            = link_to t('shared.header.about'), about_path, class: "nav-link"
           li.nav-item
-            = link_to 'Course', courses_path, class: "nav-link"
+            = link_to t('shared.header.course'), courses_path, class: "nav-link"
           li.flag
             = link_to image_tag('en.png'), locale:"en" if I18n.locale == :vi
           li.flag
             = link_to image_tag('vi.png'), locale:"vi" if I18n.locale == :en
         - unless signed_in?
           li.nav-item.get-login-btn
-            = link_to 'Sign in' , new_user_session_path
+            = link_to t('shared.header.singin') , new_user_session_path
         - else
           li.nav-item.nav-link.dropdown
             a#navbarDropdownXL.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
               = current_user.first_name.capitalize
             .dropdown-menu[aria-labelledby="navbarDropdownXL"]
-              = link_to 'Reset password', edit_user_registration_path, class: "dropdown-item" unless current_user.provider
-              = link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item"
+              = link_to t('shared.header.reset'), edit_user_registration_path, class: "dropdown-item" unless current_user.provider
+              = link_to t('shared.header.logout's), destroy_user_session_path, method: :delete, class: "dropdown-item"

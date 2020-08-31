@@ -1,2 +1,57 @@
 vi:
-    hello: "Xin chao"
+  hello: "Xin chào"
+  mailer:
+    send: 'Xin chào, hệ thống có thêm khóa học mới.'
+  course:
+    detail: 'Chi tiết'
+    register: 'Đăng kí'
+    registed: 'Đã đăng kí'
+    title: 'Khóa học'
+    info: 'Thông tin'
+    lesson: 'Bài học'
+    rate: 'Đánh giá'
+    listStudent: 'Danh sách học sinh'
+  devise:
+    password:
+      title: 'Thay đổi mật khẩu'
+      label_input: 'Mật khẩu mới'
+      label_reinput: 'Nhập lại mật khẩu mới'
+      forgot: 'Quên mật khẩu'
+      submit: 'Gửi'
+    register:
+      title: 'Đăng kí'
+      first_name: 'Tên'
+      last_name: 'Họ'
+      password: 'Mật khẩu'
+      confirm_password: 'Xác thực mật khẩu'
+    login:
+      title: 'Đăng nhập'
+      confirm: 'Không thể nhận xác thực'
+      unlock: 'Không thể nhận mở khóa'
+  exam:
+    test_fail: 'Không qua kiểm tra'
+    your_mark: 'Điểm của bạn: '
+  home:
+    about: 'Thông tin'
+    target: 'Mục tiêu'
+    method: 'Phương thức'
+    value: 'Giá trị'
+    learmore: 'Tìm hiểu thêm'
+    categories: 'Thể loại'
+  comment:
+    edit: 'Cập nhật'
+    remove: 'Xóa bình luận'
+    question: 'Bạn có muốn xóa'
+    submit: 'Bình luận'
+  shared:
+    title: 'Học ngay hôm nay,'
+    lead: 'Dẫn đầu ngày mai'
+    view: 'Xem khóa học'
+    header:
+      name: 'Athena'
+      home: 'Trang chủ'
+      about: 'Thông tin'
+      course: 'Khóa học'
+      signin: 'Đăng nhập'
+      reset: 'Thay đổi mật khẩu'
+      logout: 'Đăng xuất'
