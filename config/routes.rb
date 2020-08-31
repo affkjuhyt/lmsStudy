@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :courses do
       resources :lessons
     end
+    resources :questions
+    resources :answers, only: :create
+    resources :exams
+    resources :question_choices
     resources :user_courses, only: [:create, :edit, :update]
     resources :review_courses, except: [:new, :show]
     post "course/rate/:course_id", to: "rates#save_rate", as: :rate_course
