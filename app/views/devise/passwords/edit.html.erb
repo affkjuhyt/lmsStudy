@@ -1,5 +1,5 @@
 <div class="col-md-6 offset-md-3 resend-form">
-  <h2><%= 'Thay doi mat khau' %></h2>
+  <h2><%= t('devise.password.title') %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -9,19 +9,19 @@
 
     <div class="form-inputs">
       <%= f.input :password,
-                  label: 'Mat khau moi',
+                  label: t('devise.password.label_input'),
                   required: true,
                   autofocus: true,
                   hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
-                  label: 'Nhap lai mat khau',
+                  label: t('devise.password.label_reinput'),
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, 'Thay doi mat khau' %>
+      <%= f.button :submit, t('devise.password.title') %>
     </div>
   <% end %>
 

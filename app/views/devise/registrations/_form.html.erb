@@ -2,7 +2,7 @@
   <div class="col-md-8 offset-md-2">
     <div class="form" >
       <div class="form-title row">
-          <h2><%= 'Sign up' %></h2>
+          <h2><%= t('devise.register.title') %></h2>
         </div>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -13,7 +13,7 @@
                       <div class="text-box">
                         <i class="fa fa-user"></i>
                         <%= f.input_field :first_name,
-                                          placeholder: 'First name' %>
+                                          placeholder: t('devise.register.first_name') %>
                       </div>
                     <% end %>
 
@@ -24,7 +24,7 @@
                       <div class="text-box">
                         <i class="fa fa-user"></i>
                         <%= f.input_field :last_name,
-                                          placeholder: 'Last name' %>
+                                          placeholder: t('devise.register.last_name') %>
                       </div>
                     <% end %>
 
@@ -44,7 +44,7 @@
                         <div class="text-box">
                           <i class="fa fa-lock"></i>
                           <%= f.input_field :password,
-                                            placeholder: 'Password',
+                                            placeholder: t('devise.register.password'),
                                             input_html: { autocomplete: "new-password" } %>
                         </div>
                       <% end %>
@@ -54,12 +54,12 @@
                         <div class="text-box">
                           <i class="fa fa-lock"></i>
                           <%= f.input_field :password_confirmation,
-                                            placeholder: 'Confirmation password',
+                                            placeholder: t('devise.register.confirm_password'),
                                             input_html: { autocomplete: "new-password" } %>
                         </div>
                       <% end %>
 
-          <%= f.button :submit, 'Sign up', class: "btn btn-success btn-sign-up" %>
+          <%= f.button :submit, t('devise.register.title'), class: "btn btn-success btn-sign-up" %>
       <% end %>
 
       <%= render "devise/shared/links" %>

@@ -1,9 +1,9 @@
 section#hero.d-flex.justify-content-center.align-items-center
   .container.position-relative[data-aos="zoom-in" data-aos-delay="100"]
     h1
-      | Learning Today,
+      | t('shared.title')
       br
-      | Leading Tomorrow
-    = link_to 'View course', courses_path, class: "btn-get-started"
+      | t('shared.lead')
+    = link_to t('shared.view'), courses_path, class: "btn-get-started"
 div.notify.container
   =render("layouts/messages")
