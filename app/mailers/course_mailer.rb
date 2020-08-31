@@ -1,7 +1,9 @@
 class CourseMailer < ApplicationMailer
   def course_email course
-    @user = User.find(user_id)
+    users = User.all
     @course = course
-    mail(to: @user.email, subject: 'New course')
+    users.each do |x|
+      mail(to: x.email, subject: 'New course')
+    end
   end
 end

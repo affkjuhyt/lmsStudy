@@ -14,8 +14,10 @@ class Admin::CoursesController < ApplicationController
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
-    SendEmailJob.set(wait: 5.minutes).perform_later @course
+    SendEmailJob.perform_later @course
   end
+
+  def show; end
 
   private
 
