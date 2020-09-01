@@ -31,6 +31,7 @@
 /config/application.yml
 /config/database.yml
 
+/coverage/
 /public/packs
 /public/packs-test
 /node_modules
