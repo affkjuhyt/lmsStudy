@@ -10,6 +10,7 @@ class ReviewCoursesController < ApplicationController
       end
     else
       redirect_to root_path
+      flash[:danger] = t("login.first")
     end
   end
 
