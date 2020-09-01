@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :user_courses, dependent: :destroy
   has_many :courses, through: :user_courses
+  has_many :reviewed_courses, class_name: Course.class.name, through: :review_courses
   has_many :review_courses, dependent: :destroy
   has_many :rates, dependent: :destroy
   has_many :answers, dependent: :destroy
