@@ -55,3 +55,6 @@ vi:
       signin: 'Đăng nhập'
       reset: 'Thay đổi mật khẩu'
       logout: 'Đăng xuất'
+  user_courses:
+    success_created: 'Đăng kí khóa học thành công'
+    success_updated: 'Nâng cấp thành công'
