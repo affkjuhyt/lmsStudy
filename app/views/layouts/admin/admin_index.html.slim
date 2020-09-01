@@ -1,0 +1,20 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    meta[http-equiv="x-ua-compatible" content="ie=edge"]
+    title
+      | AdminLTE 3 | Dashboard 3
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body.hold-transition.sidebar-mini
+    .wrapper
+      = render "layouts/admin/admin_navbar"
+      = render "layouts/admin/admin_sidebar"
+      = render "layouts/admin/breadcrumb"
+      = yield
+      = render "layouts/admin/admin_footer"
+    #preloader
