@@ -1,48 +1,49 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/thiennlinh/Documents/Zinza/LMS/spec/requests/user_courses_request_spec.rb": {
+      "/home/thiennlinh/Documents/Zinza/LMS/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
-          1,
-          5,
-          5,
-          5,
+          0,
+          0,
           null,
-          1,
-          5,
+          0,
+          0,
+          0,
+          0,
           null,
-          1,
-          1,
-          3,
+          0,
+          0,
           null,
-          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           null,
           null,
-          1,
+          0,
+          0,
+          0,
+          0,
+          null,
           0,
           null,
           null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          3,
-          null,
-          1,
+          0,
+          0,
+          0,
           0,
           null,
           null,
-          1,
           0,
-          null,
-          null,
-          null,
-          null,
+          0,
+          0,
           null,
           null,
           null
@@ -70,22 +71,22 @@
           0,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
-          1,
-          1,
+          0,
+          0,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
           null,
           null
         ]
@@ -1327,13 +1328,80 @@
           null
         ]
       },
+      "/home/thiennlinh/Documents/Zinza/LMS/spec/factories/categories.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/thiennlinh/Documents/Zinza/LMS/spec/factories/courses.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/thiennlinh/Documents/Zinza/LMS/spec/factories/lessons.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/thiennlinh/Documents/Zinza/LMS/spec/factories/rates.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/thiennlinh/Documents/Zinza/LMS/spec/factories/review_courses.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/thiennlinh/Documents/Zinza/LMS/spec/factories/user_courses.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          5,
+          1,
           1,
           1,
           null,
@@ -1346,14 +1414,14 @@
           null,
           1,
           1,
-          5,
-          5,
-          5,
-          5,
-          5,
-          5,
-          5,
-          5,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -1391,7 +1459,6 @@
       },
       "/home/thiennlinh/Documents/Zinza/LMS/app/models/user.rb": {
         "lines": [
-          1,
           1,
           1,
           1,
@@ -1438,6 +1505,20 @@
           null
         ]
       },
+      "/home/thiennlinh/Documents/Zinza/LMS/app/models/course.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
       "/home/thiennlinh/Documents/Zinza/LMS/app/helpers/application_helper.rb": {
         "lines": [
           1,
@@ -1463,10 +1544,10 @@
         "lines": [
           1,
           1,
-          4,
-          4,
-          4,
-          4,
+          0,
+          0,
+          0,
+          0,
           null,
           null
         ]
@@ -1475,11 +1556,11 @@
         "lines": [
           1,
           1,
-          1,
+          0,
           null,
           null,
           1,
-          4,
+          0,
           null,
           null,
           1,
@@ -1487,101 +1568,16 @@
           null,
           null,
           1,
-          4,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null
-        ]
-      },
-      "/home/thiennlinh/Documents/Zinza/LMS/app/controllers/user_courses_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
           0,
           null,
           null,
           1,
           0,
-          0,
-          0,
-          0,
           null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/thiennlinh/Documents/Zinza/LMS/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/thiennlinh/Documents/Zinza/LMS/app/models/user_course.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/thiennlinh/Documents/Zinza/LMS/app/models/category.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null
         ]
       }
     },
-    "timestamp": 1598929309
+    "timestamp": 1598946615
   }
 }
