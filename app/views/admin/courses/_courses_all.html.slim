@@ -1,0 +1,46 @@
+.row
+  .col-lg-12
+    .card
+      .card-header.border-0
+      .card-body.table-responsive.p-0
+        table.table.table-striped.table-valign-middle.table-hover
+          thead
+            tr
+              th
+                = sort_link @q, :id, 'ID', {}, {remote: true}
+              th
+                = sort_link @q, :title, 'Title', {}, {remote: true}
+              th
+                = 'Show'
+              th
+                = 'Details'
+              th
+                = 'Edit'
+              th
+                = 'Delete'
+          tbody
+            tbody
+              - @courses.each do |course|
+                tr
+                  td.with-5
+                      = course.id
+                  td.with-10
+                    p.webkit-box-2
+                      = course.title
+                  td.with-5
+                    = link_to admin_course_path(course) do
+                      i.fas.fa-search
+                  td.with-5
+                    = link_to course_path(course) do
+                      i.fas.fa-search-plus
+                  td.with-5
+                    = link_to  edit_admin_course_path(course) do
+                      i.far.fa-edit
+                  td.with-5
+                    = link_to admin_course_path(course), method: :delete, data: { confirm: 'Are you sure?' } do
+                      i.fas.fa-trash-alt
+  br
+  .container
+    .row
+      .paginate
+        = will_paginate @courses

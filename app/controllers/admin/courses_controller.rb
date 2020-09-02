@@ -1,5 +1,16 @@
 class Admin::CoursesController < Admin::BaseController
-  before_action :get_course, only: [:show, :edit, :update, :destroy]
+  before_action :load_course, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @result = Course.ransack params[:q]
+    @courses = @result.result(distinct: true).order(created_at: :desc).paginate(page: params[:page], per_page: Settings.users.per_page)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def show; end
 
   def create
     @course = Course.new(course_params)
@@ -17,11 +28,9 @@ class Admin::CoursesController < Admin::BaseController
     SendEmailJob.perform_later @course
   end
 
-  def show; end
-
   private
 
-  def get_course
+  def load_course
     @course = Course.find(params[:id])
   end
 
