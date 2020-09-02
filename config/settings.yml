@@ -8,6 +8,8 @@ first_name:
   maximum: 20
 last_name:
   maximum: 20
+users:
+  per_page: 20
 search:
   per_page: 6
 lesson_step:

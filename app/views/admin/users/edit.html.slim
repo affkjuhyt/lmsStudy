@@ -1,0 +1,42 @@
+= content_for :breadcrumbs, [['User', admin_users_path], [@user.first_name, admin_user_path(@user)], 'Edit']
+.content-wrapper
+  .content
+    .container
+      .edit-user
+        .row
+          .col-md-4
+            .show-edit-user
+              h4
+                = @user.first_name + " "
+                = @user.last_name
+              p
+                = 'Email:'
+                |: 
+                = @user.email
+                br
+                = 'Time created at:'
+                |:  
+                = @user.created_at.strftime("%d-%m-%Y")
+          .col-md-8
+            .row
+              .col-lg-10.offset-lg-1
+                = simple_form_for [:admin, @user] do |f|
+                  = f.error_notification
+                  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+                  .form-inputs
+                    .row
+                      .col-lg-12.col-md-12
+                        = f.input :avatar, as: :file
+                    .row
+                      .col-lg-6.col-md-6
+                        = f.input :first_name
+                      .col-lg-6.col-md-6
+                        = f.input :first_name
+                    .row
+                      .col-lg-12.col-md-12
+                        = f.input :email, readonly: true
+                    .row
+                      .col-lg-12.col-md-12
+                        = f.input :password
+                  .form-actions
+                    = f.button :submit, class: "btn btn-outline-success"
