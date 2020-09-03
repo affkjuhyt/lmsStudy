@@ -1,0 +1,19 @@
+= content_for :breadcrumbs, ['User']
+.content-wrapper
+  .content
+    .container-fluid
+      = render  "layouts/messages" 
+      .row.action-user
+        .ml-4
+          = link_to new_admin_user_path, class: "action-new" do
+            i.fas.fa-user-plus
+              span.tooltiptext = 'New User'
+        .col-md-8
+          = search_form_for(@result, url: admin_users_path, html: { class: "form-inline ml-3" }, remote: true) do |f|
+            .input-group.input-group-sm
+              = f.search_field :first_name_cont, placeholder: 'Search by name', class: "input-search"
+              .input-group-append
+                button.btn.btn-outline-success[type="submit"]
+                  i.fas.fa-search
+      #show-users
+        = render  "admin/users/users_all"

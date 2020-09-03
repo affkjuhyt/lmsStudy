@@ -1,4 +1,4 @@
-class Admin::CoursesController < ApplicationController
+class Admin::CoursesController < Admin::BaseController
   before_action :get_course, only: [:show, :edit, :update, :destroy]
 
   def create

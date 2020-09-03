@@ -1,0 +1,6 @@
+= content_for :breadcrumbs, [['User', admin_users_path], 'New User']
+.content-wrapper
+  .content
+    .container
+      .new-user
+        = render 'form', user: @user

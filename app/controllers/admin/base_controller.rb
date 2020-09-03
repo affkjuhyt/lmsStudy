@@ -3,8 +3,8 @@ class Admin::BaseController < ApplicationController
   layout "admin/admin_index"
 
   def index
-    @courses = Course.all
-    @users = User.all
+    @count_user = User.count
+    @count_courses = Course.count
   end
 
   private

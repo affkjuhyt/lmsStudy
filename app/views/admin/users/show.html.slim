@@ -1,0 +1,27 @@
+= content_for :breadcrumbs, [['User', admin_users_path], @user.first_name]
+.content-wrapper
+  .content
+    .container-fluid
+      = render  "layouts/messages"
+      .container
+        .show-user
+          .row
+            .col-md-6.img
+            .col-md-6.details
+              blockquote
+                h5
+                  = @user.first_name + " "
+                  = @user.last_name
+              p
+                = 'Email:'
+                |:
+                = @user.email
+                br
+                = 'Time created at'
+                |:
+                = @user.created_at.strftime("%d-%m-%Y")
+              = link_to 'Edit', edit_admin_user_path(@user), class: "btn btn-outline-success"
+    #modalIMG.modal.fade[aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"]
+      .modal-dialog.modal-lg[role="document"]
+        .modal-content
+          .modal-body.mb-0.p-0
