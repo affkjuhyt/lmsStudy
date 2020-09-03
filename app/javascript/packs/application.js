@@ -11,6 +11,7 @@ require("channels")
 
 require("jquery");
 require("bootstrap");
+require("admin-lte");
 
 // import jQuery from "jquery";
 var jQuery = require("jquery");

@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&lang=en");
+
+@import "admin-lte/dist/css/adminlte";
+
+// admin-index
+.sidebar {
+  border-right: 1px solid #d4d4d4;
+}
+
+// form-login-admin
+.form-login-admin {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+}
+.get-login-btn:hover {
+  background: #0e722c !important;
+  color: #fff;
+}
+
+// common
+.nav-item .nav-link {
+  padding: 0.5rem 1rem !important;
+}
+
+
+// navbar
+.dropdown-menu {
+  left: -100px !important;
+}
+.admin-avatar {
+    width: auto;
+    height: 100%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.icon-lg {
+  padding: 8px;
+  margin: 0px auto;
+}
+.content-header {
+  background: #f4f6f9;
+}
+
+.form-select-date{
+  margin-left: 0px !important;
+}

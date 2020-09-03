@@ -1,0 +1,49 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4.position-fixed
+  = link_to admin_path, class: "brand-link" do
+    span.brand-text.font-weight-light
+      | AdminLTE
+  .slimScrollDiv style=("position: relative; overflow: hidden; width: auto; height: 652px;")
+    .sidebar style=("min-height: 652px; overflow: hidden; width: auto; height: 652px;")
+      .user-panel.mt-3.pb-3.mb-3.d-flex
+        .image
+        .info
+          a.d-block
+            = link_to  current_user.first_name.capitalize, admin_user_path(current_user)
+      nav.mt-2
+        ul.nav.nav-pills.nav-sidebar.flex-column data-accordion="false" data-widget="treeview" role="menu"
+          li.nav-item.has-treeview.menu-open
+            a.nav-link.active href="/admin"
+              i.nav-icon.fas.fa-tachometer-alt
+              p
+                span = 'Dashboard'
+                i.right.fas.fa-angle-left
+            ul.nav.nav-treeview
+              li.nav-item.menu-item
+                = link_to admin_users_path, class: "nav-link " do
+                  i.far.fa-circle.nav-icon
+                  p = 'User'
+
+              li.nav-item.menu-item
+                = link_to admin_courses_path, class: "nav-link" do
+                  i.far.fa-circle.nav-icon
+                  p = 'Course'
+
+script
+  | $(document).ready(function(){
+      const currentLocation = location.href;
+      const menuItem = document.querySelectorAll('.menu-item > a')
+      const pathBreadcrumb = document.querySelector('ol li:nth-child(2) > a')
+      const menuLenght = menuItem.length
+      for (let i = 0; i < menuLenght; i++) {
+        if (menuItem[i].href == currentLocation)  {
+          menuItem[i].className = "nav-link active"
+        }
+      }
+      if (pathBreadcrumb != null) {
+        for (let i = 0; i < menuLenght; i++) {
+          if (menuItem[i].href ==  pathBreadcrumb.href){
+            menuItem[i].className = "nav-link active"
+          }
+        }
+      }
+    });
