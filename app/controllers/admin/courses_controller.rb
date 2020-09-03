@@ -10,7 +10,19 @@ class Admin::CoursesController < Admin::BaseController
     end
   end
 
-  def show; end
+  def new
+    @course = Course.new
+  end
+
+  def edit; end
+
+  def show
+    @lessons = @course.lessons
+    @review_courses = @course.review_courses.order('created_at DESC').
+      paginate(page: params[:page], per_page: Settings.search.per_page)
+    @user_courses = @course.user_courses.order('created_at DESC').
+      paginate(page: params[:register_page], per_page: Settings.user_courses.per_page)
+  end
 
   def create
     @course = Course.new(course_params)
@@ -26,6 +38,27 @@ class Admin::CoursesController < Admin::BaseController
       end
     end
     SendEmailJob.perform_later @course
+  end
+
+  def update
+    respond_to do |format|
+      if @course.update(course_params)
+        format.html { redirect_to admin_courses_path, notice: 'Updated' }
+        format.json { render :show, status: :ok, location: @course }
+      else
+        format.html { render :edit }
+        format.js
+        format.json { render json: @course.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @course.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_courses_path, notice: 'Course destroyed' }
+      format.json { head :no_content }
+    end
   end
 
   private

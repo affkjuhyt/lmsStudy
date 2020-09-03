@@ -12,6 +12,8 @@ users:
   per_page: 20
 search:
   per_page: 6
+user_courses:
+  per_page: 8
 lesson_step:
   default: 1
 lesson_type: { video: 1, question: 2 }
