@@ -6,7 +6,7 @@
       remove: Delete
       submit: Comment
     course: 
-      detail: Deatils
+      details: Detail
       info: Aboutu
       lesson: Lessons
       listStudent: "List student"
@@ -14,8 +14,11 @@
       registed: Registed
       register: Register
       title: Courses
-    devise: 
-      login: "title:'Sign in' confirm:'Can't confirm authentication' unlock:'Can't receive unlock'"
+    devise:
+      login:
+        title: 'Sign in'
+        confirm: 'Not confirmmation'
+        unlock: 'Not unlock' 
       password: 
         forgot: "Forgot password"
         label_input: "New password"
@@ -28,6 +31,8 @@
         last_name: "Last name"
         password: Password
         title: "Sign up"
+      user:
+        remember: "Remember me"
     exam: 
       test_fail: Fail
       your_mark: "Your point: "
@@ -53,4 +58,5 @@
       lead: "Leading tomorow"
       title: "Learn today,"
       view: "View courses"
-  
+  category:
+    detail: "Detail"
