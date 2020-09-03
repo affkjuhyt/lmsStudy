@@ -1,0 +1,51 @@
+- @lessons.each do |lesson|
+  .lesson-field.mr-5.ml-5
+    .card
+      .card-header.row
+        .col-sm-1
+          .btn.btn-collapse-show-admin.fa.fa-angle-double-down
+        .col-sm-11.view-lesson-name
+          .lesson-name
+            = lesson.name
+      .card-body.collapse-show-lesson-admin
+        .header-lesson
+          .show-lesson-name.row
+            strong.col-sm-3
+              = 'Lesson name'
+            .col-sm-9
+              = lesson.name
+          .show-lesson-type.row
+            strong.col-sm-3
+              = 'Lesson type'
+            .col-sm-9
+              = lesson.lesson_type
+          - if lesson.video?
+            .video-url.row
+              strong.col-sm-3
+                | Video URL
+              .col-sm-9
+                = lesson.video_url
+          - elsif lesson.question?
+            .row.min_point
+              strong.col-sm-3
+                = 'Min point'
+              .col-sm-9
+        - if lesson.question?
+          - lesson.questions.each_with_index do |quiz, i|
+            .quiz
+              .show-question
+                = i + 1
+                = ". "
+              - question.question_choices.each_with_index do |answer, idx|
+                .answer.row
+                  .correct-icon.col-sm-1
+                    - if choice.right_answer === true 
+                      .correct-answer-icon.fa.fa-check
+                  .col-sm-11.offset-sm-1.row.answer
+                    .label-ans
+                      |
+                      = choice.answer
+                    .text-answer
+        - if lesson.video?
+          strong.label-video-lesson
+            iframe.lesson-video *{ src: lesson.video_url } width="400" height="220" frameborder="0" allowfullscreen allow="encrypted-media"
