@@ -33,7 +33,7 @@
                                             input_html: { auto_complete: "current-password" } %>
                         </div>
                       <% end %>
-          <%= f.input :remember_me, label: t("user.remember_me"), as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, label: t("devise.user.remember"), as: :boolean if devise_mapping.rememberable? %>
           <%= f.hidden_field :course_id, value: @course_id %>
           <div class="btn-sign-in">
             <%= f.button :submit, t('devise.login.title'), class: "btn btn-success btn-block" %>

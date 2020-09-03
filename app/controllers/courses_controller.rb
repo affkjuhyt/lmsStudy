@@ -1,12 +1,12 @@
 class CoursesController < ApplicationController
-  before_action :get_course, only: [:show]
+  before_action :load_course, only: [:show]
   before_action :set_search, only: [:index, :show]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index; end
 
   def show
-    @review_courses = @course.review_courses.order('created_at DESC').paginate(page: params[:comment_page], per_page: 6)
+    @review_courses = @course.review_courses.paginate(page: params[:page], per_page: Settings.search.per_page)
     @lessons = @course.lessons.order('sequence ASC')
     respond_to do |format|
       format.html
@@ -18,10 +18,10 @@ class CoursesController < ApplicationController
 
   def set_search
     @q = Course.ransack params[:q]
-    @courses = @q.result.page(params[:page])
+    @courses = @q.result.paginate(page: params[:page], per_page: Settings.search.per_page)
   end
 
-  def get_course
+  def load_course
     @course = Course.find(params[:id])
   end
 

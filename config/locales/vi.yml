@@ -3,7 +3,7 @@ vi:
   mailer:
     send: 'Xin chào, hệ thống có thêm khóa học mới.'
   course:
-    detail: 'Chi tiết'
+    details: 'Chi tiết'
     register: 'Đăng kí'
     registed: 'Đã đăng kí'
     title: 'Khóa học'
@@ -28,6 +28,8 @@ vi:
       title: 'Đăng nhập'
       confirm: 'Không thể nhận xác thực'
       unlock: 'Không thể nhận mở khóa'
+    user:
+      remember: "Lưu mật khẩu"
   exam:
     test_fail: 'Không qua kiểm tra'
     your_mark: 'Điểm của bạn: '
@@ -58,3 +60,5 @@ vi:
   user_courses:
     success_created: 'Đăng kí khóa học thành công'
     success_updated: 'Nâng cấp thành công'
+  category:
+    detail: "Chi tiết"
