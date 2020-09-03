@@ -1,0 +1,22 @@
+.container
+  .row
+    .col-lg-10.offset-lg-1
+      .invalid.container.error-messages
+        = render "shared/error_messages", object: @course
+      = simple_form_for [:admin, @course], class: "form-course", remote: true do |f|
+        = f.error_notification
+        = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+        .form-inputs
+          .row
+            .col-lg-7.col-md-7
+              = f.input :title, label: 'Title'
+            .col-lg-5.col-md-5
+          .row
+            .col-lg-12.col-md-12
+              = f.input :overview, label: 'Overview'
+          .row
+            .col-lg-12.col-md-12
+              = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' }}  , label: 'Description'
+          = f.input :image, label: 'Image'
+          .btn.btn-success.btn-submit-course
+            = f.button :submit, 'Create course'

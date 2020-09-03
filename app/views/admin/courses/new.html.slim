@@ -1,0 +1,5 @@
+= content_for :breadcrumbs, [['Course', admin_courses_path], 'New course']
+.content-wrapper
+  .content
+    .container-fluid
+      = render 'form', course: @course

@@ -10,6 +10,10 @@ class Admin::CoursesController < Admin::BaseController
     end
   end
 
+  def new
+    @course = Course.new
+  end
+
   def show; end
 
   def create
