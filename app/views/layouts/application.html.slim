@@ -5,6 +5,7 @@ html
       | Athena
     = csrf_meta_tags
     = csp_meta_tag
+    = javascript_include_tag Ckeditor.cdn_url
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
