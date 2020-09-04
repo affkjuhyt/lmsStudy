@@ -18,5 +18,4 @@
             .col-lg-12.col-md-12
               = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' }}  , label: 'Description'
           = f.input :image, label: 'Image'
-          .btn.btn-success.btn-submit-course
-            = f.button :submit, 'Create course'
+          = render "lesson_form", f: f

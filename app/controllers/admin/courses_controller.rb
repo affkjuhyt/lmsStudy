@@ -12,6 +12,7 @@ class Admin::CoursesController < Admin::BaseController
 
   def new
     @course = Course.new
+    @lesson = @course.lessons.build
   end
 
   def edit; end
@@ -31,13 +32,13 @@ class Admin::CoursesController < Admin::BaseController
       if @course.save
         format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
         format.json { render :show, status: :created, location: @course }
+        SendEmailJob.perform_later @course
       else
         format.html { render :new }
         format.js
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
-    SendEmailJob.perform_later @course
   end
 
   def update
@@ -68,6 +69,6 @@ class Admin::CoursesController < Admin::BaseController
   end
 
   def course_params
-    params.require(:course).permit(:title, :overview, :description, :image)
+    params.require(:course).permit(:title, :overview, :description, :image, lessons_attributes: [:sequence, :lesson_type, :name, :video_url, :check_point])
   end
 end
