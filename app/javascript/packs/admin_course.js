@@ -17,13 +17,10 @@ $(document).on("click", ".btn-add-lesson", function() {
 $(document).on("click", ".remove-lesson", function() {
   parent = $(this).closest("#sortable");
   number_lesson = $("#sortable .lesson-box").length;
-  replaceLesson($("input[name^='course[lessons_attributes][" + (number_lesson - 1) + "']"),
-    $(this).closest(".lesson-box").find(".input-video-url") )
   $(this).closest(".lesson-box").remove();
   if (parent.find(".lesson-box").length == 1) {
     parent.find(".remove-lesson").hide();
   }
-  $(this).closest(".lesson-box").remove();
 });
 
 $(document).on("click", ".btn-submit-course", function () {
@@ -31,6 +28,27 @@ $(document).on("click", ".btn-submit-course", function () {
     $(this).find(".lesson_seq").val(index + 1);
   })
   $(".form-course").submit()
+})
+
+$(document).on("click", ".delete-lesson-btn", function () {
+  let btnDeleteLesson = $(this);
+  $('#confirm-delete').on('shown.bs.modal', function() {
+    delete_modal = $(this);
+    $(document).on("click", ".btn-ok", function () {
+      btnDeleteLesson.parent().find(".delete-lesson").val("true");
+      btnDeleteLesson.closest(".lesson-box").hide();
+      delete_modal.modal('hide');
+    })
+  });
+})
+
+$(document).on("click", ".btn-edit-course", function () {
+  $("#sortable").find(".lesson-box").filter(function () {
+    return $(this).find(".delete-lesson").val() == "false"
+  }).each(function (index) {
+    $(this).find(".lesson_seq").val(index + 1);
+  })
+  $(this).submit();
 })
 
 function change_name_lesson(lesson, number_lesson) {
