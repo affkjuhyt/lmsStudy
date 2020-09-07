@@ -28,6 +28,7 @@ lesson_attrs = proc do
       course_id: idx+1,
       name: Faker::Educator.course_name,
       lesson_type: rand(1..2),
+      check_point: 1,
       sequence: idx +1,
       video_url: video_urls.sample
     }

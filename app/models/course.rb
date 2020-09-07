@@ -8,4 +8,6 @@ class Course < ApplicationRecord
   has_many :lessons, dependent: :destroy
 
   validates :user_id, :title, :overview, :description, presence: true
+
+  accepts_nested_attributes_for :lessons, allow_destroy: true
 end
