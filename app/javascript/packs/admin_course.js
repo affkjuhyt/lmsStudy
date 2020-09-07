@@ -31,19 +31,18 @@ $(document).on("click", ".btn-submit-course", function () {
 })
 
 $(document).on("click", ".delete-lesson-btn", function () {
-  btn_delete_lesson = $(this);
+  let btnDeleteLesson = $(this);
   $('#confirm-delete').on('shown.bs.modal', function() {
     delete_modal = $(this);
     $(document).on("click", ".btn-ok", function () {
-      btn_delete_lesson.parent().find(".delete-lesson").val("true");
-      btn_delete_lesson.closest(".lesson-box").hide();
+      btnDeleteLesson.parent().find(".delete-lesson").val("true");
+      btnDeleteLesson.closest(".lesson-box").hide();
       delete_modal.modal('hide');
     })
   });
 })
 
 $(document).on("click", ".btn-edit-course", function () {
-  debugger
   $("#sortable").find(".lesson-box").filter(function () {
     return $(this).find(".delete-lesson").val() == "false"
   }).each(function (index) {
