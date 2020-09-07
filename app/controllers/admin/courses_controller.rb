@@ -15,7 +15,9 @@ class Admin::CoursesController < Admin::BaseController
     @lesson = @course.lessons.build
   end
 
-  def edit; end
+  def edit
+    @lessons = @course.lessons.sort_by(&:sequence)
+  end
 
   def show
     @lessons = @course.lessons
@@ -69,6 +71,6 @@ class Admin::CoursesController < Admin::BaseController
   end
 
   def course_params
-    params.require(:course).permit(:title, :overview, :description, :image, lessons_attributes: [:sequence, :lesson_type, :name, :video_url, :check_point])
+    params.require(:course).permit(:title, :overview, :description, :image, lessons_attributes: [:id, :sequence, :lesson_type, :name, :video_url, :check_point, :_destroy])
   end
 end

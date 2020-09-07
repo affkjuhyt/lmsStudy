@@ -1,31 +1,32 @@
 #sortable
-  = f.fields_for :lessons do |lesson|
+  = f.fields_for :lessons, @lessons do |lesson|
     .lesson-box.lesson-field
       .new-lesson
         .card
           .card-header.row.field.header-lesson
-            .col-sm-4.container
-              .btn.btn-collapse.fa.fa-angle-double-up
-              .form-check.form-check-inline.form-check-lesson-type
-                = lesson.hidden_field :sequence, value: 1, class: "lesson_seq"
+            .col-sm-4
+              .btn.edit-collapse.btn-collapse.fa.fa-angle-double-down
+              .form-check.form-check-inline
+                = lesson.hidden_field :sequence, class: "lesson_seq"
                 .form-check-label
                   = lesson.label :lesson_type, "Video"
                 .radio-video.form-check-input
                   = lesson.radio_button :lesson_type, :video, class: "radio-lesson-type video"
-              .form-check.form-check-inline.form-check-lesson-type
+              .form-check.form-check-inline
                 .form-check-label
                   = lesson.label :lesson_type
-                    = 'Questions'
+                    = 'Question'
                 .radio-quiz.form-check-input
                   = lesson.radio_button :lesson_type, :question, class: "radio-lesson-type quiz"
             .col-sm-7.view-lesson-name
-              .lesson-name-collapse
+              .lesson-name-collapse.edit-collapse.prev-lesson
             .col-sm-1
-              .btn.remove-lesson.col-sm-1 ×
+              = lesson.hidden_field :_destroy, class: "delete-lesson"
+              .btn.col-sm-1.delete-lesson-btn data-toggle="modal" data-target="#confirm-delete" ×
           .card-body
             .form-group
               .lesson-name.row
-                .form-input-label.col-sm-2.label-lesson-name
+                .form-input-label.col-sm-2
                   = lesson.label :name
                     = 'Lesson name'
                 .col-sm-10
@@ -41,3 +42,23 @@
                   = lesson.label 'Check point'
                 .col-sm-7.min-point
                   = lesson.number_field :check_point, min: 0, class: "form-control input-min-point"
+.form-actions.row
+  .btn.btn-add-lesson.btn-primary
+    = 'Add lesson'
+  button.btn.btn-success.btn-edit-course
+    = 'Update'
+#confirm-delete.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        h5.modal-title
+          = 'Are you delete'
+        button.close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true"  &times;
+      .modal-body
+        = 'Are you sure?'
+      .modal-footer
+        button.btn.btn-secondary data-dismiss="modal" type="button"
+          = 'Close'
+        button.btn.btn-danger.btn-ok type="button"
+          = 'Delete'
