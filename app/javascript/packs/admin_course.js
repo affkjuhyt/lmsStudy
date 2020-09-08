@@ -1,4 +1,4 @@
-var lesson_box;
+var lessonBox;
 
 $(window).on("turbolinks:load", function(){
   $( "#sortable" ).sortable();
@@ -6,12 +6,12 @@ $(window).on("turbolinks:load", function(){
   if ($("#sortable .lesson-box").length == 1) {
     $(".remove-lesson").hide();
   }
-  lesson_box = $("#sortable .lesson-box").first().html();
+  lessonBox = $("#sortable .lesson-box").first().html();
 });
 
 $(document).on("click", ".btn-add-lesson", function() {
-  new_box = $(lesson_box);
-  addLesson(new_box);
+  let newBox = $(lessonBox);
+  addLesson(newBox);
 });
 
 $(document).on("click", ".remove-lesson", function() {
@@ -33,11 +33,11 @@ $(document).on("click", ".btn-submit-course", function () {
 $(document).on("click", ".delete-lesson-btn", function () {
   let btnDeleteLesson = $(this);
   $('#confirm-delete').on('shown.bs.modal', function() {
-    delete_modal = $(this);
+    deleteModal = $(this);
     $(document).on("click", ".btn-ok", function () {
       btnDeleteLesson.parent().find(".delete-lesson").val("true");
       btnDeleteLesson.closest(".lesson-box").hide();
-      delete_modal.modal('hide');
+      deleteModal.modal('hide');
     })
   });
 })
@@ -51,22 +51,22 @@ $(document).on("click", ".btn-edit-course", function () {
   $(this).submit();
 })
 
-function change_name_lesson(lesson, number_lesson) {
+function change_name_lesson(lesson, numberLesson) {
   lesson.find("input").each(function () {
     if ($(this).attr("name").includes("course[lessons_attributes]")) {
       $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0,$(this).attr("name").indexOf(']', 26)),
-      "course[lessons_attributes][" + number_lesson));
+      "course[lessons_attributes][" + numberLesson));
     }
   })
   lesson = lesson.html();
 }
 
-function addLesson(new_box) {
-  var number_lesson = $("#sortable .lesson-box").length;
+function addLesson(newBox) {
+  var numberLesson = $("#sortable .lesson-box").length;
   var parent = "<div class='lesson-box lesson-field ui-sortable-handle'></div>"
-  new_box.find(".lesson_seq").val(number_lesson +1);
-  change_name_lesson(new_box, number_lesson, 0, 0);
+  newBox.find(".lesson_seq").val(numberLesson +1);
+  change_name_lesson(newBox, numberLesson, 0, 0);
   $("#sortable").append(parent);
-  $("#sortable .lesson-box").last().append(new_box);
+  $("#sortable .lesson-box").last().append(newBox);
   $(".remove-lesson").show();
 }

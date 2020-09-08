@@ -10,14 +10,8 @@
                 = sort_link @q, :id, 'ID', {}, {remote: true}
               th
                 = sort_link @q, :title, 'Title', {}, {remote: true}
-              th
-                = 'Show'
-              th
-                = 'Details'
-              th
-                = 'Edit'
-              th
-                = 'Delete'
+              th.action
+                = 'Action'
           tbody
             tbody
               - @courses.each do |course|
@@ -29,7 +23,7 @@
                       = course.title
                   td.with-5
                     = link_to admin_course_path(course) do
-                      i.fas.fa-search
+                      i.fas.fa-eye
                   td.with-5
                     = link_to course_path(course) do
                       i.fas.fa-search-plus
