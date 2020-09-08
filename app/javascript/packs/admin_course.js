@@ -1,12 +1,24 @@
-var lessonBox;
+var lessonBox, questionBox, answer;
 
 $(window).on("turbolinks:load", function(){
   $( "#sortable" ).sortable();
   $( "#sortable" ).disableSelection();
+  $(".remove-answer").hide();
+  $(".remove-question").hide();
   if ($("#sortable .lesson-box").length == 1) {
     $(".remove-lesson").hide();
   }
   lessonBox = $("#sortable .lesson-box").first().html();
+  questionBox = $(".quiz-form").find(".list .quiz-element").first().html();
+  answer = $(questionBox).find(".input-choice").last().html();
+});
+
+$(document).on("click", ".btn-add-question", function () {
+  parent = "<div class='quiz-element list-question'></div>";
+  let questionElement = $(questionBox);
+  $(this).closest(".quiz-form").find(".list").append(parent);
+  $(this).closest(".quiz-form").find(".quiz-element").last().append(questionElement);
+  $(this).closest(".quiz-form").find(".remove-question").show();
 });
 
 $(document).on("click", ".btn-add-lesson", function() {
@@ -14,13 +26,35 @@ $(document).on("click", ".btn-add-lesson", function() {
   addLesson(newBox);
 });
 
+$(document).on("click", ".remove-answer", function () {
+  let removeButton = '<div class="btn btn-danger remove-answer">×</div>';
+  removeAnswer($(this), removeButton);
+});
+
+$(document).on("click", ".remove-question", function () {
+  let parent = $(this).closest(".list");
+  $(this).closest(".quiz-element").remove();
+  if (parent.find(".quiz-element").length == 1) {
+    parent.find(".remove-question").hide();
+  }
+});
+
 $(document).on("click", ".remove-lesson", function() {
-  parent = $(this).closest("#sortable");
-  number_lesson = $("#sortable .lesson-box").length;
+  let parent = $(this).closest("#sortable");
   $(this).closest(".lesson-box").remove();
   if (parent.find(".lesson-box").length == 1) {
     parent.find(".remove-lesson").hide();
   }
+});
+
+$(document).on("click", ".btn-add-option, .edit-btn-add-answer", function () {
+  let ans = $(answer)
+  let parent = "<div class='input-choice'></div>";
+  question = $(this).closest($(".quiz-element"));
+  question.find(".remove-answer").remove();
+  question.find(".list-answer").append(parent);
+  question.find(".input-choice").last().append(ans);
+  question.find(".input-choice .remove-answer").show();
 });
 
 $(document).on("click", ".btn-submit-course", function () {
@@ -33,7 +67,7 @@ $(document).on("click", ".btn-submit-course", function () {
 $(document).on("click", ".delete-lesson-btn", function () {
   let btnDeleteLesson = $(this);
   $('#confirm-delete').on('shown.bs.modal', function() {
-    deleteModal = $(this);
+    let deleteModal = $(this);
     $(document).on("click", ".btn-ok", function () {
       btnDeleteLesson.parent().find(".delete-lesson").val("true");
       btnDeleteLesson.closest(".lesson-box").hide();
@@ -51,7 +85,7 @@ $(document).on("click", ".btn-edit-course", function () {
   $(this).submit();
 })
 
-function change_name_lesson(lesson, numberLesson) {
+function changeNameLesson(lesson, numberLesson) {
   lesson.find("input").each(function () {
     if ($(this).attr("name").includes("course[lessons_attributes]")) {
       $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0,$(this).attr("name").indexOf(']', 26)),
@@ -61,11 +95,20 @@ function change_name_lesson(lesson, numberLesson) {
   lesson = lesson.html();
 }
 
+function removeAnswer(selector, removeButton) {
+  var parent =  selector.closest($(".list-answer"));
+  selector.closest($(".input-choice")).remove();
+  parent.find((".input-choice")).last().find(".row").last().append(removeButton);
+  if (parent.find(".input-choice").length == 1) {
+    parent.find(".remove-answer").hide();
+  }
+}
+
 function addLesson(newBox) {
   var numberLesson = $("#sortable .lesson-box").length;
   var parent = "<div class='lesson-box lesson-field ui-sortable-handle'></div>"
   newBox.find(".lesson_seq").val(numberLesson +1);
-  change_name_lesson(newBox, numberLesson, 0, 0);
+  changeNameLesson(newBox, numberLesson, 0, 0);
   $("#sortable").append(parent);
   $("#sortable .lesson-box").last().append(newBox);
   $(".remove-lesson").show();
