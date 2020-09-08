@@ -1,9 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :load_category, only: [:show]
-  before_action :set_search, only: [:index, :show]
+  before_action :set_search, only: [:show]
   skip_before_action :authenticate_user!, only: [:index, :show]
-
-  def index; end
 
   def show
     @courses = @category.courses
@@ -12,7 +10,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_search
-    @q = Category.paginate(page: params[:page], per_page: Settings.search.per_page).ransack params[:q]
+    @q = Category.ransack params[:q]
     @categories = @q.result
   end
 

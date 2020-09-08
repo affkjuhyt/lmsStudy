@@ -11,7 +11,7 @@ last_name:
 users:
   per_page: 20
 search:
-  per_page: 6
+  per_page: 5
 user_courses:
   per_page: 8
 lesson_step:
