@@ -12,8 +12,8 @@ class CategoriesController < ApplicationController
   private
 
   def set_search
-    @q = Category.ransack params[:q]
-    @categories = @q.result.page(params[:page], per_page: Settings.search.per_page)
+    @q = Category.paginate(page: params[:page], per_page: Settings.search.per_page).ransack params[:q]
+    @categories = @q.result
   end
 
   def load_category
