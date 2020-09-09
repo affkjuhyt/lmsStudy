@@ -38,7 +38,7 @@ vi:
     target: 'Mục tiêu'
     method: 'Phương thức'
     value: 'Giá trị'
-    learmore: 'Tìm hiểu thêm'
+    learnmore: 'Tìm hiểu thêm'
     categories: 'Thể loại'
   comment:
     edit: 'Cập nhật'
@@ -57,8 +57,17 @@ vi:
       signin: 'Đăng nhập'
       reset: 'Thay đổi mật khẩu'
       logout: 'Đăng xuất'
+      search: 'Tìm kiếm'
   user_courses:
     success_created: 'Đăng kí khóa học thành công'
     success_updated: 'Nâng cấp thành công'
   category:
     detail: "Chi tiết"
+  footer:
+    address: 'Địa chỉ: '
+    phone: 'Số điện thoại: '
+    email: 'Địa chỉ mail: '
+    course: 'Khóa học'
+    home: 'Trang chủ'
+    about: 'Thông tin'
+    company: 'Công ty'

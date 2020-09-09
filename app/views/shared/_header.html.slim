@@ -6,7 +6,7 @@ header#header.fixed-top
         .cover
           - snt = request.url.include?('course') ? 'title_cont' : 'name_cont'
           = search_form_for @q, method: "get", class: "forms-group" do |f|
-            = f.text_field :"#{snt}", class: "input-search-course", placeholder: 'Search'
+            = f.text_field :"#{snt}", class: "input-search-course", placeholder: t('shared.header.search')
             = f.button class: "btn-search-course" do
               i.fa.fa-search
       button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarSupportedContentXL" aria-controls="navbarSupportedContentXL" aria-expanded="false" aria-label="Toggle navigation"]

@@ -6,14 +6,14 @@ footer#footer
           h3
             | Athena
           p
-            = 'Address'
+            = t('footer.address')
             br
             strong
-              = 'Phone'
+              = t('footer.phone')
             |  +84 123456789
             br
             strong
-              = 'Email'
+              = t('footer.email')
             |  athena@gmail.com
             br
         .col-lg-2.col-md-6.footer-links
@@ -22,31 +22,18 @@ footer#footer
           ul
             li
               i.fas.fa-angle-right
-              = link_to 'Home', root_path
+              = link_to t('footer.home'), root_path
             li
               i.fas.fa-angle-right
-              = link_to 'About', about_path
+              = link_to t('footer.about'), about_path
         .col-lg-3.col-md-6.footer-links
           h4
-            = 'Courses'
-          ul
-            li
-              i.fas.fa-angle-right
-              = link_to "Web Design"
-            li
-              i.fas.fa-angle-right
-              = link_to "Web Development"
-            li
-              i.fas.fa-angle-right
-              = link_to "Product Management"
-            li
-              i.fas.fa-angle-right
-              = link_to "Marketing"
+            = t('footer.course')
         .col-lg-4.col-md-6.footer-newsletter
           h4
-            = 'About'
+            = t('footer.about')
           p
-            = 'Company'
+            = t('footer.company')
   .container.d-md-flex.py-4
     .mr-md-auto.text-center.text-md-left
       .copyright
