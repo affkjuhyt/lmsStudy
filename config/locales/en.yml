@@ -55,8 +55,20 @@
         name: Athena
         reset: "Reset password"
         signin: "Sign in"
+        search: 'Search'
       lead: "Leading tomorow"
       title: "Learn today,"
       view: "View courses"
+  user_course:
+    success_created: 'Registed successfully'
+    success_updated: 'Updated successfully'
   category:
     detail: "Detail"
+  footer:
+    address: 'Address'
+    phone: 'Phone'
+    email: 'Email'
+    course: 'Courses'
+    home: 'Home'
+    about: 'About'
+    company: 'Company'
