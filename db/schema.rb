@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 2020_09_03_041610) do
     t.string "name", null: false
     t.integer "lesson_type", default: 1, null: false
     t.integer "sequence"
-    t.string "video_url", null: false
-    t.integer "check_point", null: false
+    t.string "video_url"
+    t.integer "check_point"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["course_id"], name: "index_lessons_on_course_id"

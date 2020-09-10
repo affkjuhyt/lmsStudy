@@ -57,7 +57,7 @@
                           = question.text_field :title, class: "form-control input-question"
                       = question.label :title, class: "col-sm-2 col-form-label"
                           = 'Answers: '
-                      = question.fields :question_choices, class: "input-answer form-control" do |choice|
+                      = question.fields :question_choices, class: "form-control" do |choice|
                         .row
                           .col-sm-10
                             .list-answer
@@ -65,7 +65,7 @@
                                   .form-group.row.option-answer.container
                                     .col-sm-11
                                       .row
-                                        = choice.radio_button :right_answer, class: "correct-answer form-check-input"
+                                        = choice.check_box :right_answer, class: "correct-answer form-check-input input-answer"
                                         = choice.text_field :answer, class: "input-answer form-control"
                                         .btn.btn-danger.remove-answer.left-input ×
                           .col-sm-2

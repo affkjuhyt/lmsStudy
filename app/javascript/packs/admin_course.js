@@ -1,5 +1,4 @@
 var lessonBox, questionBox, answer;
-var milis = Date.now();
 
 $(window).on("turbolinks:load", function(){
   $( "#sortable" ).sortable();
@@ -15,7 +14,9 @@ $(window).on("turbolinks:load", function(){
 });
 
 $(document).on("click", ".btn-add-question", function () {
+  let milis = Date.now();
   parent = "<div class='quiz-element list-question'></div>";
+  question = $(this).closest(".quiz-form").find(".quiz-element");
   let questionElement = $(questionBox);
   name = $(this).closest(".quiz-form").find(".input-question").first().attr("name");
   changeNameQuestion(questionElement, milis);
@@ -51,9 +52,11 @@ $(document).on("click", ".remove-lesson", function() {
 });
 
 $(document).on("click", ".btn-add-option, .edit-btn-add-answer", function () {
+  let milis = Date.now();
   let ans = $(answer)
   let parent = "<div class='input-choice'></div>";
   question = $(this).closest($(".quiz-element"));
+  name = question.find(".input-answer").attr("name");
   changeNameAnswer(ans, milis);
   question.find(".remove-answer").remove();
   question.find(".list-answer").append(parent);
@@ -101,16 +104,16 @@ function changeNameLesson(lesson, milis) {
 
 function changeNameQuestion(question, milis) {
   question.find("input").each(function () {
-    $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0, $(this).attr("name").indexOf("]", 56)),
-      name.substring(0, name.indexOf("[", 54)) + "[" + milis));
+    $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0, $(this).attr("name").indexOf("]", 52)),
+      name.substring(0, name.indexOf("[", 50)) + "[" + milis));
   });
-  
+  question = question.html();
 }
 
 function changeNameAnswer(answer, milis) {
   answer.find("input").each(function () {
-    $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0, $(this).attr("name").indexOf("]", 78)),
-      name.substring(0, name.indexOf("[", 76)) + "[" + milis));
+    $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0, $(this).attr("name").indexOf("]", 85)),
+      name.substring(0, name.indexOf("[", 83)) + "[" + milis));
   });
   answer = answer.html();
 }
@@ -125,6 +128,7 @@ function removeAnswer(selector, removeButton) {
 }
 
 function addLesson(newBox) {
+  let milis = Date.now()
   var parent = "<div class='lesson-box lesson-field ui-sortable-handle'></div>"
   newBox.find(".lesson_seq").val(milis +1);
   changeNameLesson(newBox, milis, 0, 0);
