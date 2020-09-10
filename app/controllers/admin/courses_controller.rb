@@ -13,6 +13,7 @@ class Admin::CoursesController < Admin::BaseController
   def new
     @course = Course.new
     @lesson = @course.lessons.build
+    @lesson.questions.build.question_choices.build
   end
 
   def edit
@@ -71,6 +72,8 @@ class Admin::CoursesController < Admin::BaseController
   end
 
   def course_params
-    params.require(:course).permit(:title, :overview, :description, :image, lessons_attributes: [:id, :sequence, :lesson_type, :name, :video_url, :check_point, :_destroy])
+    params.require(:course).permit(:title, :overview, :description, :image,
+                            lessons_attributes: [:id, :sequence, :lesson_type, :name, :video_url, :check_point, :_destroy, 
+                            questions_attributes: [:id, :title, :_destroy, question_choices_attributes: [:id, :right_answer, :answer, :_destroy]]])
   end
 end
