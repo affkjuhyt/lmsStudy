@@ -32,7 +32,6 @@ class Admin::CoursesController < Admin::BaseController
     @course = Course.new(course_params)
     @course.user_id = current_user.id
     respond_to do |format|
-      binding.pry
       if @course.save
         format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
         format.json { render :show, status: :created, location: @course }

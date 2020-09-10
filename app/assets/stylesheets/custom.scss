@@ -341,6 +341,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.quiz{
+  border: 1px solid green;
+  margin: 10px 20px;
+  padding: 10px;
+}
+
 .remove-answer{
   text-align: left;
 }
@@ -506,7 +512,7 @@ input:checked + .slider:before {
 }
 
 .header-lesson{
-  margin-left: 0px;
+  margin-left: 10px;
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -552,6 +558,7 @@ input:checked + .slider:before {
 
 .view-lesson-name{
   margin-top: 8px;
+  font-weight: bold;
 }
 
 #iframe-lesson{
