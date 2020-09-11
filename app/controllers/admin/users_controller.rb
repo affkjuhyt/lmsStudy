@@ -32,7 +32,7 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
-  def update
+  def update    
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to admin_users_path, notice: 'User updated' }

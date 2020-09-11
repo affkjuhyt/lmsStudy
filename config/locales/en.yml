@@ -79,6 +79,7 @@
     course: 'Courses'
     question: 'Are you sure?'
     action: 'Action'
+    register: 'Number of registed'
     user:
       id: 'ID'
       title: 'Name courses'

@@ -17,7 +17,7 @@ course_attrs = proc do
       title: Faker::Job.title,
       overview: Faker::Lorem.sentence(word_count: 15),
       description: Faker::Lorem.sentence,
-      image: Faker::LoremFlickr.image
+      image: Faker::LoremFlickr.image(size: '200x200')
     }
   end
 end

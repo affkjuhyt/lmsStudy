@@ -78,6 +78,7 @@ vi:
     course: 'Khóa học'
     question: 'Bạn có chắc chắn ?'
     action: 'Chức năng'
+    register: 'Số người đăng kí'
     user:
       id: 'ID'
       title: 'Tên khóa học'

@@ -17,6 +17,7 @@
                 = t('admin.user.time_create')
                 |:  
                 = @user.created_at.strftime("%d-%m-%Y")
+              = image_tag @user.avatar.to_s
           .col-md-8
             .row
               .col-lg-10.offset-lg-1
