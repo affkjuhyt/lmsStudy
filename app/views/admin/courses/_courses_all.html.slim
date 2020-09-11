@@ -9,7 +9,9 @@
               th
                 = sort_link @q, :id, t('admin.id'), {}, {remote: true}
               th
-                = sort_link @q, :title, t('admin.title'), {}, {remote: true}
+                = sort_link @q, :title, t('admin.user.title'), {}, {remote: true}
+              th
+                = sort_link @q, :title, t('admin.register'), {}, {remote: true}
               th.action
                 = t('admin.action')
           tbody
@@ -21,6 +23,9 @@
                   td.with-10
                     p.webkit-box-2
                       = course.title
+                  td.with-5
+                    p.webkit-box-2
+                      = course.total_register_count
                   td.with-5
                     = link_to admin_course_path(course) do
                       i.fas.fa-eye

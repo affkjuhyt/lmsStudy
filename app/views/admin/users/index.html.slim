@@ -1,4 +1,4 @@
-= content_for :breadcrumbs, [t('admin.user.name')]
+= content_for :breadcrumbs, [I18n.t('admin.user.name')]
 .content-wrapper
   .content
     .container-fluid
@@ -11,7 +11,7 @@
         .col-md-8
           = search_form_for(@result, url: admin_users_path, html: { class: "form-inline ml-3" }, remote: true) do |f|
             .input-group.input-group-sm
-              = f.search_field :first_name_cont, placeholder: t('admin.user.search_name'), class: "input-search"
+              = f.search_field :first_name_cont, placeholder: I18n.t('admin.user.search_name'), class: "input-search"
               .input-group-append
                 button.btn.btn-outline-success[type="submit"]
                   i.fas.fa-search
