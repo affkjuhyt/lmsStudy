@@ -1,66 +1,65 @@
---- 
-  en: 
-    comment: 
-      edit: Update
-      question: "Are you cancel?"
-      remove: Delete
-      submit: Comment
-    course: 
-      details: Detail
-      info: About
-      lesson: Lessons
-      listStudent: "List student"
-      rate: Comment
-      registed: Registed
-      register: Register
-      title: Courses
-    devise:
-      login:
-        title: 'Sign in'
-        confirm: 'Not confirmmation'
-        unlock: 'Not unlock' 
-      password: 
-        forgot: "Forgot password"
-        label_input: "New password"
-        label_reinput: "Comfirm password"
-        submit: Send
-        title: "Change password"
-        update: 'Update'
-        recent: 'Password recent'
-      register: 
-        confirm_password: "Confirmation password"
-        first_name: "First name"
-        last_name: "Last name"
-        password: Password
-        title: "Sign up"
-      user:
-        remember: "Remember me"
-    exam: 
-      test_fail: Fail
-      your_mark: "Your point: "
-    hello: "Hello world"
-    home: 
+en: 
+  comment: 
+    edit: Update
+    question: "Are you cancel?"
+    remove: Delete
+    submit: Comment
+  course: 
+    details: Detail
+    info: About
+    lesson: Lessons
+    listStudent: "List student"
+    rate: Comment
+    registed: Registed
+    register: Register
+    title: Courses
+  devise:
+    login:
+      title: 'Sign in'
+      confirm: 'Not confirmmation'
+      unlock: 'Not unlock' 
+    password: 
+      forgot: "Forgot password"
+      label_input: "New password"
+      label_reinput: "Comfirm password"
+      submit: Send
+      title: "Change password"
+      update: 'Update'
+      recent: 'Password recent'
+    register: 
+      confirm_password: "Confirmation password"
+      first_name: "First name"
+      last_name: "Last name"
+      password: Password
+      title: "Sign up"
+    user:
+      remember: "Remember me"
+  exam: 
+    test_fail: Fail
+    your_mark: "Your point: "
+  hello: "Hello world"
+  home: 
+    about: About
+    categories: Categories
+    learmore: "Learn more"
+    method: "About method"
+    target: Target
+    value: Value
+  mailer: 
+    send: "Hello, the system has a new course."
+  shared: 
+    header: 
       about: About
-      categories: Categories
-      learmore: "Learn more"
-      method: "About method"
-      target: Target
-      value: Value
-    mailer: 
-      send: "Hello, the system has a new course."
-    shared: 
-      header: 
-        about: About
-        course: Courses
-        home: Home
-        logout: Logout
-        name: Athena
-        reset: "Reset password"
-        signin: "Sign in"
-        search: 'Search'
-      lead: "Leading tomorow"
-      title: "Learn today,"
-      view: "View courses"
+      course: Courses
+      home: Home
+      logout: Logout
+      name: Athena
+      reset: "Reset password"
+      signin: "Sign in"
+      search: 'Search'
+    lead: "Leading tomorow"
+    title: "Learn today,"
+    view: "View courses"
   user_course:
     success_created: 'Registed successfully'
     success_updated: 'Updated successfully'
