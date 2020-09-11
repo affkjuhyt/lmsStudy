@@ -1,6 +1,6 @@
 class Admin::BaseController < ApplicationController
   before_action :check_admin
-  layout "admin/admin_index"
+  layout 'admin/admin_index'
 
   def index
     @count_user = User.count
@@ -12,7 +12,7 @@ class Admin::BaseController < ApplicationController
   def check_admin
     unless current_user.is_admin?
       redirect_to root_path
-      flash[:alert] = "You cannot access this page"
+      flash[:alert] = 'You cannot access this page'
     end
   end
 end

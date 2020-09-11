@@ -13,7 +13,7 @@ class RatesController < ApplicationController
         end
       end
     else
-      flash.now[:alert] = "Hay dang ki de vote"
+      flash.now[:alert] = 'Hay dang ki de vote'
     end
   end
 

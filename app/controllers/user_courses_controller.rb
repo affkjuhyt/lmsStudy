@@ -5,14 +5,14 @@ class UserCoursesController < ApplicationController
   def create
     @user_course = current_user.user_courses.create(course_id: params[:course_id])
     redirect_to @course
-    flash[:succes] = t("user_courses.success_created")
+    flash[:succes] = t('user_courses.success_created')
   end
 
   def update
     @user_course.update user_courses_params
     @user_course.save
     redirect_to @course
-    flash[:succes] = t("user_courses.success_updated")
+    flash[:succes] = t('user_courses.success_updated')
   end
 
   private
