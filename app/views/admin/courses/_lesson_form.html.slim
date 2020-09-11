@@ -42,28 +42,33 @@
                 .col-sm-7.min-point
                   = lesson.number_field :check_point, min: 0, class: "form-control input-min-point"
           .card.quiz-form
-            .card-header
-              = 'Question'
+            .card-header.bold-class
+              = 'Question:'
             .card-body
               = lesson.fields_for :questions do |question|
                 .container.quiz-list
                   .list
                     .quiz-element.list-question
                       .btn.remove-question ×
+                      = question.label :title, class: "col-sm-2 col-form-label"
+                          = 'Title: '
                       .form-group.row
-                        = question.label :title, class: "col-sm-2 col-form-label"
-                          = 'Title'
-                        .col-sm-10
+                        .col-sm-12
                           = question.text_field :title, class: "form-control input-question"
-                      = question.fields :question_choice, class: "input-answer form-control" do |choice|
-                        .list-answer
-                          .input-choice
-                            .form-group.row.option-answer.container
-                              .col-sm-11
-                                .row
-                                  = choice.check_box :right_answer, class: "correct-answer form-check-input"
-                                  = choice.text_field :answer, class: "input-answer form-control"
-                                  .btn.btn-danger.remove-answer ×
-                      .btn.btn-add-option.btn-secondary +
+                      = question.label :title, class: "col-sm-2 col-form-label"
+                          = 'Answers: '
+                      = question.fields :question_choices, class: "form-control" do |choice|
+                        .row
+                          .col-sm-10
+                            .list-answer
+                                .input-choice
+                                  .form-group.row.option-answer.container
+                                    .col-sm-11
+                                      .row
+                                        = choice.check_box :right_answer, class: "correct-answer form-check-input input-answer"
+                                        = choice.text_field :answer, class: "input-answer form-control"
+                                        .btn.btn-danger.remove-answer.left-input ×
+                          .col-sm-2
+                            .btn.btn-add-option.btn-success +
             .btn.btn-success.btn-add-question
               = 'Add question'

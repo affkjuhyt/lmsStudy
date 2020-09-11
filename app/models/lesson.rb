@@ -6,6 +6,8 @@ class Lesson < ApplicationRecord
   validates :lesson_type, :sequence, :name, presence: true
   validates :name, length: { maximum: 14 }
   validates :check_point, numericality: { only_integer: true, greater_than_or_equal_to: 1 }, presence: true
-  validates :video_url, presence: true
+  # validates :video_url, presence: true
+
+  accepts_nested_attributes_for :questions, allow_destroy: true
   enum lesson_type: Settings.lesson_type.to_h
 end

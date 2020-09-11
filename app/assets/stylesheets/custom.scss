@@ -311,10 +311,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .quiz-element{
+  border: 1px solid green;
+  padding: 15px;
+  margin-bottom: 20px;
   .correct-answer{
     margin-top: 12px;
     margin-left: 32px;
   }
+}
+
+.bold-class{
+  font-weight: bold;
 }
 
 .label-option{
@@ -367,7 +374,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .input-answer{
-  margin-left: 9.8%;
+  margin-left: 10%;
+}
+
+.list-answer{
+  margin-right: 10%;
+}
+
+.left-input{
+  margin-left: 5%;
 }
 
 .btn-add-lesson{

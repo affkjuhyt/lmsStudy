@@ -3,4 +3,6 @@ class Question < ApplicationRecord
 
   has_many :question_choices
   has_many :answers, dependent: :destroy
+
+  accepts_nested_attributes_for :question_choices, allow_destroy: true
 end

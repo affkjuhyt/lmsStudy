@@ -13,6 +13,7 @@ class Admin::CoursesController < Admin::BaseController
   def new
     @course = Course.new
     @lesson = @course.lessons.build
+    @lesson.questions.build.question_choices.build
   end
 
   def edit
@@ -27,10 +28,11 @@ class Admin::CoursesController < Admin::BaseController
       paginate(page: params[:register_page], per_page: Settings.user_courses.per_page)
   end
 
-  def create
+  def create  
     @course = Course.new(course_params)
     @course.user_id = current_user.id
     respond_to do |format|
+      binding.pry
       if @course.save
         format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
         format.json { render :show, status: :created, location: @course }
@@ -71,6 +73,8 @@ class Admin::CoursesController < Admin::BaseController
   end
 
   def course_params
-    params.require(:course).permit(:title, :overview, :description, :image, lessons_attributes: [:id, :sequence, :lesson_type, :name, :video_url, :check_point, :_destroy])
+    params.require(:course).permit(:title, :overview, :description, :image,
+                            lessons_attributes: [:id, :sequence, :lesson_type, :name, :video_url, :check_point, :_destroy, 
+                            questions_attributes: [:id, :title, :_destroy, question_choices_attributes: [:id, :right_answer, :answer, :_destroy]]])
   end
 end
