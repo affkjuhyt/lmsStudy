@@ -7,7 +7,7 @@ RSpec.describe UserCourse, type: :model do
   let!(:course) { FactoryBot.create :course }
   let!(:user_course) { FactoryBot.build :user_course, user_id: user.id, course_id: course.id }
 
-  describe "Validations" do
+  describe 'Validations' do
     it { expect(subject).to be_valid }
 
     [:course_id, :user_id].each do |field|
@@ -17,7 +17,7 @@ RSpec.describe UserCourse, type: :model do
     it { is_expected.to validate_uniqueness_of(:user_id).scoped_to(:course_id) }
   end
 
-  describe "Associations" do
+  describe 'Associations' do
     [:user, :course].each do |field|
       it { is_expected.to belong_to(field) }
     end

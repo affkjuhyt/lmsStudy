@@ -78,19 +78,19 @@ $(document).on("click", ".delete-lesson-btn", function () {
     $(document).on("click", ".btn-ok", function () {
       btnDeleteLesson.parent().find(".delete-lesson").val("true");
       btnDeleteLesson.closest(".lesson-box").hide();
-      deleteModal.modal('hide');
+      deleteModal.modal("hide");
     })
   });
 })
 
 $(document).on("click", ".delete-question-btn", function() {
   let btnDeleteQuestion = $(this);
-  $('#confirm-delete').on('shown.bs.modal', function() {
+  $('#confirm-delete').on("shown.bs.modal", function() {
     let deleteModal = $(this);
     $(document).on("click", ".btn-ok", function () {
       btnDeleteQuestion.parent().find(".delete-question").val("true");
       btnDeleteQuestion.closest(".list-question").hide();
-      deleteModal.modal('hide');
+      deleteModal.modal("hide");
     })
   });
 })

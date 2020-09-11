@@ -46,7 +46,7 @@ gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
-gem "faker"
+gem 'faker'
 gem 'will_paginate-bootstrap4'
 gem 'seed-fu'
 gem 'ransack'

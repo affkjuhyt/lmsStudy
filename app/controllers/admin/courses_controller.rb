@@ -22,13 +22,13 @@ class Admin::CoursesController < Admin::BaseController
 
   def show
     @lessons = @course.lessons
-    @review_courses = @course.review_courses.order('created_at DESC').
-      paginate(page: params[:page], per_page: Settings.search.per_page)
-    @user_courses = @course.user_courses.order('created_at DESC').
-      paginate(page: params[:register_page], per_page: Settings.user_courses.per_page)
+    @review_courses = @course.review_courses.order('created_at DESC')
+                              .paginate(page: params[:page], per_page: Settings.search.per_page)
+    @user_courses = @course.user_courses.order('created_at DESC')
+                              .paginate(page: params[:register_page], per_page: Settings.user_courses.per_page)
   end
 
-  def create  
+  def create
     @course = Course.new(course_params)
     @course.user_id = current_user.id
     respond_to do |format|
