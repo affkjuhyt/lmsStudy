@@ -25,6 +25,8 @@
         label_reinput: "Comfirm password"
         submit: Send
         title: "Change password"
+        update: 'Update'
+        recent: 'Password recent'
       register: 
         confirm_password: "Confirmation password"
         first_name: "First name"
@@ -72,3 +74,43 @@
     home: 'Home'
     about: 'About'
     company: 'Company'
+  admin:
+    all_user: 'All user'
+    course: 'Courses'
+    question: 'Are you sure?'
+    action: 'Action'
+    user:
+      id: 'ID'
+      title: 'Name courses'
+      time_create: 'Time created at'
+      name: 'User'
+      email: 'Email: '
+      new_user: 'New User'
+      search_name: 'Search by name'
+    edit:
+      video: 'Video'
+      questions: 'Questions'
+      lesson_name: 'Lesson name: '
+      check_point: 'Check point: '
+      question: 'Question: '
+      title: 'Title: '
+      add_question: 'Add question'
+      add_lesson: 'Add lesson'
+      delete_lesson: 'Delete lesson'
+      close: 'Close'
+      delete: 'Delete'
+      update: 'Update'
+    form:
+      overview: 'Overview'
+      image: 'Image'
+      create_course: 'Create course'
+    lesson:
+      lesson_type: 'Lesson type: '
+      min_point: 'Min point: '
+      sentence: 'Question: '
+      answer: 'Answers: '
+    index:
+      new_course: 'New Course'
+      course: 'Course'
+    show:
+      edit: 'Edit'

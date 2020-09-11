@@ -11,12 +11,12 @@
         .header-lesson
           .show-lesson-name.row
             strong.col-sm-3
-              = 'Lesson name: '
+              = t('admin.edit.lesson_name')
             .col-sm-9
               = lesson.name
           .show-lesson-type.row
             strong.col-sm-3
-              = 'Lesson type: '
+              = t('admin.lesson.lesson_type')
             .col-sm-9
               = lesson.lesson_type
           - if lesson.video?
@@ -28,14 +28,14 @@
           - elsif lesson.question?
             .row.min_point
               strong.col-sm-3
-                = 'Min point: '
+                = t('admin.lesson.min_point')
               .col-sm-9
                 = lesson.check_point
         - if lesson.question?
           - lesson.questions.each_with_index do |question, i|
             .quiz
               .show-question
-                = "Cau: "
+                = t('admin.lesson.sentence')
                 = i + 1
               - question.question_choices.each_with_index do |choice, idx|
                 .answer.row

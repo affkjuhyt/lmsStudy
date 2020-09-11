@@ -1,4 +1,4 @@
-= content_for :breadcrumbs, ['User']
+= content_for :breadcrumbs, [t('admin.user.name')]
 .content-wrapper
   .content
     .container-fluid
@@ -7,11 +7,11 @@
         .ml-4
           = link_to new_admin_user_path, class: "action-new" do
             i.fas.fa-user-plus
-              span.tooltiptext = 'New User'
+              span.tooltiptext = t('admin.user.new_user')
         .col-md-8
           = search_form_for(@result, url: admin_users_path, html: { class: "form-inline ml-3" }, remote: true) do |f|
             .input-group.input-group-sm
-              = f.search_field :first_name_cont, placeholder: 'Search by name', class: "input-search"
+              = f.search_field :first_name_cont, placeholder: t('admin.user.search_name'), class: "input-search"
               .input-group-append
                 button.btn.btn-outline-success[type="submit"]
                   i.fas.fa-search

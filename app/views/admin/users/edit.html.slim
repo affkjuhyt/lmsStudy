@@ -1,4 +1,4 @@
-= content_for :breadcrumbs, [['User', admin_users_path], [@user.first_name, admin_user_path(@user)], 'Edit']
+= content_for :breadcrumbs, [[t('admin.user.name'), admin_users_path], [@user.first_name, admin_user_path(@user)], 'Edit']
 .content-wrapper
   .content
     .container
@@ -10,11 +10,11 @@
                 = @user.first_name + " "
                 = @user.last_name
               p
-                = 'Email:'
+                = t('admin.user.email')
                 |: 
                 = @user.email
                 br
-                = 'Time created at:'
+                = t('admin.user.time_create')
                 |:  
                 = @user.created_at.strftime("%d-%m-%Y")
           .col-md-8
