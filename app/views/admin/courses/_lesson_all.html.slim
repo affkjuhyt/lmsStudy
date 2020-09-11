@@ -31,12 +31,12 @@
                 = 'Min point'
               .col-sm-9
         - if lesson.question?
-          - lesson.questions.each_with_index do |quiz, i|
+          - lesson.questions.each_with_index do |question, i|
             .quiz
               .show-question
+                = "Cau: "
                 = i + 1
-                = ". "
-              - question.question_choices.each_with_index do |answer, idx|
+              - question.question_choices.each_with_index do |choice, idx|
                 .answer.row
                   .correct-icon.col-sm-1
                     - if choice.right_answer === true 
