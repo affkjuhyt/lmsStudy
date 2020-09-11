@@ -9,13 +9,13 @@
               .form-check.form-check-inline
                 = lesson.hidden_field :sequence, class: "lesson_seq"
                 .form-check-label
-                  = lesson.label :lesson_type, "Video"
+                  = lesson.label :lesson_type, t('admin.edit.video')
                 .radio-video.form-check-input
                   = lesson.radio_button :lesson_type, :video, class: "radio-lesson-type video"
               .form-check.form-check-inline
                 .form-check-label
                   = lesson.label :lesson_type
-                    = 'Question'
+                    = t('admin.edit.questions')
                 .radio-quiz.form-check-input
                   = lesson.radio_button :lesson_type, :question, class: "radio-lesson-type quiz"
             .col-sm-7.view-lesson-name
@@ -28,7 +28,7 @@
               .lesson-name.row
                 .form-input-label.col-sm-2
                   = lesson.label :name
-                    = 'Lesson name'
+                    = t('admin.edit.lesson_name')
                 .col-sm-10
                   = lesson.text_field :name, class: "form-control input-lesson-name"
             .form-group.row
@@ -39,12 +39,12 @@
                   = lesson.text_field :video_url, class: "form-control input-video-url"
               .col-sm-4.row.form-min_point
                 .col-sm-5.label-point
-                  = lesson.label 'Check point'
+                  = lesson.label t('admin.edit.check_point')
                 .col-sm-7.min-point
                   = lesson.number_field :check_point, min: 0, class: "form-control input-min-point"
             .card.quiz-form
               .card-header
-                = 'Questions: '
+                = t('admin.edit.question')
               .card-body
                 .container.quiz-list
                   .list
@@ -54,7 +54,7 @@
                         .btn.delete-question-btn.col-sm-1 data-toggle="modal" data-target="#confirm-delete" ×
                         .form-group.row
                           = question.label :question, class: "col-sm-2 col-form-label"
-                            = 'Title: '
+                            = t('admin.edit.title')
                           .col-sm-10
                             = question.text_field :title, class: "form-control input-question"
                         = question.fields :question_choices, class: "form-control" do |choice|
@@ -70,24 +70,24 @@
                                           .btn.btn-danger.remove-answer.left-input ×
                         .btn.btn-add-option.btn-success.edit-btn-add-answer +
               .btn.btn-success.btn-add-question
-                = 'Add question'
+                = t('admin.edit.add_question')
 .form-actions.row
   .btn.btn-add-lesson.btn-primary
-    = 'Add lesson'
+    = t('admin.edit.add_lesson')
   button.btn.btn-success.btn-edit-course
-    = 'Update'
+    = t('admin.edit.update')
 #confirm-delete.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1"
   .modal-dialog role="document"
     .modal-content
       .modal-header
         h5.modal-title
-          = 'Delete lesson'
+          = t('admin.edit.delete_lesson')
         button.close aria-label="Close" data-dismiss="modal" type="button"
           span aria-hidden="true"  &times;
       .modal-body
-        = 'Are you sure?'
+        = t('admin.question')
       .modal-footer
         button.btn.btn-secondary data-dismiss="modal" type="button"
-          = 'Close'
+          = t('admin.edit.close')
         button.btn.btn-danger.btn-ok type="button"
-          = 'Delete'
+          = t('admin.edit.delete')

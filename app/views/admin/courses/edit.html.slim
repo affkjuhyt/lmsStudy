@@ -9,13 +9,13 @@
         .form-inputs
           .row
             .col-lg-7.col-md-7
-              = f.input :title, label: 'Title'
+              = f.input :title, label: t('admin.edit.title')
             .col-lg-5.col-md-5
           .row
             .col-lg-12.col-md-12
-              = f.input :overview, label: 'Overview'
+              = f.input :overview, label: t('admin.form.overview')
           .row
             .col-lg-12.col-md-12
               = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' }}  , label: 'Description'
-          = f.input :image, label: 'Image'
+          = f.input :image, label: t('admin.form.image')
           = render "edit_lesson", f: f

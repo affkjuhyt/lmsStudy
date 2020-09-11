@@ -18,6 +18,8 @@ vi:
       label_reinput: 'Nhập lại mật khẩu mới'
       forgot: 'Quên mật khẩu'
       submit: 'Gửi'
+      update: 'Cập nhật'
+      recent: 'Mật khẩu hiện tại'
     register:
       title: 'Đăng kí'
       first_name: 'Tên'
@@ -71,3 +73,43 @@ vi:
     home: 'Trang chủ'
     about: 'Thông tin'
     company: 'Công ty'
+  admin:
+    all_user: 'Người dùng'
+    course: 'Khóa học'
+    question: 'Bạn có chắc chắn ?'
+    action: 'Chức năng'
+    user:
+      id: 'ID'
+      title: 'Tên khóa học'
+      time_create: 'Thời gian tạo'
+      name: 'Người dùng'
+      email: 'Email'
+      new_user: 'Người dùng mới'
+      search_name: 'Tìm kiếm theo tên'
+    edit:
+      video: 'Video'
+      questions: 'Câu hỏi'
+      lesson_name: 'Tên bài học: '
+      check_point: 'Điểm tối thiểu: '
+      question: 'Câu hỏi: '
+      title: 'Tiêu đề: '
+      add_question: 'Thêm câu hỏi'
+      add_lesson: 'Thêm bài học'
+      delete_lesson: 'Xóa bài học'
+      close: 'Đóng'
+      delete: 'Xóa'
+      update: 'Cập nhật'
+    form:
+      overview: 'Mô tả'
+      image: 'Hình ảnh'
+      create_course: 'Tạo khóa học'
+    lesson:
+      lesson-type: 'Loại bài học'
+      min_point: 'Điểm tối thiểu'
+      sentence: 'Câu: '
+      answer: 'Câu trả lời'
+    index:
+      new-course: 'Tạo khóa học mới'
+      course: 'Khóa học'
+    show:
+      edit: 'Sửa'

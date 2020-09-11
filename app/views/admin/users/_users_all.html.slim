@@ -6,17 +6,17 @@
           thead
             tr
               th
-                = sort_link @q, :id, "ID", {}, {remote: true}
+                = sort_link @q, :id, t('admin.user.id'), {}, {remote: true}
               th
-                = sort_link @q, :first_name, 'First name', {}, {remote: true}
+                = sort_link @q, :first_name, t('devise.register.first_name'), {}, {remote: true}
               th
-                = sort_link @q, :last_name, 'Last name', {}, {remote: true}
+                = sort_link @q, :last_name, t('devise.register.last_name'), {}, {remote: true}
               th
-                = sort_link @q, :email, 'Email', {}, {remote: true}
+                = sort_link @q, :email, t('footer.email'), {}, {remote: true}
               th
-                = sort_link @q, :created_at, 'Time created at', {}, {remote: true}
+                = sort_link @q, :created_at, t('admin.user.time_create'), {}, {remote: true}
               th
-                = 'Edit'
+                = t('admin.show.edit')
           tbody
             tbody
               - @users.each do |user|
