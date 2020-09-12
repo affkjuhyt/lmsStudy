@@ -11,7 +11,16 @@ $(window).on("turbolinks:load", function(){
   lessonBox = $("#sortable .lesson-box").first().html();
   questionBox = $(".quiz-form").find(".list .quiz-element").first().html();
   answer = $(questionBox).find(".input-choice").last().html();
+  add_remove_answer_btn($(".list-answer"));
 });
+
+function add_remove_answer_btn(selector) {
+  selector.each(function () {
+    $(this).find(".edit-answer").last().find(".row").last()
+      .append('<div class="btn btn-danger btn-remove-answer" data-toggle="modal" data-taget="#confirm-delete-answer">×</div>');
+  })
+  $(".btn-remove-answer").show();
+}
 
 $(document).on("click", ".btn-add-question", function () {
   let milis = Date.now();
@@ -22,6 +31,8 @@ $(document).on("click", ".btn-add-question", function () {
   changeNameQuestion(questionElement, milis);
   $(this).closest(".quiz-form").find(".list").append(parent);
   $(this).closest(".quiz-form").find(".quiz-element").last().append(questionElement);
+  $(this).closest(".quiz-form").find(".quiz-element").last().find(".edit-answer").last().find(".row").last()
+    .append('<div class="btn btn-danger btn-remove-answer" data-toggle="modal" data-taget="#confirm-delete-answer">×</div>');
   $(this).closest(".quiz-form").find(".remove-question").show();
 });
 
