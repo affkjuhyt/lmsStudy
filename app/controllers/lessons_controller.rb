@@ -15,6 +15,12 @@ class LessonsController < ApplicationController
     end
   end
 
+  def next_lesson
+    @user_course = current_user.user_courses.find_by(course_id: @course.id) if current_user
+    @user_course.lesson_step.increment!(:lesson_step)
+    redirect_to courses_path
+  end
+
   private
 
   def load_course

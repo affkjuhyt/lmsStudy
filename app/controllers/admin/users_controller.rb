@@ -11,7 +11,9 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
-  def show; end
+  def show
+    @courses = @user.courses
+  end
 
   def new
     @user = User.new

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
     get "/about", to: "home#about"
     resources :courses do
-      resources :lessons
+      resources :lessons do
+        get :next_lesson, on: :collection
+      end
     end
     resources :questions
     resources :answers, only: :create
