@@ -22,6 +22,8 @@ $(document).on("change", ".radio-lesson-type", function () {
 
 $(window).on("turbolinks:load", function () {
   $(document).find(".quiz-form").hide();
+  var items_locked = $(".lesson-locked .lesson-item")
+  items_locked.prop("disabled", true);
   $(".radio-lesson-type").each(function () {
     if ($(this).closest(".card-header").find(".quiz").is(":checked")) {
       $(this).closest(".card").find(".input-video-url").prop("disabled", true);

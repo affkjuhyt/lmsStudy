@@ -1,0 +1,47 @@
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.3/ext/nio4r
+/usr/bin/ruby -I /usr/share/rubygems -r ./siteconf20200913-16209-14j0j7h.rb extconf.rb --with-cflags\=-std\=c99
+checking for unistd.h... yes
+checking for linux/aio_abi.h... yes
+checking for sys/select.h... yes
+checking for port_event_t in poll.h... no
+checking for sys/epoll.h... yes
+checking for sys/event.h... no
+checking for port_event_t in port.h... no
+checking for sys/resource.h... yes
+creating Makefile
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.3/ext/nio4r
+make "DESTDIR=" clean
+rm -f 
+rm -f nio4r_ext.so  *.o  *.bak mkmf.log .*.time
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.3/ext/nio4r
+make "DESTDIR="
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_UNISTD_H -DHAVE_LINUX_AIO_ABI_H -DEV_USE_LINUXAIO -DHAVE_SYS_SELECT_H -DEV_USE_SELECT -DHAVE_SYS_EPOLL_H -DEV_USE_EPOLL -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_RESOURCE_H    -fPIC -std=c99 -m64 -o bytebuffer.o -c bytebuffer.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_UNISTD_H -DHAVE_LINUX_AIO_ABI_H -DEV_USE_LINUXAIO -DHAVE_SYS_SELECT_H -DEV_USE_SELECT -DHAVE_SYS_EPOLL_H -DEV_USE_EPOLL -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_RESOURCE_H    -fPIC -std=c99 -m64 -o monitor.o -c monitor.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_UNISTD_H -DHAVE_LINUX_AIO_ABI_H -DEV_USE_LINUXAIO -DHAVE_SYS_SELECT_H -DEV_USE_SELECT -DHAVE_SYS_EPOLL_H -DEV_USE_EPOLL -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_RESOURCE_H    -fPIC -std=c99 -m64 -o nio4r_ext.o -c nio4r_ext.c
+In file included from nio4r_ext.c:7:
+../libev/ev.c:1867:31: warning: ‘ev_default_loop_ptr’ initialized and declared ‘extern’
+ 1867 |   EV_API_DECL struct ev_loop *ev_default_loop_ptr = 0; /* needs to be initialised to make it a definition despite extern */
+      |                               ^~~~~~~~~~~~~~~~~~~
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DHAVE_UNISTD_H -DHAVE_LINUX_AIO_ABI_H -DEV_USE_LINUXAIO -DHAVE_SYS_SELECT_H -DEV_USE_SELECT -DHAVE_SYS_EPOLL_H -DEV_USE_EPOLL -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_RESOURCE_H    -fPIC -std=c99 -m64 -o selector.o -c selector.c
+selector.c: In function ‘NIO_Selector_synchronize’:
+selector.c:286:26: warning: passing argument 1 of ‘rb_ensure’ from incompatible pointer type [-Wincompatible-pointer-types]
+  286 |         return rb_ensure(func, (VALUE)args, NIO_Selector_unlock, self);
+      |                          ^~~~
+      |                          |
+      |                          VALUE (*)(VALUE *) {aka long unsigned int (*)(long unsigned int *)}
+In file included from /usr/include/ruby.h:33,
+                 from nio4r.h:9,
+                 from selector.c:6:
+/usr/include/ruby/ruby.h:1990:17: note: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(VALUE *)’ {aka ‘long unsigned int (*)(long unsigned int *)’}
+ 1990 | VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+      |                 ^~~~~~~~~~~~~~~
+rm -f nio4r_ext.so
+gcc -shared -o nio4r_ext.so bytebuffer.o monitor.o nio4r_ext.o selector.o -L. -L/usr/lib64 -L. -Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld  -m64  -lruby  -lm   -lc
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.3/ext/nio4r
+make "DESTDIR=" install
+/usr/bin/mkdir -p . ./.gem.20200913-16209-me6tl8
+exit > .sitearchdir.time
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20200913-16209-me6tl8
