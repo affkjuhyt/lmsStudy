@@ -25,7 +25,7 @@ header#header.fixed-top
             = link_to image_tag('vi.png'), locale:"vi" if I18n.locale == :en
         - unless signed_in?
           li.nav-item.get-login-btn
-            = link_to t('shared.header.singin') , new_user_session_path
+            = link_to t('shared.header.signin') , new_user_session_path
         - else
           li.nav-item.nav-link.dropdown
             a#navbarDropdownXL.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]

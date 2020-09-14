@@ -1,0 +1,66 @@
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/rmagick-4.1.2/ext/RMagick
+/usr/bin/ruby -I /usr/share/rubygems -r ./siteconf20200913-16209-1qk39bz.rb extconf.rb
+checking for brew... no
+checking for pacman... no
+checking for Ruby version >= 2.3.0... yes
+checking for pkg-config... yes
+checking for outdated ImageMagick version (<= 6.7.7)... no
+checking for gcc... yes
+
+Warning: Found a partial ImageMagick installation. Your operating
+system likely has some built-in ImageMagick libraries but not all of
+ImageMagick. This will most likely cause problems at both compile and
+runtime.
+Found partial installation at: /usr
+
+checking for __GNUC__... yes
+checking for MagickCore/MagickCore.h... no
+checking for magick/MagickCore.h... yes
+checking for rb_gc_adjust_memory_usage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,magick/MagickCore.h... yes
+checking for posix_memalign() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,magick/MagickCore.h... yes
+checking for malloc_usable_size() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,magick/MagickCore.h... yes
+checking for malloc_size() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,magick/MagickCore.h... no
+checking for _aligned_msize() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,magick/MagickCore.h... no
+checking for GetImageChannelEntropy() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,magick/MagickCore.h... yes
+checking for SetImageGray() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,magick/MagickCore.h... yes
+checking for SetMagickAlignedMemoryMethods() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,magick/MagickCore.h... yes
+checking for malloc.h... yes
+creating extconf.h
+creating Makefile
+======================================================================
+Sun 13 Sep 20 22:36:22
+This installation of RMagick 4.1.2 is configured for
+Ruby 2.7.1 (x86_64-linux) and ImageMagick 6.9.11
+======================================================================
+
+
+Configured compile options: {:magick_version=>"6.9.11", :local_libs=>" -lMagickCore-6.Q16 ", :cflags=>" -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99", :cppflags=>" -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 ", :ldflags=>" -lMagickCore-6.Q16 ", :defs=>[], :config_h=>"Makefile rmagick.h"}
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/rmagick-4.1.2/ext/RMagick
+make "DESTDIR=" clean
+rm -f 
+rm -f RMagick2.so  *.o  *.bak mkmf.log .*.time
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/rmagick-4.1.2/ext/RMagick
+make "DESTDIR="
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmagick.o -c rmagick.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmdraw.o -c rmdraw.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmenum.o -c rmenum.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmfill.o -c rmfill.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmilist.o -c rmilist.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmimage.o -c rmimage.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rminfo.o -c rminfo.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmkinfo.o -c rmkinfo.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmmain.o -c rmmain.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmmontage.o -c rmmontage.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmpixel.o -c rmpixel.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmstruct.o -c rmstruct.c
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I. -DRUBY_EXTCONF_H=\"extconf.h\"  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -fPIC  -I/usr/include/ImageMagick-6 -fopenmp -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16  -std=gnu99 -m64 -o rmutil.o -c rmutil.c
+rm -f RMagick2.so
+gcc -shared -o RMagick2.so rmagick.o rmdraw.o rmenum.o rmfill.o rmilist.o rmimage.o rminfo.o rmkinfo.o rmmain.o rmmontage.o rmpixel.o rmstruct.o rmutil.o -L. -L/usr/lib64 -lMagickCore-6.Q16  -Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld  -m64 -lMagickCore-6.Q16  -lruby  -lm   -lc
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/rmagick-4.1.2/ext/RMagick
+make "DESTDIR=" install
+/usr/bin/mkdir -p . ./.gem.20200913-16209-199xza0
+exit > .sitearchdir.time
+/usr/bin/install -c -m 0755 RMagick2.so ./.gem.20200913-16209-199xza0

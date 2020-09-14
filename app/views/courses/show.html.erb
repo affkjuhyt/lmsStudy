@@ -84,7 +84,8 @@
               <div class="row col-sm-12">
                 <% if course_registered_by_user?(@course.id) %>
                   <div class="col-sm-4 lessons-list">
-                    <%= render "lessons/lesson_unlock", lessons: @lessons %>
+                    <%= render "lessons/lesson_unlock", lessons_unlock: @lessons_unlock %>
+                    <%= render @lessons_locked %>
                   </div>
                   <div class="col-sm-8 offset-sm-4 lesson-content"></div>
                 <% elsif current_user &.is_admin? %>

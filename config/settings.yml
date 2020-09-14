@@ -15,5 +15,5 @@ search:
 user_courses:
   per_page: 8
 lesson_step:
-  default: 1
+  default: 2
 lesson_type: { video: 1, question: 2 }

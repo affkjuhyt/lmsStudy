@@ -1,0 +1,139 @@
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/hpricot-0.8.6/ext/hpricot_scan
+/usr/bin/ruby -I /usr/share/rubygems -r ./siteconf20200913-16209-2pcw2k.rb extconf.rb
+checking for main() in -lc... yes
+creating Makefile
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/hpricot-0.8.6/ext/hpricot_scan
+make "DESTDIR=" clean
+rm -f 
+rm -f hpricot_scan.so  *.o  *.bak mkmf.log .*.time
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/hpricot-0.8.6/ext/hpricot_scan
+make "DESTDIR="
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I.   -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fPIC  -m64 -o hpricot_css.o -c hpricot_css.c
+hpricot_css.rl: In function ‘hpricot_css’:
+hpricot_css.rl:15:17: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat=]
+   15 |   sprintf(filt, "%.*s", te - ts, ts); \
+      |                 ^~~~~~  ~~~~~~~
+      |                            |
+      |                            long int
+hpricot_css.rl:87:14: note: in expansion of macro ‘FILTERAUTO’
+   87 |     traverse   => { FILTERAUTO(); };
+      |              ^~~~~~~~~~
+hpricot_css.c:3407:9: warning: comparison between pointer and integer
+ 3407 |  if ( p == eof )
+      |         ^~
+At top level:
+hpricot_css.c:34:18: warning: ‘hpricot_css_en_main’ defined but not used [-Wunused-const-variable=]
+   34 | static const int hpricot_css_en_main = 87;
+      |                  ^~~~~~~~~~~~~~~~~~~
+hpricot_css.c:32:18: warning: ‘hpricot_css_error’ defined but not used [-Wunused-const-variable=]
+   32 | static const int hpricot_css_error = 0;
+      |                  ^~~~~~~~~~~~~~~~~
+hpricot_css.rl: In function ‘hpricot_css’:
+hpricot_css.c:3407:9: warning: ‘eof’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 3407 |  if ( p == eof )
+      |       ~~^~~~~~
+hpricot_css.rl:96:16: note: ‘eof’ was declared here
+   96 |   int cs, act, eof;
+      |                ^~~
+gcc -I. -I/usr/include -I/usr/include/ruby/backward -I/usr/include -I.   -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fPIC  -m64 -o hpricot_scan.o -c hpricot_scan.c
+hpricot_scan.rl: In function ‘Init_hpricot_scan’:
+hpricot_scan.rl:855:3: warning: passing argument 3 of ‘rb_define_singleton_method3’ from incompatible pointer type [-Wincompatible-pointer-types]
+  855 |   rb_define_singleton_method(mHpricot, "css", hpricot_css, 3);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   |
+      |   VALUE (*)(VALUE,  VALUE,  VALUE,  VALUE,  VALUE) {aka long unsigned int (*)(long unsigned int,  long unsigned int,  long unsigned int,  long unsigned int,  long unsigned int)}
+In file included from /usr/include/ruby/ruby.h:2148,
+                 from /usr/include/ruby.h:33,
+                 from hpricot_scan.rl:9:
+/usr/include/ruby/intern.h:1195:1: note: expected ‘VALUE (*)(VALUE,  VALUE,  VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int,  long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(VALUE,  VALUE,  VALUE,  VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int,  long unsigned int,  long unsigned int,  long unsigned int)’}
+ 1195 | RB_METHOD_DEFINITION_DECL(rb_define_singleton_method, (2,3), (VALUE klass, const char *name), (klass, name))
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~
+At top level:
+hpricot_scan.rl:241:16: warning: ‘hpricot_ele_get_children’ defined but not used [-Wunused-function]
+  241 |   static VALUE hpricot_ele_get_##prop(VALUE self) { \
+      |                ^~~~~~~~~~~~~~~~
+hpricot_scan.rl:259:1: note: in expansion of macro ‘H_PROP’
+  259 | H_PROP(children, H_ELE_CHILDREN);
+      | ^~~~~~
+hpricot_scan.rl:237:16: warning: ‘hpricot_ele_clear_children’ defined but not used [-Wunused-function]
+  237 |   static VALUE hpricot_ele_clear_##prop(VALUE self) { \
+      |                ^~~~~~~~~~~~~~~~~~
+hpricot_scan.rl:259:1: note: in expansion of macro ‘H_PROP’
+  259 | H_PROP(children, H_ELE_CHILDREN);
+      | ^~~~~~
+hpricot_scan.rl:233:16: warning: ‘hpricot_ele_set_children’ defined but not used [-Wunused-function]
+  233 |   static VALUE hpricot_ele_set_##prop(VALUE self, VALUE x) { \
+      |                ^~~~~~~~~~~~~~~~
+hpricot_scan.rl:259:1: note: in expansion of macro ‘H_PROP’
+  259 | H_PROP(children, H_ELE_CHILDREN);
+      | ^~~~~~
+hpricot_scan.rl:241:16: warning: ‘hpricot_ele_get_etag’ defined but not used [-Wunused-function]
+  241 |   static VALUE hpricot_ele_get_##prop(VALUE self) { \
+      |                ^~~~~~~~~~~~~~~~
+hpricot_scan.rl:258:1: note: in expansion of macro ‘H_PROP’
+  258 | H_PROP(etag, H_ELE_ETAG);
+      | ^~~~~~
+hpricot_scan.rl:237:16: warning: ‘hpricot_ele_clear_etag’ defined but not used [-Wunused-function]
+  237 |   static VALUE hpricot_ele_clear_##prop(VALUE self) { \
+      |                ^~~~~~~~~~~~~~~~~~
+hpricot_scan.rl:258:1: note: in expansion of macro ‘H_PROP’
+  258 | H_PROP(etag, H_ELE_ETAG);
+      | ^~~~~~
+hpricot_scan.rl:233:16: warning: ‘hpricot_ele_set_etag’ defined but not used [-Wunused-function]
+  233 |   static VALUE hpricot_ele_set_##prop(VALUE self, VALUE x) { \
+      |                ^~~~~~~~~~~~~~~~
+hpricot_scan.rl:258:1: note: in expansion of macro ‘H_PROP’
+  258 | H_PROP(etag, H_ELE_ETAG);
+      | ^~~~~~
+hpricot_scan.rl:241:16: warning: ‘hpricot_ele_get_parent’ defined but not used [-Wunused-function]
+  241 |   static VALUE hpricot_ele_get_##prop(VALUE self) { \
+      |                ^~~~~~~~~~~~~~~~
+hpricot_scan.rl:256:1: note: in expansion of macro ‘H_PROP’
+  256 | H_PROP(parent, H_ELE_PARENT);
+      | ^~~~~~
+hpricot_scan.rl:237:16: warning: ‘hpricot_ele_clear_parent’ defined but not used [-Wunused-function]
+  237 |   static VALUE hpricot_ele_clear_##prop(VALUE self) { \
+      |                ^~~~~~~~~~~~~~~~~~
+hpricot_scan.rl:256:1: note: in expansion of macro ‘H_PROP’
+  256 | H_PROP(parent, H_ELE_PARENT);
+      | ^~~~~~
+hpricot_scan.rl:233:16: warning: ‘hpricot_ele_set_parent’ defined but not used [-Wunused-function]
+  233 |   static VALUE hpricot_ele_set_##prop(VALUE self, VALUE x) { \
+      |                ^~~~~~~~~~~~~~~~
+hpricot_scan.rl:256:1: note: in expansion of macro ‘H_PROP’
+  256 | H_PROP(parent, H_ELE_PARENT);
+      | ^~~~~~
+hpricot_scan.rl:241:16: warning: ‘hpricot_ele_get_raw’ defined but not used [-Wunused-function]
+  241 |   static VALUE hpricot_ele_get_##prop(VALUE self) { \
+      |                ^~~~~~~~~~~~~~~~
+hpricot_scan.rl:255:1: note: in expansion of macro ‘H_PROP’
+  255 | H_PROP(raw, H_ELE_RAW);
+      | ^~~~~~
+hpricot_scan.rl:233:16: warning: ‘hpricot_ele_set_raw’ defined but not used [-Wunused-function]
+  233 |   static VALUE hpricot_ele_set_##prop(VALUE self, VALUE x) { \
+      |                ^~~~~~~~~~~~~~~~
+hpricot_scan.rl:255:1: note: in expansion of macro ‘H_PROP’
+  255 | H_PROP(raw, H_ELE_RAW);
+      | ^~~~~~
+hpricot_scan.c:132:18: warning: ‘hpricot_scan_en_main’ defined but not used [-Wunused-const-variable=]
+  132 | static const int hpricot_scan_en_main = 198;
+      |                  ^~~~~~~~~~~~~~~~~~~~
+hpricot_scan.c:131:18: warning: ‘hpricot_scan_en_html_procins’ defined but not used [-Wunused-const-variable=]
+  131 | static const int hpricot_scan_en_html_procins = 212;
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hpricot_scan.c:130:18: warning: ‘hpricot_scan_en_html_cdata’ defined but not used [-Wunused-const-variable=]
+  130 | static const int hpricot_scan_en_html_cdata = 210;
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+hpricot_scan.c:129:18: warning: ‘hpricot_scan_en_html_comment’ defined but not used [-Wunused-const-variable=]
+  129 | static const int hpricot_scan_en_html_comment = 208;
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rm -f hpricot_scan.so
+gcc -shared -o hpricot_scan.so hpricot_css.o hpricot_scan.o -L. -L/usr/lib64 -L. -Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld  -m64  -lruby -lc  -lm   -lc
+
+current directory: /home/thiennlinh/Documents/Zinza/lmsStudy/vendor/bundle/ruby/2.7.0/gems/hpricot-0.8.6/ext/hpricot_scan
+make "DESTDIR=" install
+/usr/bin/mkdir -p . ./.gem.20200913-16209-10jgt0o
+exit > .sitearchdir.time
+/usr/bin/install -c -m 0755 hpricot_scan.so ./.gem.20200913-16209-10jgt0o

@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 2020_09_03_041610) do
   end
 
   create_table "user_courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "lesson_step", default: 1, null: false
+    t.integer "lesson_step", default: 2, null: false
     t.bigint "course_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
