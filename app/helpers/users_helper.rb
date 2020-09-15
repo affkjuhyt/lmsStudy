@@ -10,5 +10,6 @@ module UsersHelper
 
     @register = course.total_register_count
     @percent = (@cnt.to_f / @register) * 100
+    @percent.round(2)
   end
 end
