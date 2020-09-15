@@ -16,6 +16,9 @@ html
     .main
       .container-fuild
         = yield
-
+        .notice
+          = notice
+        .alert
+          = alert
     .container-fluid
       = render  "shared/footer"
