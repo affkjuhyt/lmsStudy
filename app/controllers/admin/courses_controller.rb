@@ -26,6 +26,7 @@ class Admin::CoursesController < Admin::BaseController
                               .paginate(page: params[:page], per_page: Settings.search.per_page)
     @user_courses = @course.user_courses.order('created_at DESC')
                               .paginate(page: params[:register_page], per_page: Settings.user_courses.per_page)
+    @users = @course.users
   end
 
   def create

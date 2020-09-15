@@ -15,7 +15,7 @@ module CoursesHelper
   end
 
   def percent user, course
-    @lesson_step = course.user_courses.find_by(params[:user_id]).lesson_step
+    @lesson_step = course.user_courses.find_by(user_id: user.id).lesson_step
     @size = course.lessons.size
     @percent = (@lesson_step.to_f / @size) * 100
   end
