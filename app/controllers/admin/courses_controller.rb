@@ -37,6 +37,9 @@ class Admin::CoursesController < Admin::BaseController
         format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
         format.json { render :show, status: :created, location: @course }
         SendEmailJob.perform_later @course
+        (User.all - [current_user]).each do |user|
+          Notification.create(recipient: user, actor: current_user, action: 'created', notifiable: @course)
+        end
       else
         format.html { render :new }
         format.js

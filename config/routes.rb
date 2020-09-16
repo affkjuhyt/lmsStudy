@@ -15,6 +15,12 @@ Rails.application.routes.draw do
     resources :question_choices
     resources :user_courses, only: [:create, :edit, :update]
     resources :review_courses, except: [:new, :show]
+    resources :notifications do
+      collection do
+        post :mark_as_read
+      end
+    end
+
     post "course/rate/:course_id", to: "rates#save_rate", as: :rate_course
     # Ex:- scope :active, -> {where(:active => true)}
     devise_for :users, skip: :omniauth_callbacks, controllers: { sessions: "sessions" }

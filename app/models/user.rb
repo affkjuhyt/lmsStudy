@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   attr_readonly :email
 
+  has_many :notifications, foreign_key: :recipient_id
   has_many :user_courses, dependent: :destroy
   has_many :courses, through: :user_courses
   has_many :reviewed_courses, class_name: Course.class.name, through: :review_courses

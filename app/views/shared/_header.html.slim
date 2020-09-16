@@ -19,33 +19,11 @@ header#header.fixed-top
             = link_to t('shared.header.about'), about_path, class: "nav-link"
           li.nav-item
             = link_to t('shared.header.course'), courses_path, class: "nav-link"
+          = render "shared/bell"
           li.flag
             = link_to image_tag('en.png'), locale:"en" if I18n.locale == :vi
           li.flag
             = link_to image_tag('vi.png'), locale:"vi" if I18n.locale == :en
-          li.nav-item.dropdown
-            a.nav-link data-toggle="dropdown" href="#" 
-              i.far.fa-bell
-              span.badge.badge-warning.navbar-badge 15
-            .dropdown-menu.dropdown-menu-lg.dropdown-menu-right
-              span.dropdown-item.dropdown-header 15 Notifications
-              .dropdown-divider
-              a.dropdown-item href="#" 
-                i.fas.fa-envelope.mr-2
-                | 4 new messages
-                span.float-right.text-muted.text-sm 3 mins
-              .dropdown-divider
-              a.dropdown-item href="#" 
-                i.fas.fa-users.mr-2
-                | 8 friend requests
-                span.float-right.text-muted.text-sm 12 hours
-              .dropdown-divider
-              a.dropdown-item href="#" 
-                i.fas.fa-file.mr-2
-                | 3 new reports
-                span.float-right.text-muted.text-sm 2 days
-              .dropdown-divider
-              a.dropdown-item.dropdown-footer href="#"  See All Notifications
         - unless signed_in?
           li.nav-item.get-login-btn
             = link_to t('shared.header.signin') , new_user_session_path
