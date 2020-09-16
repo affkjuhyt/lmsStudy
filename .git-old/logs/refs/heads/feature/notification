@@ -1,7 +1,0 @@
-0000000000000000000000000000000000000000 607fea2c7084aa8c48fa9b22a6518cf39563b7d6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237708 +0700	branch: Created from HEAD
-607fea2c7084aa8c48fa9b22a6518cf39563b7d6 31bedac2ce098d8c500559bf23492aa80a32941c thiennlinh <nguyenthienlinhptit@gmail.com> 1600241392 +0700	commit: Notification when created course
-31bedac2ce098d8c500559bf23492aa80a32941c 17206e253782376482ed90874017baebd173901e thiennlinh <nguyenthienlinhptit@gmail.com> 1600241514 +0700	commit (amend): Notification when created course
-17206e253782376482ed90874017baebd173901e 0f4287e99603eb5a5779c8ab01874a5e15d52165 thiennlinh <nguyenthienlinhptit@gmail.com> 1600241581 +0700	commit (amend): Notification when created course
-0f4287e99603eb5a5779c8ab01874a5e15d52165 4bf19fb009446d686e15ecb3fd2f48dbdc4ff305 thiennlinh <nguyenthienlinhptit@gmail.com> 1600243067 +0700	commit (amend): Notification when created course
-4bf19fb009446d686e15ecb3fd2f48dbdc4ff305 f3b4642f78094f5207e04ed7e67ebf85b09ae8eb thiennlinh <nguyenthienlinhptit@gmail.com> 1600244270 +0700	commit (amend): Notification when created course
-f3b4642f78094f5207e04ed7e67ebf85b09ae8eb 9b3c93b4ed2ce64f342870bbf1389563c05bc35c thiennlinh <nguyenthienlinhptit@gmail.com> 1600246252 +0700	rebase finished: returning to refs/heads/feature/notification
