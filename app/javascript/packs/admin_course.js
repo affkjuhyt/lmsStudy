@@ -1,4 +1,4 @@
-var lessonBox, questionBox, answer;
+var lessonBox, questionBox;
 
 $(window).on("turbolinks:load", function(){
   $( "#sortable" ).sortable();
@@ -36,14 +36,50 @@ $(document).on("click", ".btn-add-question", function () {
   $(this).closest(".quiz-form").find(".remove-question").show();
 });
 
+function changeNameQuestion(question, milis) {
+  question.find("input").each(function () {
+    $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0, $(this).attr("name").indexOf("]", 52)),
+      name.substring(0, name.indexOf("[", 50)) + "[" + milis));
+  });
+  if ($(this).attr("type") == "text") {
+    $(this).val("");
+  } else if ($(this).attr("type") == "checkbox") {
+    $(this).removeAttr("checked");
+  }
+  question = question.html();
+}
+
 $(document).on("click", ".btn-add-lesson", function() {
   let newBox = $(lessonBox);
   addLesson(newBox);
 });
 
+$(document).on("click", ".btn-new-lesson", function () {
+  newBox = $("#sortable .lesson-box").first().html();
+  quuestionLength = $(newBox).find(".quiz-element").length;
+  question = $(".quiz-form").find(".list .quiz-element").first();
+  newBox = $(newBox);
+  if(questionLength == 0) {
+    newBox.find(".list").append("<div class='quiz-element list-question'></div>");
+    newBox.find(".quiz-element").append(question.html());
+    newBox.find(".btn-remove-answer").show();
+  } else{
+    for (var i = 2* questionLength - 1; i > 0 ; i--) {
+      $(newBox.find(".list").children()[i]).remove();
+    }
+  }
+  newBox.find(".prev-lesson").text("");
+  addLesson(newBox);
+})
+
 $(document).on("click", ".remove-answer", function () {
   let removeButton = '<div class="btn btn-danger remove-answer">×</div>';
   removeAnswer($(this), removeButton);
+});
+
+$(document).on("click", ".btn-remove-answer", function () {
+  var remove_btn = '<div class="btn btn-danger btn-remove-answer">×</div>';
+  remove_answer($(this), remove_btn);
 });
 
 $(document).on("click", ".remove-question", function () {
@@ -64,8 +100,8 @@ $(document).on("click", ".remove-lesson", function() {
 
 $(document).on("click", ".btn-add-option, .edit-btn-add-answer", function () {
   let milis = Date.now();
-  let ans = $(answer)
-  let parent = "<div class='input-choice'></div>";
+  ans = $(answer)
+  var parent = "<div class='input-choice'></div>";
   question = $(this).closest($(".quiz-element"));
   name = question.find(".input-answer").attr("name");
   changeNameAnswer(ans, milis);
@@ -73,6 +109,12 @@ $(document).on("click", ".btn-add-option, .edit-btn-add-answer", function () {
   question.find(".list-answer").append(parent);
   question.find(".input-choice").last().append(ans);
   question.find(".input-choice .remove-answer").show();
+});
+
+$(document).on("click", ".edit-btn-add-answer", function () {
+  $(this).closest($(".quiz-element")).find(".btn-remove-answer").remove();
+  $(this).closest($(".quiz-element")).find(".input-choice").last().find(".row").last()
+    .append('<div class="btn btn-danger btn-remove-answer">×</div>');
 });
 
 $(document).on("click", ".btn-submit-course", function () {
@@ -123,14 +165,6 @@ function changeNameLesson(lesson, milis) {
     }
   })
   lesson = lesson.html();
-}
-
-function changeNameQuestion(question, milis) {
-  question.find("input").each(function () {
-    $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0, $(this).attr("name").indexOf("]", 52)),
-      name.substring(0, name.indexOf("[", 50)) + "[" + milis));
-  });
-  question = question.html();
 }
 
 function changeNameAnswer(answer, milis) {

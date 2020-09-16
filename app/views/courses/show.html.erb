@@ -19,7 +19,7 @@
                 <div class="course-info-icon d-flex align-items-center" id="course-actions">
                   <div class="item-icon">
                       <i class="fas fa-users fa-2x"></i>
-                    <span id="registers-count"> </span>
+                    <span id="registers-count"> <%= @course.total_register_count %> </span>
                   </div>
                   <div class="item-icon">
                     <% unless signed_in? %>
