@@ -662,3 +662,26 @@ iframe{
 #infinite-scrolling {
   display: none;
 }
+
+// Back to top
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background:  #5fcf80;
+  border-radius: 50%;
+
+  display:none;
+  z-index: 1;
+
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+button.back-to-top:hover {
+  background: #3ac162;
+  color: #fff;
+}
