@@ -1,0 +1,52 @@
+0000000000000000000000000000000000000000 7f0bb00db81e250f4730c2b588cdb1d02a04e9ec thiennlinh <nguyenthienlinhptit@gmail.com> 1600102046 +0700	clone: from git@github.com:thiennlinh/lmsStudy.git
+7f0bb00db81e250f4730c2b588cdb1d02a04e9ec 7f0bb00db81e250f4730c2b588cdb1d02a04e9ec thiennlinh <nguyenthienlinhptit@gmail.com> 1600134304 +0700	checkout: moving from master to statisc-percent-progess-course
+7f0bb00db81e250f4730c2b588cdb1d02a04e9ec 6f69b0efb74594088a2ff8775452743a5c1f728a thiennlinh <nguyenthienlinhptit@gmail.com> 1600134314 +0700	pull origin statisc-percent-progess-course: Fast-forward
+6f69b0efb74594088a2ff8775452743a5c1f728a 9bead9aac3ba6da22c79670a60a26fbbe48ea99d thiennlinh <nguyenthienlinhptit@gmail.com> 1600138571 +0700	commit: Fix helper
+9bead9aac3ba6da22c79670a60a26fbbe48ea99d 280cd08b9a64840410a8330d39c2d21f8d5bcfe6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600138641 +0700	commit (amend): Fix helper
+280cd08b9a64840410a8330d39c2d21f8d5bcfe6 8f8d12121d4b3277d86876d2882527e1817209ff thiennlinh <nguyenthienlinhptit@gmail.com> 1600138697 +0700	commit (amend): Fix helper
+8f8d12121d4b3277d86876d2882527e1817209ff 8f8d12121d4b3277d86876d2882527e1817209ff thiennlinh <nguyenthienlinhptit@gmail.com> 1600140336 +0700	checkout: moving from statisc-percent-progess-course to feature/signup-devise
+8f8d12121d4b3277d86876d2882527e1817209ff 26c0a63bd193f1fd9b517af7dd46dc4a3e02a677 thiennlinh <nguyenthienlinhptit@gmail.com> 1600141209 +0700	commit: Fix signup
+26c0a63bd193f1fd9b517af7dd46dc4a3e02a677 221686c9d8ac0a876fc27a5d5c36bf45f93ebab6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600141265 +0700	commit (amend): Fix signup
+221686c9d8ac0a876fc27a5d5c36bf45f93ebab6 8f8d12121d4b3277d86876d2882527e1817209ff thiennlinh <nguyenthienlinhptit@gmail.com> 1600142690 +0700	checkout: moving from feature/signup-devise to statisc-percent-progess-course
+8f8d12121d4b3277d86876d2882527e1817209ff 8f8d12121d4b3277d86876d2882527e1817209ff thiennlinh <nguyenthienlinhptit@gmail.com> 1600142842 +0700	checkout: moving from statisc-percent-progess-course to feature/fix-edit-course
+8f8d12121d4b3277d86876d2882527e1817209ff 67d156a0dcaebf5415248f060cee844e51e6c21c thiennlinh <nguyenthienlinhptit@gmail.com> 1600143447 +0700	commit: Fix edit course
+67d156a0dcaebf5415248f060cee844e51e6c21c a4a1e145e2c8853a3a8d827acb50cc1ee3fc5910 thiennlinh <nguyenthienlinhptit@gmail.com> 1600145605 +0700	commit (amend): Fix edit course
+a4a1e145e2c8853a3a8d827acb50cc1ee3fc5910 4a36c13a594c04b90c6641c31805cad772318c87 thiennlinh <nguyenthienlinhptit@gmail.com> 1600150378 +0700	commit (amend): Fix edit course
+4a36c13a594c04b90c6641c31805cad772318c87 4a36c13a594c04b90c6641c31805cad772318c87 thiennlinh <nguyenthienlinhptit@gmail.com> 1600176585 +0700	checkout: moving from feature/fix-edit-course to feature/fix-edit-course
+4a36c13a594c04b90c6641c31805cad772318c87 99cd6d4a6c2bae4b0e19c663d495543bc5383071 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237362 +0700	commit (amend): Fix edit course
+99cd6d4a6c2bae4b0e19c663d495543bc5383071 221686c9d8ac0a876fc27a5d5c36bf45f93ebab6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237376 +0700	checkout: moving from feature/fix-edit-course to feature/signup-devise
+221686c9d8ac0a876fc27a5d5c36bf45f93ebab6 7f0bb00db81e250f4730c2b588cdb1d02a04e9ec thiennlinh <nguyenthienlinhptit@gmail.com> 1600237390 +0700	checkout: moving from feature/signup-devise to master
+7f0bb00db81e250f4730c2b588cdb1d02a04e9ec e5ef7be9431ce4ea7c46a5b5e5dd1778d1d3900e thiennlinh <nguyenthienlinhptit@gmail.com> 1600237402 +0700	pull origin master: Fast-forward
+e5ef7be9431ce4ea7c46a5b5e5dd1778d1d3900e 221686c9d8ac0a876fc27a5d5c36bf45f93ebab6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237411 +0700	checkout: moving from master to feature/signup-devise
+221686c9d8ac0a876fc27a5d5c36bf45f93ebab6 e5ef7be9431ce4ea7c46a5b5e5dd1778d1d3900e thiennlinh <nguyenthienlinhptit@gmail.com> 1600237419 +0700	rebase: checkout master
+e5ef7be9431ce4ea7c46a5b5e5dd1778d1d3900e b79b92b14e1192e2cf12b1def42ebc9e8c552ce0 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237419 +0700	rebase: Fix signup
+b79b92b14e1192e2cf12b1def42ebc9e8c552ce0 b79b92b14e1192e2cf12b1def42ebc9e8c552ce0 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237419 +0700	rebase finished: returning to refs/heads/feature/signup-devise
+b79b92b14e1192e2cf12b1def42ebc9e8c552ce0 e5ef7be9431ce4ea7c46a5b5e5dd1778d1d3900e thiennlinh <nguyenthienlinhptit@gmail.com> 1600237456 +0700	checkout: moving from feature/signup-devise to master
+e5ef7be9431ce4ea7c46a5b5e5dd1778d1d3900e cbbb292bc720d56904e4d53570a5c80368c94aae thiennlinh <nguyenthienlinhptit@gmail.com> 1600237472 +0700	pull origin master: Fast-forward
+cbbb292bc720d56904e4d53570a5c80368c94aae 99cd6d4a6c2bae4b0e19c663d495543bc5383071 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237489 +0700	checkout: moving from master to feature/fix-edit-course
+99cd6d4a6c2bae4b0e19c663d495543bc5383071 cbbb292bc720d56904e4d53570a5c80368c94aae thiennlinh <nguyenthienlinhptit@gmail.com> 1600237493 +0700	rebase: checkout master
+cbbb292bc720d56904e4d53570a5c80368c94aae 59cfd65bd786753ee29432e2524e31642d402a7f thiennlinh <nguyenthienlinhptit@gmail.com> 1600237493 +0700	rebase: Fix edit course
+59cfd65bd786753ee29432e2524e31642d402a7f 59cfd65bd786753ee29432e2524e31642d402a7f thiennlinh <nguyenthienlinhptit@gmail.com> 1600237493 +0700	rebase finished: returning to refs/heads/feature/fix-edit-course
+59cfd65bd786753ee29432e2524e31642d402a7f dd742a543f1c3f689e63ecd57e522bc7a74bce4b thiennlinh <nguyenthienlinhptit@gmail.com> 1600237616 +0700	commit (amend): Fix edit course
+dd742a543f1c3f689e63ecd57e522bc7a74bce4b cbbb292bc720d56904e4d53570a5c80368c94aae thiennlinh <nguyenthienlinhptit@gmail.com> 1600237662 +0700	checkout: moving from feature/fix-edit-course to master
+cbbb292bc720d56904e4d53570a5c80368c94aae 607fea2c7084aa8c48fa9b22a6518cf39563b7d6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237675 +0700	pull origin master: Fast-forward
+607fea2c7084aa8c48fa9b22a6518cf39563b7d6 607fea2c7084aa8c48fa9b22a6518cf39563b7d6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600237708 +0700	checkout: moving from master to feature/notification
+607fea2c7084aa8c48fa9b22a6518cf39563b7d6 31bedac2ce098d8c500559bf23492aa80a32941c thiennlinh <nguyenthienlinhptit@gmail.com> 1600241392 +0700	commit: Notification when created course
+31bedac2ce098d8c500559bf23492aa80a32941c 17206e253782376482ed90874017baebd173901e thiennlinh <nguyenthienlinhptit@gmail.com> 1600241514 +0700	commit (amend): Notification when created course
+17206e253782376482ed90874017baebd173901e 0f4287e99603eb5a5779c8ab01874a5e15d52165 thiennlinh <nguyenthienlinhptit@gmail.com> 1600241581 +0700	commit (amend): Notification when created course
+0f4287e99603eb5a5779c8ab01874a5e15d52165 4bf19fb009446d686e15ecb3fd2f48dbdc4ff305 thiennlinh <nguyenthienlinhptit@gmail.com> 1600243067 +0700	commit (amend): Notification when created course
+4bf19fb009446d686e15ecb3fd2f48dbdc4ff305 f3b4642f78094f5207e04ed7e67ebf85b09ae8eb thiennlinh <nguyenthienlinhptit@gmail.com> 1600244270 +0700	commit (amend): Notification when created course
+f3b4642f78094f5207e04ed7e67ebf85b09ae8eb 607fea2c7084aa8c48fa9b22a6518cf39563b7d6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600244320 +0700	checkout: moving from feature/notification to master
+607fea2c7084aa8c48fa9b22a6518cf39563b7d6 607fea2c7084aa8c48fa9b22a6518cf39563b7d6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600244337 +0700	checkout: moving from master to feature/design
+607fea2c7084aa8c48fa9b22a6518cf39563b7d6 04dc6a675fae9846a5df125b4e600f21efaa4f21 thiennlinh <nguyenthienlinhptit@gmail.com> 1600246141 +0700	commit: fix show image for category
+04dc6a675fae9846a5df125b4e600f21efaa4f21 607fea2c7084aa8c48fa9b22a6518cf39563b7d6 thiennlinh <nguyenthienlinhptit@gmail.com> 1600246185 +0700	checkout: moving from feature/design to master
+607fea2c7084aa8c48fa9b22a6518cf39563b7d6 38e73d5dc10ab27ccae5b7bd95afa762e544cc81 thiennlinh <nguyenthienlinhptit@gmail.com> 1600246193 +0700	pull origin master: Fast-forward
+38e73d5dc10ab27ccae5b7bd95afa762e544cc81 f3b4642f78094f5207e04ed7e67ebf85b09ae8eb thiennlinh <nguyenthienlinhptit@gmail.com> 1600246249 +0700	checkout: moving from master to feature/notification
+f3b4642f78094f5207e04ed7e67ebf85b09ae8eb 38e73d5dc10ab27ccae5b7bd95afa762e544cc81 thiennlinh <nguyenthienlinhptit@gmail.com> 1600246252 +0700	rebase: checkout master
+38e73d5dc10ab27ccae5b7bd95afa762e544cc81 9b3c93b4ed2ce64f342870bbf1389563c05bc35c thiennlinh <nguyenthienlinhptit@gmail.com> 1600246252 +0700	rebase: Notification when created course
+9b3c93b4ed2ce64f342870bbf1389563c05bc35c 9b3c93b4ed2ce64f342870bbf1389563c05bc35c thiennlinh <nguyenthienlinhptit@gmail.com> 1600246252 +0700	rebase finished: returning to refs/heads/feature/notification
+9b3c93b4ed2ce64f342870bbf1389563c05bc35c 38e73d5dc10ab27ccae5b7bd95afa762e544cc81 thiennlinh <nguyenthienlinhptit@gmail.com> 1600246751 +0700	checkout: moving from feature/notification to master
+38e73d5dc10ab27ccae5b7bd95afa762e544cc81 4a9311bf90a5893a7e3f829ccff47dbcdb6bc803 thiennlinh <nguyenthienlinhptit@gmail.com> 1600247335 +0700	commit: Fix condition register
+4a9311bf90a5893a7e3f829ccff47dbcdb6bc803 4a9311bf90a5893a7e3f829ccff47dbcdb6bc803 thiennlinh <nguyenthienlinhptit@gmail.com> 1600248312 +0700	checkout: moving from master to edit-course-js
+4a9311bf90a5893a7e3f829ccff47dbcdb6bc803 b176baa839977a3619dce921adad74bff73bc2fb thiennlinh <nguyenthienlinhptit@gmail.com> 1600264666 +0700	commit: Back to top
+                                                                                                                                                                                                                                                                                                                                                                            
