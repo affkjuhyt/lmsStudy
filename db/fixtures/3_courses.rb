@@ -14,10 +14,10 @@ course_attrs = proc do
     {
       id: idx + 1,
       user_id: 1,
+      image: Faker::LoremFlickr.image(size: '200x200'),
       title: Faker::Job.title,
       overview: Faker::Lorem.sentence(word_count: 15),
       description: Faker::Lorem.sentence,
-      image: Faker::LoremFlickr.image(size: '200x200')
     }
   end
 end
