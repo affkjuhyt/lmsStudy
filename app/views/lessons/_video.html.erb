@@ -2,6 +2,13 @@
 <div id="iframe-lesson">
   <iframe class="lesson-video" src="<%= @lesson.video_url %>" width="720" height="480" frameborder="0" allowfullscreen allow="encrypted-media"></iframe>
 </div>
+<div class="text-right">
+  <button class="sc-ifAKCX sc-EHOje SkmoF">
+    <div class="sc-cZBZkQ hCmaGq">
+      <%= link_to 'Next lesson', next_lesson_course_lessons_path, class: "fa fa-chevron-right"%>
+    </div>
+  </button>
+</div>
 <script type="text/javascript">
   <% if @user_course %>
     var step = <%= @user_course.lesson_step %>;
