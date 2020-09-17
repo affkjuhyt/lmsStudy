@@ -6,24 +6,24 @@ class ExamsController < ApplicationController
   end
 
   def create
-    @questions = @lesson.questions
     @exam = current_user.exams.build(exam_params)
     @user_course = current_user.user_courses.find_by course_id: @lesson.course.id
-    @max_point = @questions.length
-    @point = 0
+    point = 0
+    @course = @lesson.course
     params[:exam][:answers_attributes].each do |param|
       if QuestionChoice.find(param.last[:choice]).right_answer == true
-        @point += 1
+        point += 1
       end
     end
     respond_to do |format|
-      if @point >= @max_point
+      if point >= @lesson.questions.length
+        @exam.point = point
         @exam.save && (@user_course.update(lesson_step: @user_course.lesson_step + 1) if @lesson)
-        format.html
-        format.js { render '_quiz_form'}
+        format.html { redirect_to(course_path(@course)) }
+        format.js
       else
-        format.html
-        format.js { render '_fail' }
+        format.html { redirect_to(course_path(@course)) }
+        format.js
       end
     end
   end
