@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-      <h3 class="card-title">Projects</h3>
+      <h3 class="card-title"><%= t('admin.project.projects')%></h3>
 
       <div class="card-tools">
       <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -15,13 +15,13 @@
         <thead>
             <tr>
                 <th style="width: 20%">
-                    Courses Name
+                    <%= t('admin.project.name') %>
                 </th>
                 <th>
-                    Course Progress
+                    <%= t('admin.project.progress') %>
                 </th>
                 <th style="width: 8%" class="text-center">
-                    Status
+                    <%= t('admin.project.status') %>
                 </th>
                 <th style="width: 20%">
                 </th>
@@ -45,17 +45,22 @@
                           </div>
                       </div>
                       <small>
-                          <%= percent(@user, course) %> % Complete
+                          <%= percent(@user, course) %> %
                       </small>
                   </td>
                   <td class="project-state">
-                      <span class="badge badge-success">Success</span>
+                    <% if status_success(@user, course) %>
+                        <span class="badge badge-success"> <%= t('admin.project.progressing') %> </span>
+                    <% else %>
+                        <span class="badge badge-success"> <%= t('admin.project.success') %> </span>
+                    <% end %>
+                     
                   </td>
                   <td class="project-actions text-right">
                       <a class="btn btn-primary btn-sm" href="#">
                           <i class="fas fa-folder">
                           </i>
-                          View
+                          <%= t('admin.project.view') %>
                       </a>
                   </td>
               </tr>

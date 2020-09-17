@@ -6,6 +6,7 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4.position-fixed
     .sidebar style=("min-height: 652px; overflow: hidden; width: auto; height: 652px;")
       .user-panel.mt-3.pb-3.mb-3.d-flex
         .image
+          = image_tag current_user.avatar
         .info
           a.d-block
             = link_to  current_user.first_name.capitalize, admin_user_path(current_user)
@@ -15,18 +16,18 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4.position-fixed
             a.nav-link.active href="/admin"
               i.nav-icon.fas.fa-tachometer-alt
               p
-                span = 'Dashboard'
+                span = I18n.t('admin.side_bar.dashboard')
                 i.right.fas.fa-angle-left
             ul.nav.nav-treeview
               li.nav-item.menu-item
                 = link_to admin_users_path, class: "nav-link " do
                   i.far.fa-circle.nav-icon
-                  p = 'User'
+                  p = I18n.t('admin.side_bar.user')
 
               li.nav-item.menu-item
                 = link_to admin_courses_path, class: "nav-link" do
                   i.far.fa-circle.nav-icon
-                  p = 'Course'
+                  p = I18n.t('admin.side_bar.course')
 
 script
   | $(document).ready(function(){

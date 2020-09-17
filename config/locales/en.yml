@@ -114,3 +114,10 @@ en:
       course: 'Course'
     show:
       edit: 'Edit'
+    side_bar:
+      dashboard: 'Dashboard'
+      user: 'User'
+      course: 'Course'
+    navbar:
+      setting: 'Settings'
+      logout: 'Log out'
