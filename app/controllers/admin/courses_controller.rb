@@ -3,7 +3,8 @@ class Admin::CoursesController < Admin::BaseController
 
   def index
     @result = Course.ransack params[:q]
-    @courses = @result.result(distinct: true).order(created_at: :desc).paginate(page: params[:page], per_page: Settings.users.per_page)
+    @courses = @result.result(distinct: true).order(created_at: :desc)
+                      .paginate(page: params[:page], per_page: Settings.users.per_page)
     respond_to do |format|
       format.html
       format.js
@@ -25,7 +26,7 @@ class Admin::CoursesController < Admin::BaseController
     @review_courses = @course.review_courses.order('created_at DESC')
                               .paginate(page: params[:page], per_page: Settings.search.per_page)
     @user_courses = @course.user_courses.order('created_at DESC')
-                              .paginate(page: params[:register_page], per_page: Settings.user_courses.per_page)
+                  .paginate(page: params[:register_page], per_page: Settings.user_courses.per_page)
     @users = @course.users
   end
 
