@@ -114,3 +114,20 @@ vi:
       course: 'Khóa học'
     show:
       edit: 'Sửa'
+    side_bar:
+      dashboard: 'Danh mục'
+      user: 'Người dùng'
+      course: 'Khóa học'
+    navbar:
+      setting: 'Cài đặt'
+      logout: 'Đăng xuất'
+    project:
+      projects: 'Các khóa học'
+      name: 'Tên khóa học'
+      progress: 'Tiến trình'
+      status: 'Tình trạng'
+      success: 'Thành công'
+      progressing: 'Đang diễn ra'
+      view: 'Xem'
+      
+
