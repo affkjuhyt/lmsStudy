@@ -6,7 +6,7 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4.position-fixed
     .sidebar style=("min-height: 652px; overflow: hidden; width: auto; height: 652px;")
       .user-panel.mt-3.pb-3.mb-3.d-flex
         .image
-          = image_tag current_user.avatar
+          = image_tag(current_user.avatar.url(:thumb), class: "admin-avatar")
         .info
           a.d-block
             = link_to  current_user.first_name.capitalize, admin_user_path(current_user)

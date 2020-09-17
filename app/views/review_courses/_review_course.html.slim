@@ -2,7 +2,7 @@
   div.row.container
     div.row.comment-element
       div.container.avatar.col
-        = image_tag(review_course.user.avatar, class: "image-avatar")
+        = image_tag(review_course.user.avatar.url(:show), class: "image-avatar")
       .col
         div.container.user_name
           = link_to review_course.user.last_name, "#", class: "full-name"

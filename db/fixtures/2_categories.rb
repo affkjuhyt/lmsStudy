@@ -2,8 +2,8 @@ category_attrs = proc do
   10.times.map do |idx|
     {
       id: idx + 1,
-      name: Faker::Name.name,
-      image: Faker::LoremFlickr.image(size: '200x200')
+      name: Faker::Job.title,
+      image: Faker::LoremFlickr.image(size: '150x150')
     }
   end
 end
