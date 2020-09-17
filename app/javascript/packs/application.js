@@ -27,6 +27,7 @@ require("packs/disable");
 require("packs/admin_course");
 require("packs/collapse");
 require("packs/scroll");
+require("packs/edit_course");
 require("packs/backToTop");
 
 // Uncomment to copy all static images under ../images to the output folder and reference

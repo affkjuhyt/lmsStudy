@@ -1,4 +1,4 @@
-var lessonBox, questionBox;
+var lessonBox, questionBox, answer;
 
 $(window).on("turbolinks:load", function(){
   $( "#sortable" ).sortable();
@@ -40,12 +40,12 @@ function changeNameQuestion(question, milis) {
   question.find("input").each(function () {
     $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0, $(this).attr("name").indexOf("]", 52)),
       name.substring(0, name.indexOf("[", 50)) + "[" + milis));
+    if ($(this).attr("type") == "text") {
+      $(this).val("");
+    } else if ($(this).attr("type") == "checkbox") {
+      $(this).removeAttr("checked");
+    }
   });
-  if ($(this).attr("type") == "text") {
-    $(this).val("");
-  } else if ($(this).attr("type") == "checkbox") {
-    $(this).removeAttr("checked");
-  }
   question = question.html();
 }
 
@@ -79,7 +79,7 @@ $(document).on("click", ".remove-answer", function () {
 
 $(document).on("click", ".btn-remove-answer", function () {
   var remove_btn = '<div class="btn btn-danger btn-remove-answer">×</div>';
-  remove_answer($(this), remove_btn);
+  removeAnswer($(this), remove_btn);
 });
 
 $(document).on("click", ".remove-question", function () {
@@ -101,7 +101,7 @@ $(document).on("click", ".remove-lesson", function() {
 $(document).on("click", ".btn-add-option, .edit-btn-add-answer", function () {
   let milis = Date.now();
   ans = $(answer)
-  var parent = "<div class='input-choice'></div>";
+  parent = "<div class='input-choice'></div>";
   question = $(this).closest($(".quiz-element"));
   name = question.find(".input-answer").attr("name");
   changeNameAnswer(ans, milis);
@@ -124,39 +124,6 @@ $(document).on("click", ".btn-submit-course", function () {
   $(".form-course").submit()
 })
 
-$(document).on("click", ".delete-lesson-btn", function () {
-  let btnDeleteLesson = $(this);
-  $('#confirm-delete').on('shown.bs.modal', function() {
-    let deleteModal = $(this);
-    $(document).on("click", ".btn-ok", function () {
-      btnDeleteLesson.parent().find(".delete-lesson").val("true");
-      btnDeleteLesson.closest(".lesson-box").hide();
-      deleteModal.modal("hide");
-    })
-  });
-})
-
-$(document).on("click", ".delete-question-btn", function() {
-  let btnDeleteQuestion = $(this);
-  $('#confirm-delete').on("shown.bs.modal", function() {
-    let deleteModal = $(this);
-    $(document).on("click", ".btn-ok", function () {
-      btnDeleteQuestion.parent().find(".delete-question").val("true");
-      btnDeleteQuestion.closest(".list-question").hide();
-      deleteModal.modal("hide");
-    })
-  });
-})
-
-$(document).on("click", ".btn-edit-course", function () {
-  $("#sortable").find(".lesson-box").filter(function () {
-    return $(this).find(".delete-lesson").val() == "false"
-  }).each(function (index) {
-    $(this).find(".lesson_seq").val(index + 1);
-  })
-  $(this).submit();
-})
-
 function changeNameLesson(lesson, milis) {
   lesson.find("input").each(function () {
     if ($(this).attr("name").includes("course[lessons_attributes]")) {
@@ -171,6 +138,11 @@ function changeNameAnswer(answer, milis) {
   answer.find("input").each(function () {
     $(this).attr("name", $(this).attr("name").replace($(this).attr("name").substring(0, $(this).attr("name").indexOf("]", 85)),
       name.substring(0, name.indexOf("[", 83)) + "[" + milis));
+    if ($(this).attr("type") == "text") {
+      $(this).val("");
+    } else if ($(this).attr("type") == "checkbox") {
+      $(this).removeAttr("checked");
+    }
   });
   answer = answer.html();
 }
