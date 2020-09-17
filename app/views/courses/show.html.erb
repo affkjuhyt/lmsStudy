@@ -18,14 +18,14 @@
               <div class="course-info d-flex justify-content-between align-items-center">
                 <div class="course-info-icon d-flex align-items-center" id="course-actions">
                   <div class="item-icon">
-                      <i class="fas fa-users fa-2x"></i>
+                    <i class="fas fa-users fa-2x"></i>
                     <span id="registers-count"> <%= @course.total_register_count %> </span>
                   </div>
                   <div class="item-icon">
                     <% unless signed_in? %>
-                      <i class="fa fa-heart fa-2x"></i>
+                    <i class="fa fa-heart fa-2x"></i>
                     <% else %>
-                      <i class="fa fa-heart fa-2x course-like like-<%= @course.id %> <%= 'active' if course_rated_by_user?(@course.id)%>" data-id="<%= @course.id %>"></i>
+                    <i class="fa fa-heart fa-2x course-like like-<%= @course.id %> <%= 'active' if course_rated_by_user?(@course.id)%>" data-id="<%= @course.id %>"></i>
                     <% end %>
                     <span id="course-<%= @course.id %>-likes"> <%= @course.total_rate_count %> </span>
                   </div>
@@ -33,9 +33,9 @@
                 <div class="course-show d-flex align-items-center">
                   <div id="register-course">
                     <% if course_registered_by_user?(@course.id) %>
-                      <%= render "registered" %>
+                    <%= render "registered" %>
                     <% elsif signed_in? && !current_user.is_admin?  %>
-                      <%= render "register_course" %>
+                    <%= render "register_course" %>
                     <% end %>
                   </div>
                 </div>
@@ -57,13 +57,13 @@
             </div>
             <nav>
               <div id="nav-tab" class="nav nav-tabs nav-fill" role="tablist">
-                <a id="nav-home-tab" class="nav-item nav-link active" data-toggle="tab" href="#nav-info" role="tab" aria-controls="nav-home" aria-selected="true" >
+                <a id="nav-home-tab" class="nav-item nav-link active" data-toggle="tab" href="#nav-info" role="tab" aria-controls="nav-home" aria-selected="true">
                   <%= t('course.info') %>
                 </a>
-                <a id="nav-profile-tab" class="nav-item nav-link" data-toggle="tab" href="#nav-lesson" role="tab" aria-controls="nav-profile" aria-selected="false" >
+                <a id="nav-profile-tab" class="nav-item nav-link" data-toggle="tab" href="#nav-lesson" role="tab" aria-controls="nav-profile" aria-selected="false">
                   <%= t('course.lesson') %>
                 </a>
-                <a id="nav-contact-tab" class="nav-item nav-link" data-toggle="tab" href="#nav-comment" role="tab" aria-controls="nav-contact" aria-selected="false" >
+                <a id="nav-contact-tab" class="nav-item nav-link" data-toggle="tab" href="#nav-comment" role="tab" aria-controls="nav-contact" aria-selected="false">
                   <%= t('course.rate') %>
                 </a>
               </div>
@@ -83,48 +83,48 @@
             <div id="nav-lesson" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-profile-tab">
               <div class="row col-sm-12">
                 <% if course_registered_by_user?(@course.id) %>
-                  <div class="col-sm-4 lessons-list">
-                    <%= render "lessons/lesson_unlock", lessons_unlock: @lessons_unlock %>
-                    <%= render @lessons_locked %>
-                  </div>
-                  <div class="col-sm-8 offset-sm-4 lesson-content"></div>
+                <div class="col-sm-4 lessons-list">
+                  <%= render "lessons/lesson_unlock", lessons_unlock: @lessons_unlock %>
+                  <%= render @lessons_locked %>
+                </div>
+                <div class="col-sm-8 offset-sm-4 lesson-content"></div>
                 <% elsif current_user &.is_admin? %>
-                  <div class="col-sm-4 lessons-list">
-                    <% @lessons.each do |lesson| %>
-                      <div class="card card-lesson-show lesson-unlock">
-                        <div class="card-body">
-                          <div class="lesson-name-show row">
-                            <%= link_to lesson.name, course_lesson_path(@course, lesson), remote: true, class: "btn btn-link lesson-item"%>
-                          </div>
-                        </div>
+                <div class="col-sm-4 lessons-list">
+                  <% @lessons.each do |lesson| %>
+                  <div class="card card-lesson-show lesson-unlock">
+                    <div class="card-body">
+                      <div class="lesson-name-show row">
+                        <%= link_to lesson.name, course_lesson_path(@course, lesson), remote: true, class: "btn btn-link lesson-item"%>
                       </div>
-                    <% end %>
+                    </div>
                   </div>
-                  <div class="col-sm-8 offset-sm-4 lesson-content"></div>
+                  <% end %>
+                </div>
+                <div class="col-sm-8 offset-sm-4 lesson-content"></div>
                 <% elsif signed_in? %>
-                  <div class="inform"><%= t("message.register_message") %></div>
+                <div class="inform"><%= t("message.register_message") %></div>
                 <% else %>
-                  <div class="inform"><%= t("message.log_in_message_html", href: link_to(t("message.log_in"), new_user_session_path(course_id: @course.id)))%></div>
+                <div class="inform"><%= t("message.log_in_message_html", href: link_to(t("message.log_in"), new_user_session_path(course_id: @course.id)))%></div>
                 <% end %>
               </div>
             </div>
             <div id="nav-comment" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-contact-tab">
               <div id="student-review">
                 <% if course_registered_by_user?(@course.id) || (current_user && current_user.is_admin?) %>
-                  <div id="review-form">
-                    <%= render "review_courses/review_form" %>
-                  </div>
-                  <div id="reviews">
-                    <%= render "review_courses/comments" %>
-                  </div>
+                <div id="review-form">
+                  <%= render "review_courses/review_form" %>
+                </div>
+                <div id="reviews">
+                  <%= render "review_courses/comments" %>
+                </div>
                 <% elsif signed_in? %>
-                  <div id="review-form">
-                  </div>
-                  <div id="reviews">
-                    <%= render "review_courses/comments" %>
-                  </div>
+                <div id="review-form">
+                </div>
+                <div id="reviews">
+                  <%= render "review_courses/comments" %>
+                </div>
                 <% else %>
-                  <div class="inform"><%= t("message.log_in_message_html", href: link_to(t("message.log_in"), new_user_session_path(course_id: @course.id)))%></div>
+                <div class="inform"><%= t("message.log_in_message_html", href: link_to(t("message.log_in"), new_user_session_path(course_id: @course.id)))%></div>
                 <% end %>
               </div>
             </div>

@@ -1,1 +1,3 @@
 $(".lesson-content").html("<%= j render 'exams/result', questions: @questions %>")
+var oldElement = $(".lessons-list .card-lesson-show").get(<%= @user_course.lesson_step - 1 %>);
+newElement = $(oldElement).replaceWith("<%= j render 'lessons/show_lesson'%>");

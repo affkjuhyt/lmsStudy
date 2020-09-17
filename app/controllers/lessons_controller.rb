@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :load_course, only: [:show]
+  before_action :load_course, only: [:show, :next_lesson]
 
   def show
     @lesson = @course.lessons.find(params[:id])

@@ -22,7 +22,12 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: sans-serif;
 }
 
@@ -30,10 +35,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 55px;
 }
 
-.was-validated .form-control:invalid, .form-control.is-invalid {
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
   background-position: right calc(0.375em + 0.8rem) center !important;
 }
-.was-validated .form-control:valid, .form-control.is-valid {
+.was-validated .form-control:valid,
+.form-control.is-valid {
   background-position: right calc(0.375em + 0.8rem) center !important;
 }
 
@@ -41,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   View sign in and sign up
 */
 
-.form{
+.form {
   width: 500px;
   background: white;
   border-radius: 10px;
@@ -49,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 150px auto;
 }
 
-.text-box{
+.text-box {
   overflow: hidden;
   padding: 8px 0;
   margin: 15px 0;
@@ -57,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
 }
 
-.text-box input{
+.text-box input {
   margin: 5px 10px;
   outline: none;
   border: none;
@@ -65,14 +72,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   width: 300px;
 }
-.text-box i{
+.text-box i {
   width: 25px;
   margin: 5px 10px;
   float: left;
   text-align: center;
 }
 
-.btn-sign-up{
+.btn-sign-up {
   padding: 8px 15px;
   border-radius: 30px;
 }
@@ -80,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 .invalid-feedback {
   display: block;
   width: 100%;
-  margin-top: .25rem;
+  margin-top: 0.25rem;
   font-size: 90%;
   color: #dc3545;
 }
@@ -88,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2px;
 }
 
-.body-box{
+.body-box {
   background-image: url("sign_up_bg.jpg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -96,32 +103,32 @@ h1, h2, h3, h4, h5, h6 {
   padding: 40px;
 }
 
-.form-box{
+.form-box {
   min-height: 70vh;
 }
 
-.btn-sign-in{
+.btn-sign-in {
   margin: 0px 0px;
-  .btn{
+  .btn {
     border-radius: 1px;
   }
 }
 
-.form-title{
+.form-title {
   border-bottom: 3px solid #4da222;
   display: table;
-  h2{
+  h2 {
     font-size: 40px;
     margin-bottom: 1px;
   }
 }
 
-.btn-sign-in .btn-success{
+.btn-sign-in .btn-success {
   margin-bottom: 5px;
   height: 40px;
 }
 
-.google-btn{
+.google-btn {
   text-transform: none;
   margin-bottom: 5px;
   width: auto;
@@ -130,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: blue;
 }
 
-.google-icon{
+.google-icon {
   display: table;
   width: 20px;
   height: 20px;
@@ -140,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
 }
 
-.icon-box{
+.icon-box {
   margin: 0px;
   margin-left: 0px;
   width: 40px;
@@ -148,21 +155,21 @@ h1, h2, h3, h4, h5, h6 {
   background-color: white;
 }
 
-.btn-sign-in .row{
+.btn-sign-in .row {
   margin: 0px 0px;
 }
 
-.google-login-text{
+.google-login-text {
   color: white;
   margin: auto auto;
   margin-top: 8px;
 }
 
-.google-btn:hover{
+.google-btn:hover {
   background-color: #1a1ab9;
 }
 
-.btn-facebook{
+.btn-facebook {
   color: white;
   padding: 0px 0px;
   background-color: #4267b2;
@@ -170,27 +177,27 @@ h1, h2, h3, h4, h5, h6 {
   height: 40px;
   padding: 4px 5px;
   margin-bottom: 10px;
-  i{
+  i {
     font-size: 30px;
     float: left;
   }
-  div{
+  div {
     margin-top: 3px;
   }
 }
 
-.btn-facebook:hover{
+.btn-facebook:hover {
   background-color: #2f498a;
   color: white;
 }
 
-.messages{
+.messages {
   margin-top: 5px;
 }
 
-.resend-form{
+.resend-form {
   margin: 150px auto;
-  .resend-btn{
+  .resend-btn {
     background-color: #5fcf80;
   }
 }
@@ -205,11 +212,11 @@ h1, h2, h3, h4, h5, h6 {
 
   padding-top: 20px;
   margin-top: 20px;
-  .profile-img{
+  .profile-img {
     width: 200px;
     height: 100%;
     margin: 10px auto;
-    .image{
+    .image {
       width: 100%;
       height: 200px;
     }
@@ -226,29 +233,29 @@ h1, h2, h3, h4, h5, h6 {
 /*
   Review Course
 */
-.btn-comment{
+.btn-comment {
   margin-top: 20px;
   margin-bottom: 50px;
 }
 
-.destroy-comment{
+.destroy-comment {
   margin-left: 20px;
   color: #007bff;
 }
 
-.destroy-comment:hover{
+.destroy-comment:hover {
   color: #4d96ff;
 }
 
-.edit-comment{
+.edit-comment {
   color: #007bff;
 }
 
-.edit-comment:hover{
+.edit-comment:hover {
   color: #4d96ff;
 }
 
-.inform{
+.inform {
   text-align: center;
 }
 
@@ -256,40 +263,40 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 25%;
 }
 
-.user_name{
+.user_name {
   margin-top: 10px;
   min-width: 300px;
-  a{
+  a {
     color: #007bff;
   }
 }
-.comment{
+.comment {
   margin-left: 30px;
   margin-top: 10px;
   font-size: 15px;
   margin-right: 20px;
 }
 
-.divider-comment{
+.divider-comment {
   border-bottom: 1px solid #c6c2c2;
 }
 
-#nav-comment{
+#nav-comment {
   margin: auto 100px;
 }
 
-.full-name:hover{
+.full-name:hover {
   color: #4d96ff;
   border-bottom: 1px solid #4d96ff;
 }
 
-.user-actions{
+.user-actions {
   display: inline-block;
   font-size: 14px;
   color: #007bff;
 }
 
-.image-avatar{
+.image-avatar {
   vertical-align: top;
   margin-right: 10px;
   width: 50px;
@@ -297,115 +304,115 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
-.avatar{
+.avatar {
   margin: auto 0px;
   margin-top: 5px;
   max-width: 80px;
 }
 
-.comment-element{
+.comment-element {
   text-align: top;
 }
 
 /*
   Lesson form
 */
-.video-form{
+.video-form {
   margin-top: 30px;
 }
 
-.quiz-element{
+.quiz-element {
   border: 1px solid green;
   padding: 15px;
   margin-bottom: 20px;
-  .correct-answer{
+  .correct-answer {
     margin-top: 12px;
     margin-left: 32px;
   }
 }
 
-.bold-class{
+.bold-class {
   font-weight: bold;
 }
 
-.label-option{
+.label-option {
   text-align: center;
 }
 
-.option-answer{
+.option-answer {
   margin-bottom: 10px;
-  .row{
+  .row {
     flex-flow: row;
   }
 }
 
-.form-quiz{
-  input{
+.form-quiz {
+  input {
     margin-right: 0px;
   }
 }
 
-.quiz{
+.quiz {
   border: 1px solid green;
   margin: 10px 20px;
   padding: 10px;
 }
 
-.remove-answer{
+.remove-answer {
   text-align: left;
 }
 
-.lesson-box{
+.lesson-box {
   margin: 0px 0px;
   max-width: 100%;
 }
 
-.btn-add-option{
+.btn-add-option {
   font-size: 16px;
   margin-top: 10px;
 }
 
-.btn-add-option{
+.btn-add-option {
   margin-left: 16.5%;
 }
 
-.remove-lesson{
+.remove-lesson {
   text-align: right;
 }
 
-.correct-answer{
+.correct-answer {
   margin-left: 20px !important;
   margin-bottom: 5px;
 }
 
-.label-option{
+.label-option {
   text-align: right;
   margin-top: 8px;
 }
 
-.input-answer{
+.input-answer {
   margin-left: 10%;
 }
 
-.list-answer{
+.list-answer {
   margin-right: 10%;
 }
 
-.left-input{
+.left-input {
   margin-left: 5%;
 }
 
-.btn-add-lesson{
+.btn-add-lesson {
   width: 150px;
   margin-right: 10px;
   margin-left: 5px;
 }
 
-.btn-submit-course{
+.btn-submit-course {
   width: 150px;
 }
 
-.lesson-name-collapse{
+.lesson-name-collapse {
   white-space: nowrap;
   width: inherit;
   line-height: 20px;
@@ -414,15 +421,15 @@ h1, h2, h3, h4, h5, h6 {
   text-overflow: ellipsis;
 }
 
-.lesson-content{
+.lesson-content {
   margin-left: auto;
 }
 
-.lesson-lock{
+.lesson-lock {
   margin-left: auto;
 }
 
-.lesson-item{
+.lesson-item {
   white-space: nowrap;
   line-height: 20px;
   height: 27px;
@@ -431,27 +438,27 @@ h1, h2, h3, h4, h5, h6 {
   color: #3b424a;
 }
 
-.lessons-list{
+.lessons-list {
   height: 480px;
   overflow: scroll;
   margin-top: 30px;
 }
 
-.radio-lesson-type{
+.radio-lesson-type {
   margin-left: 10px;
   margin-bottom: 12px;
 }
 
-.card-lesson-show{
+.card-lesson-show {
   border-radius: 0px;
   margin-bottom: 5px;
 }
 
-.form-actions{
+.form-actions {
   margin-bottom: 3%;
 }
 
-.quiz-form{
+.quiz-form {
   margin-bottom: 0px;
 }
 
@@ -476,8 +483,8 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -488,8 +495,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 2px;
   bottom: 3px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -497,7 +504,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -507,76 +514,79 @@ input:checked + .slider:before {
 }
 
 /* Rounded sliders */
-.switch{
+.switch {
   margin-top: 10px;
 }
 
-.delete-lesson-btn{
+.delete-lesson-btn {
   text-align: center !important;
 }
 
-.header-lesson{
+.header-lesson {
   margin-left: 10px;
   padding-left: 0px;
   padding-right: 0px;
 }
 
-.btn-edit-course{
+.btn-edit-course {
   margin-left: 10px;
 }
 
-.btn-new-lesson{
+.btn-new-lesson {
   margin-left: 5px;
 }
 
-.label-point, .label-video-url, .label-lesson-name, .label-max-point{
+.label-point,
+.label-video-url,
+.label-lesson-name,
+.label-max-point {
   margin-top: 7px;
 }
 
-.label-point{
+.label-point {
   text-align: right;
   padding-left: 0px;
   padding-right: 0px;
 }
 
-.label-video-url{
+.label-video-url {
   padding-left: 15px;
 }
 
-.label-max-point{
+.label-max-point {
   text-align: left;
 }
 
-.input-min-point{
+.input-min-point {
   text-align: center;
 }
 
-.form-min_point{
+.form-min_point {
   padding-left: 0px;
   padding-right: 0px;
 }
 
-.min-point{
+.min-point {
   padding-right: 0px;
 }
 
-.view-lesson-name{
+.view-lesson-name {
   margin-top: 8px;
   font-weight: bold;
 }
 
-#iframe-lesson{
-  margin-top: auto;
+#iframe-lesson {
+  margin-top: 2%;
   vertical-align: middle;
   width: auto;
   height: auto;
 }
 
-.lesson-name{
+.lesson-name {
   text-align: center;
 }
 
-.lesson-video{
+.lesson-video {
   width: 90%;
 }
 
@@ -584,13 +594,13 @@ input:checked + .slider:before {
   Show iframe
 */
 
-iframe{
+iframe {
   margin-left: 5%;
   margin-top: 5%;
   height: 60vh;
 }
 
-.lesson-name{
+.lesson-name {
   text-align: center;
 }
 
@@ -598,61 +608,67 @@ iframe{
   Question form
 */
 
-.question{
+.question {
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-.card-quiz{
+.card-quiz {
   height: 80vh;
   overflow: scroll;
 }
 
-.result{
+.result {
   font-size: 60px;
+}
+
+.submit-btn {
+  position: absolute;
+  bottom: 0;
 }
 
 /*
   Anwser form
 */
 
-.label-answer{
+.label-answer {
   margin-left: 10px;
 }
 
-.user-answer{
+.user-answer {
   margin-left: 5%;
+  margin-right: 2%;
 }
 
-.header-quiz-result{
+.header-quiz-result {
   text-align: center;
 }
 
-.answer{
+.answer {
   margin-left: 0px;
 }
 
-.correct-icon{
+.correct-icon {
   text-align: right;
-  .correct-answer-icon{
-  color: green;
+  .correct-answer-icon {
+    color: green;
   }
 }
 
-.mark{
+.mark {
   color: green;
 }
 
-.inform{
+.inform {
   color: red;
 }
 
-.card{
-  box-shadow: 0 0 1px rgba(0, 0, 0, 1), 0 2px 2px rgba(0, 0, 0, 0.4)
+.card {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 1), 0 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-.card-lesson-show .active{
-  background-color: #1f2d3d1f
+.card-lesson-show .active {
+  background-color: #1f2d3d1f;
 }
 
 .action {
@@ -669,10 +685,10 @@ iframe{
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background:  #5fcf80;
+  background: #5fcf80;
   border-radius: 50%;
 
-  display:none;
+  display: none;
   z-index: 1;
 
   outline: 0;
