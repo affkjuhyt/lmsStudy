@@ -1,8 +1,10 @@
+category_name = ["Web Design", "Web Development", "Marketing", "Product Management"]
+
 category_attrs = proc do
   10.times.map do |idx|
     {
       id: idx + 1,
-      name: Faker::Job.title,
+      name: category_name.sample,
       image: Faker::LoremFlickr.image(size: '150x150')
     }
   end
