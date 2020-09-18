@@ -423,6 +423,8 @@ h6 {
 
 .lesson-content {
   margin-left: auto;
+  border: 1px solid green;
+  padding: 2%;
 }
 
 .lesson-lock {
@@ -439,9 +441,9 @@ h6 {
 }
 
 .lessons-list {
-  height: 480px;
+  height: 600px;
   overflow: scroll;
-  margin-top: 30px;
+  padding: 10px;
 }
 
 .radio-lesson-type {
