@@ -1,17 +1,16 @@
 class CoursesController < ApplicationController
-  before_action :load_course, only: [:show]
   before_action :set_search, only: [:index, :show]
+  before_action :load_course, only: [:show]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index; end
 
   def show
-    @review_courses = @course.review_courses
-                            .paginate(page: params[:page], per_page: Settings.search.per_page)
+    @review_courses = @course.review_courses.paginate(page: params[:page], per_page: Settings.search.per_page)
     @lessons = @course.lessons.order('sequence ASC')
-    @user_courses = @course.user_courses.order('created_at DESC')
-                        .paginate(page: params[:register_page], per_page: Settings.search.per_page)
-    @user_course = current_user.user_courses.find_by(course_id: params[:id]) if current_user
+    @user_courses = @course.user_courses.order('created_at DESC').
+      paginate(page: params[:register_page], per_page: Settings.search.per_page)
+    @user_course = @user_courses.find_by(course_id: @course.id, user_id: current_user.id) if current_user
     lesson_step = @user_course.lesson_step if @user_course
     @lessons_unlock = @lessons.where("sequence <= ?", lesson_step)
     @lessons_locked = @lessons.where("sequence > ?", lesson_step)

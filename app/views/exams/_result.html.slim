@@ -2,9 +2,7 @@
   .card-header.header-quiz-result
     strong.quiz-title
       = @lesson.name
-  .card-body
-    h2.mark
-      |Mark:  
+  .card-body 
     - @questions.each_with_index do |question, i|
       .question
         = i + 1
