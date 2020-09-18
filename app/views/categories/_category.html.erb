@@ -9,7 +9,7 @@
           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
             <div class="course-item">
               <div class="course-img">
-                <%= image_tag category.image_was.to_s %>
+                <%= link_to image_tag(category.image.url(:show), class: "img-fluid"), category %>
               </div>
               <div class="course-content">
                 <div class="d-flex mb-3">

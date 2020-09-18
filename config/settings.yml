@@ -6,6 +6,8 @@ course:
   description: 200
 first_name:
   maximum: 20
+lesson_name:
+  maximum: 200
 last_name:
   maximum: 20
 users:

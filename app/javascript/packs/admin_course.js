@@ -30,6 +30,7 @@ $(document).on("click", ".btn-add-question", function () {
   name = $(this).closest(".quiz-form").find(".input-question").first().attr("name");
   changeNameQuestion(questionElement, milis);
   $(this).closest(".quiz-form").find(".list").append(parent);
+  $(this).closest("quiz-form").find(".list").trigger("reset");
   $(this).closest(".quiz-form").find(".quiz-element").last().append(questionElement);
   $(this).closest(".quiz-form").find(".quiz-element").last().find(".edit-answer").last().find(".row").last()
     .append('<div class="btn btn-danger btn-remove-answer" data-toggle="modal" data-taget="#confirm-delete-answer">×</div>');
