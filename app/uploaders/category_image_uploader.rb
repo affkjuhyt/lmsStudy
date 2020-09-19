@@ -1,4 +1,4 @@
-class CourseImageUploader < CarrierWave::Uploader::Base
+class CategoryImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -15,7 +15,7 @@ class CourseImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url(*args)
-    "default/course-default.jpg"
+    "default/category-default.jpg"
   end
 
   # Process files as they are uploaded:

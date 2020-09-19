@@ -5,7 +5,7 @@ class Lesson < ApplicationRecord
   has_many :exams, dependent: :destroy
 
   validates :lesson_type, :sequence, :name, presence: true
-  validates :name, length: { maximum: 14 }
+  validates :name, length: { maximum: Settings.lesson_name.maximum }
   validates :check_point, numericality: { only_integer: true, greater_than_or_equal_to: 1 }, presence: true
 
   accepts_nested_attributes_for :questions, allow_destroy: true
