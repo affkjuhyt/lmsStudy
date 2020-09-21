@@ -311,5 +311,5 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV["facebook_id"], ENV["facebook_key"],
                     scope: 'email', info_fields: 'email,name'
   config.omniauth :google_oauth2, ENV["google_id"],
-                    ENV["googlel_key"], scope: 'email', info_fields: 'email,name'
+                    ENV["google_key"], scope: 'email', info_fields: 'email,name'
 end
