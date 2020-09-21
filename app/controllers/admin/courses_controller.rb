@@ -36,10 +36,9 @@ class Admin::CoursesController < Admin::BaseController
     respond_to do |format|
       if @course.save
         format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
-        format.json { render :show, status: :created, location: @course }
         SendEmailJob.perform_later @course
         (User.all - [current_user]).each do |user|
-          Notification.create(recipient: user, actor: current_user, action: 'created', notifiable: @course)
+          SendNotiJob.set(wait: 1.weeks).perform_later(@course, user, current_user)
         end
       else
         format.html { render :new }

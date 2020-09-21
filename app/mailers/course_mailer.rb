@@ -1,5 +1,5 @@
 class CourseMailer < ApplicationMailer
-  def course_email course
+  def course_email(course)
     users = User.all
     @course = course
     users.each do |x|

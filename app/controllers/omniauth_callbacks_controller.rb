@@ -7,7 +7,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     generic_callback 'facebook'
   end
 
-  def generic_callback provider
+  def generic_callback(provider)
     @user = User.from_omniauth(request.env['omniauth.auth'])
     if @user.persisted?
       flash.now[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: provider.classify
