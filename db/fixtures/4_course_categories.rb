@@ -1,5 +1,5 @@
 course_category_attrs = proc do
-  10.times.map do |idx|
+  4.times.map do |idx|
     {
       id: idx + 1,
       course_id: idx + 1,

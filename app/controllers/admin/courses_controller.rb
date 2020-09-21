@@ -33,13 +33,12 @@ class Admin::CoursesController < Admin::BaseController
   def create
     @course = Course.new(course_params)
     @course.user_id = current_user.id
+    @categories = params[:course][:category_ids]
     respond_to do |format|
       if @course.save
-        format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
+        SendNotiJob.set(wait: 1.weeks).perform_later(@categories, @course, current_user)
         SendEmailJob.perform_later @course
-        (User.all - [current_user]).each do |user|
-          SendNotiJob.set(wait: 1.weeks).perform_later(@course, user, current_user)
-        end
+        format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
       else
         format.html { render :new }
         format.js
@@ -76,7 +75,7 @@ class Admin::CoursesController < Admin::BaseController
   end
 
   def course_params
-    params.require(:course).permit(:title, :overview, :description, :image,
+    params.require(:course).permit(:title, :overview, :description, :image, { :category_ids => [] },
                             lessons_attributes: [:id, :sequence, :lesson_type, :name, :video_url, :check_point, :_destroy, 
                             questions_attributes: [:id, :title, :_destroy, question_choices_attributes: [:id, :right_answer, :answer, :_destroy]]])
   end
