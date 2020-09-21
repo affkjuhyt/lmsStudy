@@ -14,18 +14,18 @@ module CoursesHelper
     current_user.rate_ids.include?(course_id)
   end
 
-  def percent user, course
-    @lesson_step = course.user_courses.find_by(user_id: user.id).lesson_step
-    @size = course.lessons.size
-    @percent = (@lesson_step.to_f / @size) * 100
-    @percent.round(2)
+  def percent(user, course)
+    lesson_step = course.user_courses.find_by(user_id: user.id).lesson_step
+    size = course.lessons.size
+    percent = (lesson_step.to_f / size) * 100
+    percent.round(2)
   end
 
-  def status_success user, course
-    @lesson_step = course.user_courses.find_by(user_id: user.id).lesson_step
-    @size = course.lessons.size
-    @percent = (@lesson_step.to_f / @size) * 100
-    @percent.round(2)
-    return false unless @percent >= 100
+  def status_success(user, course)
+    lesson_step = course.user_courses.find_by(user_id: user.id).lesson_step
+    size = course.lessons.size
+    percent = (lesson_step.to_f / size) * 100
+    percent.round(2)
+    return false unless percent >= 100
   end
 end
