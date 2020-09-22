@@ -13,6 +13,7 @@ class Admin::CoursesController < Admin::BaseController
 
   def new
     @course = Course.new
+    @course_category = @course.course_categories.build
     @lesson = @course.lessons.build
     @lesson.questions.build.question_choices.build
   end
@@ -33,16 +34,14 @@ class Admin::CoursesController < Admin::BaseController
   def create
     @course = Course.new(course_params)
     @course.user_id = current_user.id
-    @categories = params[:course][:category_ids]
     respond_to do |format|
       if @course.save
-        SendNotiJob.set(wait: 1.weeks).perform_later(@categories, @course, current_user)
+        SendNotiJob.set(wait: 1.weeks).perform_later(@course)
         SendEmailJob.perform_later @course
         format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
       else
         format.html { render :new }
         format.js
-        format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -75,8 +74,8 @@ class Admin::CoursesController < Admin::BaseController
   end
 
   def course_params
-    params.require(:course).permit(:title, :overview, :description, :image, { :category_ids => [] },
-                            lessons_attributes: [:id, :sequence, :lesson_type, :name, :video_url, :check_point, :_destroy, 
+    params.require(:course).permit(:title, :overview, :description, :image, course_categories_attributes: [:id, :category_id, :course_id],
+                            lessons_attributes: [:id, :sequence, :lesson_type, :name, :video_url, :check_point, :_destroy,
                             questions_attributes: [:id, :title, :_destroy, question_choices_attributes: [:id, :right_answer, :answer, :_destroy]]])
   end
 end

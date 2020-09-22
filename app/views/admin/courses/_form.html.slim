@@ -10,11 +10,14 @@
           .row
             .col-lg-7.col-md-7
               = f.input :title, label: t('admin.user.title')
-            .col-lg-5.col-md-5
-              - @categories.each do |category|
-                br
-                = check_box_tag "course[category_ids][]", category.id, true
-                = category.name
+            .col-lg-5.col-md-5                
+                - @categories.each do |category|
+                  br
+                  = f.fields_for :course_categories do |course_category|
+                    = course_category.check_box(:category_id, { :multiple => false }, category.id, false)
+                    = course_category.hidden_field :course_id, value: @course.id
+                    = ' '
+                    = category.name
           .row
             .col-lg-12.col-md-12
               = f.input :overview, label: 'Overview'

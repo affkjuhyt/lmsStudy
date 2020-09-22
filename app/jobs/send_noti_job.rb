@@ -1,10 +1,9 @@
 class SendNotiJob < ApplicationJob
   queue_as :default
 
-  def perform(categories, course, current_user)
+  def perform(course)
+    categories = course.category_ids
     categories.each do |category|
-      course_category = CourseCategory.new(category_id: category, course_id: @course.id)
-      course_category.save
       course_categories = CourseCategory.where(category_id: category)
       course_category_ids = course_categories.ids
       course_category_ids.each do |course_category_id|
