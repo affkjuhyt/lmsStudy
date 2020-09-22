@@ -118,6 +118,7 @@ vi:
       dashboard: 'Danh mục'
       user: 'Người dùng'
       course: 'Khóa học'
+      message: 'Tin nhắn'
     navbar:
       setting: 'Cài đặt'
       logout: 'Đăng xuất'

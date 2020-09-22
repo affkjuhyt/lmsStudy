@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
+  mount ActionCable.server => '/cable'
+  
   scope "(:locale)", locale: /en|vi/ do
     root 'home#index'
 
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
       end
     end
     resources :questions
+    resources :messages
     resources :answers, only: :create
     resources :exams
     resources :question_choices
@@ -22,7 +25,6 @@ Rails.application.routes.draw do
     end
 
     post "course/rate/:course_id", to: "rates#save_rate", as: :rate_course
-    # Ex:- scope :active, -> {where(:active => true)}
     devise_for :users, skip: :omniauth_callbacks, controllers: { sessions: "sessions" }
     resources :categories
 

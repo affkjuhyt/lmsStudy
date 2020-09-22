@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :answers, dependent: :destroy
   has_many :exams, dependent: :destroy
+  has_many :messages, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   scope :not_admin, -> { where(is_admin: false) }

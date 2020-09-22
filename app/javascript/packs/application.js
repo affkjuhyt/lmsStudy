@@ -28,8 +28,8 @@ require("packs/admin_course");
 require("packs/collapse");
 require("packs/scroll");
 require("packs/edit_course");
+require("packs/chat_app");
 require("packs/backToTop");
-require("packs/js-select-userids");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
