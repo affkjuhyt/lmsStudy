@@ -36,6 +36,9 @@ class Admin::CoursesController < Admin::BaseController
     @course.user_id = current_user.id
     respond_to do |format|
       if @course.save
+        
+        binding.pry
+        
         SendNotiJob.set(wait: 1.weeks).perform_later(@course)
         SendEmailJob.perform_later @course
         format.html { redirect_to admin_courses_path, notice: 'The course has been created' }
