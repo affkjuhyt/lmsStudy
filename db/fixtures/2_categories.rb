@@ -1,7 +1,7 @@
 category_name = ["Web Design", "Web Development", "Marketing", "Product Management"]
 
 category_attrs = proc do
-  10.times.map do |idx|
+  4.times.map do |idx|
     {
       id: idx + 1,
       name: category_name.sample,
