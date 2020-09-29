@@ -10,6 +10,13 @@ class User < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :answers, dependent: :destroy
   has_many :exams, dependent: :destroy
+
+  has_many :messages, dependent: :destroy
+  has_many :send_conversations, class_name: "Conversation",
+    foreign_key: :sender_id
+  has_many :received_conversations, class_name: "Conversation",
+    foreign_key: :recipient_id
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   scope :not_admin, -> { where(is_admin: false) }
@@ -39,5 +46,9 @@ class User < ApplicationRecord
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save(validate: false)
     end
+  end
+
+  def conversations
+    Conversation.where("sender_id = ? OR recipient_id = ?", self.id, self.id)
   end
 end

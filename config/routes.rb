@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
+  mount ActionCable.server => '/cable'
   scope "(:locale)", locale: /en|vi/ do
     root 'home#index'
 
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
         post :mark_as_read
       end
     end
+    resources :conversations
+    resources :messages
 
     post "course/rate/:course_id", to: "rates#save_rate", as: :rate_course
     # Ex:- scope :active, -> {where(:active => true)}
@@ -35,6 +38,9 @@ Rails.application.routes.draw do
         delete "/logout", to: "sessions#destroy"
       end
       resources :courses
+      resources :conversations
+      post "close_conversation" => "conversations#close", as: :close_conversation
+      resources :message
     end
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   end
