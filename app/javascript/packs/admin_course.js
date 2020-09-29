@@ -163,6 +163,7 @@ function addLesson(newBox) {
   newBox.find(".lesson_seq").val(milis +1);
   changeNameLesson(newBox, milis, 0, 0);
   $("#sortable").append(parent);
+  $("#sortable .lesson-box").closest("lesson-box").find("lesson-field").trigger("reset");
   $("#sortable .lesson-box").last().append(newBox);
   $(".remove-lesson").show();
 }
