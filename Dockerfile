@@ -1,20 +1,17 @@
 FROM ruby:2.7.0
 
-RUN apt-get update &&  apt-get install -y nodejs npm yarn nano vim \
+RUN apt-get update &&  apt-get install -y nodejs nano npm vim \
   && rm -rf /var/lib/apt/lists/* \
-  && curl -o- -L https://yarnpkg.com/install.sh | bash
-
-RUN mkdir /lmsStudy
+  && npm install -g yarn
 
 WORKDIR /lmsStudy
 
-COPY Gemfile /lmsStudy/Gemfile
-COPY Gemfile.lock /lmsStudy/Gemfile.lock
+COPY Gemfile Gemfile.lock ./
 
-RUN npm install -g yarn
+RUN gem install bundler:2.1.4
+RUN bundle install
+
 RUN yarn install --check-files
-
-COPY . /lmsStudy
 
 EXPOSE 3000
 
