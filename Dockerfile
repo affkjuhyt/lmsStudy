@@ -6,7 +6,7 @@ RUN apt-get update &&  apt-get install -y nodejs nano npm vim \
 
 WORKDIR /lmsStudy
 
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile Gemfile.lock package.json yarn.lock ./
 
 RUN gem install bundler:2.1.4
 RUN bundle install
