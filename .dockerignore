@@ -1,6 +1,6 @@
-.git
-.gitignore
-README.md
-
-.git/
-node_modules/
+.git*
+db/*
+log/*
+tmp/*
+Dockerfile
+README.rdoc

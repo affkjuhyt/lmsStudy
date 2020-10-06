@@ -4,6 +4,9 @@ RUN apt-get update &&  apt-get install -y nodejs nano npm vim \
   && rm -rf /var/lib/apt/lists/* \
   && npm install -g yarn
 
+ENV DB_USERNAME="root"
+ENV DB_PASSWORD="passwordA123@"
+
 WORKDIR /lmsStudy
 
 COPY Gemfile Gemfile.lock package.json yarn.lock ./
