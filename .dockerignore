@@ -1,0 +1,6 @@
+.git*
+db/*
+log/*
+tmp/*
+Dockerfile
+README.rdoc
