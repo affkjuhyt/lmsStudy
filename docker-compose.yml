@@ -11,10 +11,10 @@ services:
       - node_modules:/lmsStudy/node_modules
     env_file:
       - .env
-    # command: wait-for-it.sh -t 120 db:3306 -- entrypoint
     depends_on:
       - mysql
       - redis
+      - sidekiq
     stdin_open: true
     tty: true
 
@@ -32,6 +32,15 @@ services:
       - 6370:6370
     volumes:
       - 'my-redis:/data'
+
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq
+    volumes:
+      - ./:/lmsStudy
+      - /lmsStudy/tmp
+    environment:
+      - REDIS_URL_SIDEKIQ=redis://redis:6379/12
 volumes:
   mysql-volume:
   bundle:
