@@ -1,28 +1,11 @@
 # README
 
-Trang web dạy học trực tuyến demo Athena.
-
-Things you may want to cover:
-
-* Ruby version: 2.7.0
-
-* System dependencies: redis, sidekiq
-
-* Configuration
-
-* Database creation: mysql
-
-* How to run the test suite: rspec
-
-* Services (job queues, cache servers, search engines elasticsearch, etc.)
-
-* Deployment instructions: docker
-
+# Trang web dạy học trực tuyến demo Athena.
 ---
-Hướng dẫn sử dụng:
+# Hướng dẫn sử dụng:
 - Sử dụng `docker-compose build` để build images, sau đó dùng `docker-compose up` để chạy chương trình
 ---
-Cơ chế hoạt động của trang web:
+## Cơ chế hoạt động của trang web:
 - Trang web bao gồm hai phần là admin và user:
   - Admin sẽ thực hiện những chức năng như:
     - Thêm sửa xóa khóa học.
@@ -44,7 +27,7 @@ Cơ chế hoạt động của trang web:
     - Sẽ gửi mail cho user mỗi khi tạo khóa học mới.
     - Sẽ gửi thông báo cho những user đăng kí những khóa học thuộc thể loại course được tạo.
 ---
-Cách tạo dữ liệu test:
+## Cách tạo dữ liệu test:
  - Chạy câu lệnh `docker-compose run lmsstudy rails db:seed_fu`
  - File seed dữ liệu được viết trong thư mục `db/fixtures`
  - Code trong file seed-data:
