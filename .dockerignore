@@ -1,6 +1,10 @@
 .git*
 db/*
 log/*
+node_modules
 tmp/*
 Dockerfile
 README.rdoc
+public/assets
+public/packs
+public/uploads
