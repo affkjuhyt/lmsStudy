@@ -1,0 +1,39 @@
+version: "3.5"
+
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/lmsStudy
+      - bundle:/lmsStudy/vendor/bundle
+      - node_modules:/lmsStudy/node_modules
+    env_file:
+      - .env
+    # command: wait-for-it.sh -t 120 db:3306 -- entrypoint
+    depends_on:
+      - mysql
+      - redis
+    stdin_open: true
+    tty: true
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - mysql-volume:/var/lib/mysql/
+    environment: 
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  
+  redis:
+    image: 'redis'
+    command: redis-server
+    ports:
+      - 6370:6370
+    volumes:
+      - 'my-redis:/data'
+volumes:
+  mysql-volume:
+  bundle:
+  node_modules:
+  my-redis:
