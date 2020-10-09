@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_062150) do
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "lesson_id", null: false
+    t.bigint "lesson_id"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
