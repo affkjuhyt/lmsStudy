@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+  <div class="content">
+    <div class="container-fluid">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2 class="panel-title">User</h2>
+        <hr>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% @users.each do |user| %>
+            <li style="list-style-type: none">
+              <%= link_to user.first_name, admin_user_path(user) %>
+              <div>
+                <%= link_to "Chat", admin_conversations_path(user_id: user), remote: true, method: :post,
+                class: "btn-chat btn btn-xs btn-success"  %>
+              </div>
+            </li>
+            <br>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <h2>Conversations</h2>
+    <ul id="conversations-list" style="margin-bottom: 20px">
+      <% @conversations.each do |conversation| %>
+          <%= render "admin/conversations/conversation", conversation: conversation, user: current_user %>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+</div>
+
