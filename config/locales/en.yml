@@ -121,3 +121,6 @@ en:
     navbar:
       setting: 'Settings'
       logout: 'Log out'
+  chats:
+    search: 'Search'
+  name_system: 'Athena LMS'

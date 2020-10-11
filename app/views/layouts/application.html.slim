@@ -9,20 +9,26 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'notification'
-  body
-    script src="https://player.vimeo.com/api/player.js"
-    .container-fluid
-      = render  "shared/header"
-
-    .main
-      .container-fuild
-        = yield
-        .notice
-          = notice
-        .alert
-          = alert
-    button.btn.btn-lg.back-to-top[data-toggle="tooltip" data-placement="left"]
-      i.fas.fa-angle-up
-
-    .container-fluid
-      = render  "shared/footer"
+  - if controller_name == "chats"
+    body#body-chat.skin-blue.sidebar-mini.wysihtml5-supported.fixed
+      .wrapper
+        = render "layouts/chat_header" if current_user.present?
+        .content-wrapper
+          #message-content
+            = yield
+  - else
+    body
+      script src="https://player.vimeo.com/api/player.js"
+      .container-fluid
+        = render  "shared/header"
+      .main
+        .container-fuild
+          = yield
+          .notice
+            = notice
+          .alert
+            = alert
+      button.btn.btn-lg.back-to-top[data-toggle="tooltip" data-placement="left"]
+        i.fas.fa-angle-up
+      .container-fluid
+        = render  "shared/footer"

@@ -1,0 +1,12 @@
+<%= binding.pry %>
+
+$("#users").append(
+  "<%= j render partial: 'shared/chat_room', collection: @users, as: :chat_room %>");
+
+$(".sidebar-menu .loading").hide();
+
+<% if @users.next_page %>
+  $(".sidebar-menu .pagination").replaceWith("<%= j paginate @users %>");
+<% else %>
+  $("#chat-sidebar").unbind("slimscroll");
+<% end %>

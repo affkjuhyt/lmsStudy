@@ -47,7 +47,6 @@ class Admin::CoursesController < Admin::BaseController
   end
 
   def update
-    binding.pry
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to admin_courses_path, notice: 'Updated' }

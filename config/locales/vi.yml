@@ -129,5 +129,6 @@ vi:
       success: 'Thành công'
       progressing: 'Đang diễn ra'
       view: 'Xem'
-      
-
+  chats:
+    search: 'Tìm kiếm'
+  name_system: 'Athena LMS'

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   mount Ckeditor::Engine => '/ckeditor'
+  mount ActionCable.server => "/cable"
   scope "(:locale)", locale: /en|vi/ do
     root 'home#index'
 
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
     resources :question_choices
     resources :user_courses, only: [:create, :edit, :update]
     resources :review_courses, except: [:new, :show]
+    resources :chats, only: :index
+    resources :messages,except: [:index, :show, :edit]
     resources :notifications do
       collection do
         post :mark_as_read
