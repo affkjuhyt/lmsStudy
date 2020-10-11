@@ -28,7 +28,9 @@ class ApplicationController < ActionController::Base
   end
 
   def load_message
-    @messages = Message.where(user_id: current_user.id)
+    if current_user.present?
+      @messages = Message.where(user_id: current_user.id)
+    end
     @message = Message.new
   end
 end
