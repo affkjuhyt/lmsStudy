@@ -144,8 +144,7 @@ function changeNameAnswer(answer, milis) {
     } else if ($(this).attr("type") == "checkbox") {
       $(this).removeAttr("checked");
     }
-  });
-  answer = answer.html();
+  }).html();
 }
 
 function removeAnswer(selector, removeButton) {

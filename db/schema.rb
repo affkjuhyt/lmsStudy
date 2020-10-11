@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_09_29_024332) do
 
-  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "choice", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.index ["exam_id"], name: "index_answers_on_exam_id"
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.index ["course_id"], name: "index_course_categories_on_course_id"
   end
 
-  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title", limit: 100, null: false
     t.string "overview", limit: 150, null: false
     t.text "description", size: :tiny, null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
-  create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "lesson_id", null: false
     t.integer "point", default: 0
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.index ["user_id"], name: "index_exams_on_user_id"
   end
 
-  create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "course_id", null: false
     t.string "name", null: false
     t.integer "lesson_type", default: 1, null: false
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "question_choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "question_choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "question_id", null: false
     t.string "answer"
     t.boolean "right_answer", default: false
@@ -118,15 +118,15 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.index ["question_id"], name: "index_question_choices_on_question_id"
   end
 
-  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "lesson_id", null: false
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "lesson_id"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lesson_id"], name: "index_questions_on_lesson_id"
   end
 
-  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
-  create_table "review_courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "review_courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "course_id", null: false
     t.text "comment", null: false
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.index ["user_id"], name: "index_review_courses_on_user_id"
   end
 
-  create_table "user_courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "user_courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "lesson_step", default: 2, null: false
     t.bigint "course_id", null: false
     t.bigint "user_id", null: false
@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_024332) do
     t.index ["user_id"], name: "index_user_courses_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", limit: 40, default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "first_name", default: "", null: false
