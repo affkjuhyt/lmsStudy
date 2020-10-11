@@ -118,7 +118,6 @@ en:
       dashboard: 'Dashboard'
       user: 'User'
       course: 'Course'
-      conversation: 'Conversation'
     navbar:
       setting: 'Settings'
       logout: 'Log out'

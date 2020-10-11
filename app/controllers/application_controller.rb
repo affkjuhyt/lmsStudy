@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
-  before_action :load_message
   before_action :set_search
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -25,10 +24,5 @@ class ApplicationController < ActionController::Base
     added_attrs = [:first_name, :last_name]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
-  end
-
-  def load_message
-    @messages = Message.where(user_id: current_user.id)
-    @message = Message.new
   end
 end
