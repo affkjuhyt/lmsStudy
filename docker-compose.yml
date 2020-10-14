@@ -28,8 +28,6 @@ services:
   redis:
     image: 'redis'
     command: redis-server
-    ports:
-      - 6370:6370
     volumes:
       - 'my-redis:/data'
 
@@ -40,7 +38,7 @@ services:
       - ./:/lmsStudy
       - /lmsStudy/tmp
     environment:
-      - REDIS_URL_SIDEKIQ=redis://redis:6379/12
+      - REDIS_URL_SIDEKIQ=redis://redis:6379/1
 volumes:
   mysql-volume:
   bundle:
