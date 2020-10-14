@@ -27,7 +27,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-/config/application.yml
 
 /coverage
 /public/packs
@@ -41,7 +40,6 @@ yarn-debug.log*
 .env
 
 # Ignore application configuration
-/config/application.yml
 
 config/settings.local.yml
 config/settings/*.local.yml
